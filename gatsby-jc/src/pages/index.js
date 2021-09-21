@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import SanityImage from 'gatsby-plugin-sanity-image';
 import React from 'react';
 import styled from 'styled-components';
@@ -9,54 +9,56 @@ const HomeStyles = styled.div`
     margin: 0;
     padding: 0;
     h1 {
+      padding-bottom: 2rem;
       text-align: center;
       font-size: 4rem;
       text-shadow: 1px 1px 15px whitesmoke;
-      font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',
-        sans-serif;
     }
-    img {
-      padding: 2rem 25% 2rem 25%;
+    .imgContainer {
+      max-width: 600px;
+      margin: 0 auto;
+      img {
+        height: 400px;
+      }
     }
   }
   .homeContent {
     padding: 1rem;
-    border-left: 10px black groove;
     border-bottom: 2px black groove;
-    margin: 3rem;
     h3 {
       text-align: left;
-      padding-bottom: 0.5rem;
-      padding-left: 1rem;
+      padding: 1rem;
       text-decoration: underline;
     }
     div {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-    button {
-      margin-left: 4rem;
-      margin-top: 1rem;
-    }
-    a {
-      text-decoration: none;
+      margin: 0 2rem 2rem 2rem;
     }
   }
-  @media (max-width: 400px) {
-    .heroBG {
-      h1 {
-        font-size: 2.22rem;
-      }
-    }
-    .homeContent {
-      font-size: 1.5rem;
-    }
-  }
-  @media (min-width: 401px) and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     .heroBG {
       h1 {
         font-size: 2.6rem;
       }
+      .imgContainer {
+        img {
+          height: 300px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .heroBG {
+      h1 {
+        font-size: 2.22rem;
+      }
+      .imgContainer {
+        img {
+          height: 200px;
+        }
+      }
+    }
+    .homeContent {
+      font-size: 1.5rem;
     }
   }
 `;
@@ -70,25 +72,23 @@ export default function HomePage({ data }) {
         <HomeStyles key={home.id}>
           <div className="heroBG">
             <h1>{home.welcome}</h1>
-            <SanityImage
-              {...home.image}
-              alt="Welcome Page Image"
-              height={500}
-              style={{
-                width: '50%',
-                height: '50%',
-                objectFit: 'cover',
-                auto: 'format',
-              }}
-            />
+            <div className="imgContainer">
+              <SanityImage
+                {...home.image}
+                alt="Welcome Page Image"
+                height={500}
+                style={{
+                  width: '100%',
+                  objectFit: 'cover',
+                  auto: 'format',
+                }}
+              />
+            </div>
           </div>
           {home.contents.map((info) => (
-            <div className="homeContent">
-              <h3>{info.heading}</h3>
-              <div>{info.content}</div>
-              <button type="button">
-                <Link to={info.contentURL}>Check it out here</Link>
-              </button>
+            <div key={info} className="homeContent">
+              <h3>Here's Our Site Content</h3>
+              <div>{info}</div>
             </div>
           ))}
         </HomeStyles>
@@ -99,21 +99,17 @@ export default function HomePage({ data }) {
 
 export const query = graphql`
   query {
-    home: allSanityHome {
+    home: allSanityHomepage {
       nodes {
         id
-        contents {
-          content
-          contentURL
-          heading
-        }
+        welcome
+        contents
         image {
           asset {
             id
           }
           ...ImageWithPreview
         }
-        welcome
       }
     }
   }

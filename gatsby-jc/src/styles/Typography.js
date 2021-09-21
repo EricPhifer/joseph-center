@@ -3,12 +3,13 @@ import { createGlobalStyle } from 'styled-components';
 import font from '../assets/fonts/Routhem - Regular.otf';
 
 const Typography = createGlobalStyle`
-  @font-face {
+ // to import a custom font
+ /* @font-face {
     font-family: Routhem;
     src: url(${font});
-  }
+  } */
   html {
-    font-family: Routhem, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: var(--black);
   }
   p, li {
@@ -24,20 +25,8 @@ const Typography = createGlobalStyle`
     /* Chrome renders this weird with this font, so we turn it off */
     text-decoration-skip-ink: none;
   }
-  mark, .mark {
-    background: var(--yellow);
-    padding: 0 2px 2px 2px;
-    margin: 0;
-    display: inline;
-    line-height: 1;
-  }
-
   .center {
     text-align: center;
-  }
-
-  .tilt {
-    transform: rotate(-2deg);
   }
 `;
 

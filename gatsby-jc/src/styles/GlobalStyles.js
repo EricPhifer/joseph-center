@@ -9,6 +9,8 @@ const GlobalStyles = createGlobalStyle`
     --yellow: #ffc600;
     --white: #fff;
     --grey: #efefef;
+    --blue: #4682b4;
+
   }
 
   html {
@@ -28,26 +30,25 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    background: var(--red);
+    --cast: 2px;
+    background: var(--blue);
     color: white;
     border: 0;
     padding: 0.6rem 1rem;
     border-radius: 2px;
     cursor: pointer;
-    --cast: 2px;
-    box-shadow: var(--cast) var(--cast) 0 var(--grey);
+    box-shadow: 2px 5px 10px gray;
     text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.2);
     transition: all 0.2s;
+    span {
+      vertical-align: middle;
+    }
     &:hover {
-      --cast: 4px;
+      box-shadow: 0 0 10px gray;
+      background-color: lightsteelblue;
+      color: #36454f;
     }
   }
-
-  .gatsby-image-wrapper img[src*=base64\\,] {
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-  }
-
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
     width: 12px;

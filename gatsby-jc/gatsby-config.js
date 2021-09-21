@@ -4,9 +4,10 @@ dotenv.config({ path: '.env' });
 
 export default {
   siteMetadata: {
-    title: 'Eric Phifer LLC',
-    siteUrl: 'https://ericphifer.com',
-    description: 'Bringing Life to Your Passion',
+    title: 'The Joseph Center',
+    siteUrl: 'https://josephcentergj.com',
+    description:
+      'Providing hope, establishing stability, encouraging resourcefulness and conferring a sense of belonging to the greater community.',
   },
   plugins: [
     'gatsby-plugin-styled-components',

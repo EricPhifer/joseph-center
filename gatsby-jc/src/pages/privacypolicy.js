@@ -4,15 +4,24 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 
 const PolicyStyles = styled.div`
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  color: black;
   word-wrap: break-word;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  .updateDate {
+  h1,
+  h2 {
     text-align: center;
   }
+  p {
+    font-size: 1.2rem;
+  }
+  .updateDate {
+    text-align: center;
+    margin: 0;
+  }
   @media (max-width: 600px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
   }
 `;
 
@@ -29,7 +38,8 @@ export default function PrivacyPolicy({ data }) {
     <>
       <SEO title="Privacy Policy" />
       <PolicyStyles>
-        <p className="updateDate">Last updated: May 15, 2021</p>
+        <h1>Privacy Policy</h1>
+        <p className="updateDate">Last updated: September 1, 2021</p>
         {order.map((policy) => (
           <div key={policy._id}>
             <br />
