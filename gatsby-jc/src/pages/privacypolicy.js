@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
@@ -32,15 +32,15 @@ function countOrder(policies) {
 }
 
 export default function PrivacyPolicy({ data }) {
-  const policies = data.policies.nodes;
-  const order = countOrder(policies);
+  // const policies = data.policies.nodes;
+  // const order = countOrder(policies);
   return (
     <>
       <SEO title="Privacy Policy" />
       <PolicyStyles>
         <h1>Privacy Policy</h1>
         <p className="updateDate">Last updated: September 1, 2021</p>
-        {order.map((policy) => (
+        {/* {order.map((policy) => (
           <div key={policy._id}>
             <br />
             <h1>{policy.title}</h1>
@@ -54,21 +54,21 @@ export default function PrivacyPolicy({ data }) {
               ))}
             </div>
           </div>
-        ))}
+        ))} */}
       </PolicyStyles>
     </>
   );
 }
 
-export const query = graphql`
-  query {
-    policies: allSanityPrivacyPolicy {
-      nodes {
-        id
-        order
-        title
-        contents
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     policies: allSanityPrivacyPolicy {
+//       nodes {
+//         id
+//         order
+//         title
+//         contents
+//       }
+//     }
+//   }
+// `;

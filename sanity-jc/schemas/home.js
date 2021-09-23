@@ -2,7 +2,7 @@ import { GrHome as icon } from 'react-icons/gr';
 
 export default {
   name: 'homepage',
-  title: 'Hire Me',
+  title: 'Home Page',
   type: 'document',
   icon,
   fields: [
@@ -25,9 +25,8 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'HomeContent',
-          title: 'Title & Content to Display',
-          type: 'HomeContent',
+          name: 'content',
+          type: 'text',
         },
       ],
     },

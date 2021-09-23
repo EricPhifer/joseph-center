@@ -1,7 +1,7 @@
-import { graphql } from 'gatsby';
-import SanityImage from 'gatsby-plugin-sanity-image';
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
+// import SanityImage from 'gatsby-plugin-sanity-image';
 import SEO from '../components/SEO';
 
 const HomeStyles = styled.div`
@@ -63,12 +63,13 @@ const HomeStyles = styled.div`
   }
 `;
 
-export default function HomePage({ data }) {
-  const homepage = data.home.nodes;
+export default function HomePage() {
+  // const homepage = data.home.nodes;
   return (
     <>
       <SEO title="Home Page" />
-      {homepage.map((home) => (
+      <h1>Welcome to the Home Page</h1>
+      {/* {homepage.map((home) => (
         <HomeStyles key={home.id}>
           <div className="heroBG">
             <h1>{home.welcome}</h1>
@@ -90,27 +91,27 @@ export default function HomePage({ data }) {
               <h3>Here's Our Site Content</h3>
               <div>{info}</div>
             </div>
-          ))}
-        </HomeStyles>
-      ))}
+          ))} */}
+      {/* </HomeStyles>
+      ))} */}
     </>
   );
 }
 
-export const query = graphql`
-  query {
-    home: allSanityHomepage {
-      nodes {
-        id
-        welcome
-        contents
-        image {
-          asset {
-            id
-          }
-          ...ImageWithPreview
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     home: allSanityHomepage {
+//       nodes {
+//         id
+//         welcome
+//         contents
+//         image {
+//           asset {
+//             id
+//           }
+//           ...ImageWithPreview
+//         }
+//       }
+//     }
+//   }
+// `;

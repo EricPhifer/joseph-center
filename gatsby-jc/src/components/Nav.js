@@ -2,22 +2,23 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import bg from '../assets/images/bg.png';
+import NavAccordion from './NavAccordion';
 
 const NavStyles = styled.nav`
   position: fixed;
-  height: 80px;
+  height: 100px;
   width: 100vw;
   top: 0;
   left: 0;
   padding: 0.75rem 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #fff;
+  background-color: var(--gold);
+  color: var(--white);
   z-index: 99;
   .navContainer {
     margin: 0 2rem;
     list-style: none;
     display: grid;
-    grid-template-areas: 'logo . . . . . . . page1 page2 page3 contact';
+    grid-template-areas: 'logo . home about programs volunteer contact . donate';
     gap: 1rem;
   }
   .navLink {
@@ -52,17 +53,28 @@ const NavStyles = styled.nav`
   #logo {
     grid-area: logo;
   }
-  #page1 {
-    grid-area: page1;
+  #home {
+    grid-area: home;
   }
-  #page2 {
-    grid-area: page2;
+  #about {
+    grid-area: about;
   }
-  #page3 {
-    grid-area: page3;
+  #programs {
+    grid-area: programs;
+  }
+  #volunteer {
+    grid-area: volunteer;
   }
   #contact {
     grid-area: contact;
+  }
+  #donate {
+    grid-area: donate;
+  }
+  .buttonesque {
+    padding: 1rem 1.5rem;
+    background-color: var(--darkgreen);
+    color: var(--white);
   }
   /* setting the hamburger not to display by default */
   .mobileHamburger {
@@ -261,17 +273,36 @@ export default function Nav() {
             <div className="logo" />
           </Link>
         </div>
-        <div className="navLink" id="page1">
-          <Link to="/page1">Page One</Link>
+        <div className="navLink" id="home">
+          <Link to="/home">Home</Link>
         </div>
-        <div className="navLink" id="page2">
-          <Link to="/page2">Page Two</Link>
+        <div className="navLink" id="about">
+          <NavAccordion>
+            <div label="About" className="accBoxLabel">
+              <Link to="/our-story">Our Story</Link>
+              <Link to="/board">Board</Link>
+              <Link to="/testimonials">Testimonials</Link>
+            </div>
+          </NavAccordion>
         </div>
-        <div className="navLink" id="page3">
-          <Link to="/page3">Page Three</Link>
+        <div className="navLink" id="programs">
+          <NavAccordion>
+            {/* setup nodes list of links */}
+            <Link to="/">Link One</Link>
+            <Link to="/">Link Two</Link>
+            <Link to="/">Link Three</Link>
+          </NavAccordion>
+        </div>
+        <div className="navLink" id="volunteer">
+          <Link to="/volunteer">Volunteer</Link>
         </div>
         <div className="navLink" id="contact">
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+        <div className="navLink buttonesque" id="donate">
+          <Link to="/donate" role="button">
+            Donate
+          </Link>
         </div>
         <div className="mobileHamburger" id="burger">
           <input className="menuBtn" type="checkbox" id="menuBtn" />
@@ -279,17 +310,36 @@ export default function Nav() {
             <span className="navicon" />
           </label>
           <ul className="menu">
-            <li className="mobileNavLink" id="page1">
-              <Link to="/page1">Page One</Link>
+            <li className="mobileNavLink" id="home">
+              <Link to="/home">Home</Link>
             </li>
-            <li className="mobileNavLink" id="page2">
-              <Link to="/page2">Page Two</Link>
+            <li className="mobileNavLink" id="about">
+              <NavAccordion>
+                <div label="About" className="accBoxLabel">
+                  <Link to="/our-story">Our Story</Link>
+                  <Link to="/board">Board</Link>
+                  <Link to="/testimonials">Testimonials</Link>
+                </div>
+              </NavAccordion>
             </li>
-            <li className="mobileNavLink" id="page3">
-              <Link to="/page3">Page Three</Link>
+            <li className="mobileNavLink" id="programs">
+              <NavAccordion>
+                {/* setup nodes list of links */}
+                <Link to="/">Link One</Link>
+                <Link to="/">Link Two</Link>
+                <Link to="/">Link Three</Link>
+              </NavAccordion>
+            </li>
+            <li className="mobileNavLink" id="volunteer">
+              <Link to="/volunteer">Volunteer</Link>
             </li>
             <li className="mobileNavLink" id="contact">
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li className="mobileNavLink buttonesque" id="donate">
+              <Link to="/donate" role="button">
+                Donate
+              </Link>
             </li>
           </ul>
         </div>

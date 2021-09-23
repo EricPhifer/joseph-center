@@ -4,19 +4,20 @@ import stripes from '../assets/images/stripes.svg';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --red: #FF4949;
-    --black: #2E2E2E;
-    --yellow: #ffc600;
     --white: #fff;
+    --black: #2E2E2E;
     --grey: #efefef;
+    --red: #FF4949;
     --blue: #4682b4;
-
+    --yellow: rgba(251,248,146,1);
+    --brown: rgba(114,103,82,1);
+    --gold: rgba(202,162,48,1);
+    --darkgreen: rgba(29,95,85,1);
+    --green: rgba(96,181,103,1);
   }
 
   html {
-    background-image: url(${bg});
-    background-size: 450px;
-    background-attachment: fixed;
+    background-color: var(--white);
     font-size: 10px;
   }
 

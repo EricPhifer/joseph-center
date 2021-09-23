@@ -1,11 +1,7 @@
 {
-  "root": true,
   "api": {
     "dataset": "production",
-    "projectId": "xgn13ezi"
-  },
-  "project": {
-    "name": "Eric Phifer LLC"
+    "projectId": "v91tofrv"
   },
   "env": {
     "development": {
@@ -18,10 +14,6 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
-    },
-    {
-      "name": "part:@sanity/desk-tool/structure",
-      "path": "./sidebar.js"
     }
   ],
   "plugins": [
@@ -31,5 +23,9 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/google-maps-input"
-  ]
+  ],
+  "project": {
+    "name": "Eric Phifer LLC"
+  },
+  "root": true
 }

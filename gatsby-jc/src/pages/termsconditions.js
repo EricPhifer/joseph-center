@@ -1,5 +1,5 @@
-import { graphql, Link } from 'gatsby';
 import React from 'react';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
@@ -43,15 +43,15 @@ function countOrder(terms) {
 }
 
 export default function TermsConditions({ data }) {
-  const terms = data.terms.nodes;
-  const order = countOrder(terms);
+  // const terms = data.terms.nodes;
+  // const order = countOrder(terms);
   return (
     <>
       <SEO title="Terms &amp; Conditions" />
       <TermStyles>
         <h1>Terms and Conditions</h1>
         <p className="updateDate">Last updated: September 1, 2021</p>
-        {order.map((term) => (
+        {/* {order.map((term) => (
           <div key={term.id}>
             <br />
             <h1>{term.title}</h1>
@@ -65,31 +65,31 @@ export default function TermsConditions({ data }) {
               ))}
             </div>
           </div>
-        ))}
+        ))} */}
         <div>
-          <div>Company Name</div>
-          <div>No Name, CO 88888 United States</div>
-          <div className="call">
+          <p>Joseph Center</p>
+          <p>Grand Junction, CO 81501 United States</p>
+          <p className="call">
             <a href="tel:555-555-5555">Contact Us by Phone</a>
-          </div>
-          <div>
+          </p>
+          <p>
             <Link to="/contact">Contact Us by Email</Link>
-          </div>
+          </p>
         </div>
       </TermStyles>
     </>
   );
 }
 
-export const query = graphql`
-  query {
-    terms: allSanityTermsConditions {
-      nodes {
-        contents
-        id
-        order
-        title
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     terms: allSanityTermsConditions {
+//       nodes {
+//         contents
+//         id
+//         order
+//         title
+//       }
+//     }
+//   }
+// `;

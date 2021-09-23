@@ -1,21 +1,23 @@
 {
   "author": "Eric Phifer <eric@ericphiferllc.com>",
   "dependencies": {
-    "@sanity/base": "1.150.7",
-    "@sanity/components": "1.150.7",
-    "@sanity/core": "1.150.7",
-    "@sanity/default-layout": "1.150.7",
-    "@sanity/default-login": "1.150.1",
-    "@sanity/desk-tool": "1.150.7",
-    "@sanity/google-maps-input": "1.150.1",
-    "@sanity/structure": "1.150.1",
-    "@sanity/vision": "1.150.6",
+    "@sanity/base": "^2.17.2",
+    "@sanity/components": "^2.14.0",
+    "@sanity/core": "^2.17.2",
+    "@sanity/default-layout": "^2.17.2",
+    "@sanity/default-login": "^2.17.2",
+    "@sanity/desk-tool": "^2.17.2",
+    "@sanity/google-maps-input": "^2.17.2",
+    "@sanity/structure": "^2.17.2",
+    "@sanity/vision": "^2.17.2",
     "prop-types": "^15.7",
     "react": "^16.13",
     "react-dom": "^16.13",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "sanity": "^2.14.0",
+    "styled-components": "^5.3.1"
   },
-  "description": "",
+  "description": "Providing hope, establishing stability, encouraging resourcefulness and conferring a sense of belonging to the greater community.",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
@@ -40,7 +42,7 @@
   ],
   "license": "UNLICENSED",
   "main": "package.json",
-  "name": "eric-phifer-llc-backend",
+  "name": "base-site-backend",
   "private": true,
   "scripts": {
     "lint": "eslint .",
