@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import bg from '../assets/images/bg.png';
-import NavAccordion from './NavAccordion';
+// import NavAccordion from './NavAccordion';
 
 const NavStyles = styled.nav`
   position: fixed;
-  height: 100px;
+  height: 80px;
   width: 100vw;
   top: 0;
   left: 0;
@@ -14,6 +14,25 @@ const NavStyles = styled.nav`
   background-color: var(--gold);
   color: var(--white);
   z-index: 99;
+  .twoPartLogo {
+    a {
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+      color: var(--white);
+      .firstCol {
+        width: 95px;
+        height: 8rem;
+        place-self: center;
+      }
+      .secondCol {
+        width: 95px;
+        align-self: center;
+        justify-self: left;
+        margin-left: -20px;
+      }
+    }
+  }
   .navContainer {
     margin: 0 2rem;
     list-style: none;
@@ -22,20 +41,39 @@ const NavStyles = styled.nav`
     gap: 1rem;
   }
   .navLink {
-    place-self: start right;
+    width: 70px;
+    place-self: center;
     margin-top: 0.75rem;
-    &:hover {
-      transform: translateY(8px);
-    }
-    transition: transform 0.4s ease-in-out;
     a {
-      color: #ffffff;
-      margin-top: 2rem;
-      font-size: 1.55rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+      &:hover {
+        color: var(--darkgreen);
+      }
       text-decoration: none;
       position: relative;
+      &:after {
+        content: '';
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--darkgreen);
+        left: 50%;
+        position: absolute;
+        top: 110%;
+        transition: all 0.2s ease-in-out;
+        width: 0;
+      }
+      &:hover:after {
+        left: 0;
+        width: 100%;
+      }
       &[aria-current='page'] {
-        color: var(--blue);
+        color: var(--darkgreen);
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--darkgreen);
+        &:hover:after {
+          width: 0;
+        }
       }
     }
   }
@@ -268,30 +306,26 @@ export default function Nav() {
   return (
     <NavStyles>
       <div className="navContainer">
-        <div id="logo">
-          <Link to="/">
-            <div className="logo" />
+        <div className="twoPartLogo" id="logo">
+          <Link to="/" className="twoColContainer">
+            <div className="logo firstCol" />
+            <span className="secondCol">The Joseph Center</span>
           </Link>
         </div>
         <div className="navLink" id="home">
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </div>
         <div className="navLink" id="about">
-          <NavAccordion>
-            <div label="About" className="accBoxLabel">
-              <Link to="/our-story">Our Story</Link>
-              <Link to="/board">Board</Link>
+          {/* <NavAccordion>
+            <div label="About" className="accBoxLabel"> */}
+          <Link to="/our-story">Our Story</Link>
+          {/* <Link to="/board">Board</Link>
               <Link to="/testimonials">Testimonials</Link>
             </div>
-          </NavAccordion>
+          </NavAccordion> */}
         </div>
         <div className="navLink" id="programs">
-          <NavAccordion>
-            {/* setup nodes list of links */}
-            <Link to="/">Link One</Link>
-            <Link to="/">Link Two</Link>
-            <Link to="/">Link Three</Link>
-          </NavAccordion>
+          <Link to="/programs">Programs</Link>
         </div>
         <div className="navLink" id="volunteer">
           <Link to="/volunteer">Volunteer</Link>
@@ -314,21 +348,16 @@ export default function Nav() {
               <Link to="/home">Home</Link>
             </li>
             <li className="mobileNavLink" id="about">
-              <NavAccordion>
-                <div label="About" className="accBoxLabel">
-                  <Link to="/our-story">Our Story</Link>
-                  <Link to="/board">Board</Link>
+              {/* <NavAccordion>
+                <div label="About" className="accBoxLabel"> */}
+              <Link to="/our-story">Our Story</Link>
+              {/* <Link to="/board">Board</Link>
                   <Link to="/testimonials">Testimonials</Link>
-                </div>
-              </NavAccordion>
+                </div> */}
+              {/* </NavAccordion> */}
             </li>
             <li className="mobileNavLink" id="programs">
-              <NavAccordion>
-                {/* setup nodes list of links */}
-                <Link to="/">Link One</Link>
-                <Link to="/">Link Two</Link>
-                <Link to="/">Link Three</Link>
-              </NavAccordion>
+              <Link to="/programs">Programs</Link>
             </li>
             <li className="mobileNavLink" id="volunteer">
               <Link to="/volunteer">Volunteer</Link>

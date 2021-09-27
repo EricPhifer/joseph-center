@@ -1,10 +1,8 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
 
-dotenv.config({ path: '.env' });
-
-export default {
+module.exports = {
   siteMetadata: {
-    title: 'Joseph Center',
+    title: 'The Joseph Center',
     siteUrl: 'https://josephcentergj.com',
     description:
       'Providing hope, establishing stability, encouraging resourcefulness and conferring a sense of belonging to the greater community.',
@@ -12,23 +10,23 @@ export default {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: 'gatsby-source-sanity',
-    //   options: {
-    //     projectId: 'xgn13ezi',
-    //     dataset: 'production',
-    //     apiVersion: '2021-09-01',
-    //     watchMode: true,
-    //     token: process.env.SANITY_TOKEN,
-    //     useCdn: false,
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-plugin-sanity-image',
-    //   options: {
-    //     projectId: 'xgn13ezi',
-    //     dataset: 'production',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'xgn13ezi',
+        dataset: 'production',
+        apiVersion: '2021-05-12',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+        useCdn: false,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sanity-image',
+      options: {
+        projectId: 'xgn13ezi',
+        dataset: 'production',
+      },
+    },
   ],
 };
