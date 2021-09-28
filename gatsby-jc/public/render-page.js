@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js"), require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js"), require("react"), require("react-dom/server"));
+		module.exports = factory(require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js"), require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else if(typeof define === 'function' && define.amd)
-		define("lib", ["/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js", "/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js", "react", "react-dom/server"], factory);
+		define("lib", ["/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js", "/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js", "react", "react-dom/server", "react-helmet"], factory);
 	else if(typeof exports === 'object')
-		exports["lib"] = factory(require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js"), require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js"), require("react"), require("react-dom/server"));
+		exports["lib"] = factory(require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js"), require("/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else
-		root["lib"] = factory(root["/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js"], root["/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js"], root["react"], root["react-dom/server"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__) {
+		root["lib"] = factory(root["/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/@reach/router/index.js"], root["/Users/ericphifer/Desktop/Joseph Center Code/gatsby-jc/node_modules/lodash/merge.js"], root["react"], root["react-dom/server"], root["react-helmet"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -104,6 +104,33 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 var plugins = [{
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-styled-components/gatsby-ssr */ "./node_modules/gatsby-plugin-styled-components/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "displayName": true,
+    "fileName": true,
+    "minify": true,
+    "namespace": "",
+    "transpileTemplateLiterals": true,
+    "pure": false
+  }
+}, {
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-react-helmet/gatsby-ssr */ "./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js"),
+  options: {
+    "plugins": []
+  }
+}, {
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-source-sanity/gatsby-ssr */ "./node_modules/gatsby-source-sanity/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "projectId": "xgn13ezi",
+    "dataset": "production",
+    "apiVersion": "2021-05-12",
+    "watchMode": true,
+    "token": "skBBsBKDCZabC9EvaftUicyS7PFRoGa181vFDPfmIilP3sEc8BDLlANbfhQlSWh4yLyAGkilXwNUrmbleOUH2igUt0PLtGqBYIjEEr56XpyJoS0BY92imCPmQO3RUFnFXC2As2dRDkU8TQI0bSV7PtYSIkBjiS7QTmmt9vqi5Dzq4hNHGjSs",
+    "useCdn": false
+  }
+}, {
   plugin: __webpack_require__(/*! ./gatsby-ssr */ "./gatsby-ssr.js"),
   options: {
     "plugins": []
@@ -3274,6 +3301,85 @@ function parsePath(path) {
 
 /***/ }),
 
+/***/ "./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.onRenderBody = void 0;
+
+var _reactHelmet = __webpack_require__(/*! react-helmet */ "react-helmet");
+
+var onRenderBody = function onRenderBody(_ref) {
+  var setHeadComponents = _ref.setHeadComponents,
+      setHtmlAttributes = _ref.setHtmlAttributes,
+      setBodyAttributes = _ref.setBodyAttributes;
+
+  var helmet = _reactHelmet.Helmet.renderStatic(); // These action functions were added partway through the Gatsby 1.x cycle.
+
+
+  if (setHtmlAttributes) {
+    setHtmlAttributes(helmet.htmlAttributes.toComponent());
+  }
+
+  if (setBodyAttributes) {
+    setBodyAttributes(helmet.bodyAttributes.toComponent());
+  }
+
+  setHeadComponents([helmet.title.toComponent(), helmet.link.toComponent(), helmet.meta.toComponent(), helmet.noscript.toComponent(), helmet.script.toComponent(), helmet.style.toComponent(), helmet.base.toComponent()]);
+};
+
+exports.onRenderBody = onRenderBody;
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-plugin-styled-components/gatsby-ssr.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/gatsby-plugin-styled-components/gatsby-ssr.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+
+var _styledComponents = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+
+var sheetByPathname = new Map(); // eslint-disable-next-line react/prop-types,react/display-name
+
+exports.wrapRootElement = function (_ref) {
+  var element = _ref.element,
+      pathname = _ref.pathname;
+  var sheet = new _styledComponents.ServerStyleSheet();
+  sheetByPathname.set(pathname, sheet);
+  return /*#__PURE__*/_react.default.createElement(_styledComponents.StyleSheetManager, {
+    sheet: sheet.instance
+  }, element);
+};
+
+exports.onRenderBody = function (_ref2) {
+  var setHeadComponents = _ref2.setHeadComponents,
+      pathname = _ref2.pathname;
+  var sheet = sheetByPathname.get(pathname);
+
+  if (sheet) {
+    setHeadComponents([sheet.getStyleElement()]);
+    sheetByPathname.delete(pathname);
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/gatsby-react-router-scroll/index.js":
 /*!**********************************************************!*\
   !*** ./node_modules/gatsby-react-router-scroll/index.js ***!
@@ -3657,6 +3763,51 @@ function useScrollRestoration(identifier) {
     }
   };
 }
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/gatsby-ssr.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/gatsby-ssr.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Proxy to TypeScript-compiled output.
+// Note that unlike gatsby-node.js, we need to explicitly define the exported hooks
+// as they seem to be statically analyzed at build time.
+const ssr = __webpack_require__(/*! ./lib/gatsby-ssr */ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js");
+
+exports.onRenderBody = ssr.onRenderBody;
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.onRenderBody = void 0;
+
+const react_1 = __webpack_require__(/*! react */ "react");
+
+exports.onRenderBody = ({
+  setHeadComponents
+}) => {
+  setHeadComponents([react_1.createElement('link', {
+    rel: 'preconnect',
+    key: 'sanity-cdn-preconnect',
+    href: 'https://cdn.sanity.io'
+  })]);
+};
 
 /***/ }),
 
@@ -31963,81 +32114,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const PreFooterStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
-  background-color: var(--gold);
-  width: 100%;
-  ul {
-    list-style-type: none;
-  }
-  // Three Column Grid
-  .threeColContainer {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(auto, 1fr));
-    gap: 1rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 0;
-    place-content: center;
-    @media only screen and (max-width: 450px) {
-      grid-template-columns: repeat(2, minmax(auto, 1fr));
-    }
-    @media only screen and (max-width: 300px) {
-      grid-template-columns: minmax(auto, 1fr);
-    }
-  }
-  .threeCol {
-    padding: 3rem;
-    height: auto;
-  }
-  .buttonesque {
-    padding: 1rem 1.5rem;
-    background-color: var(--darkgreen);
-    color: var(--white);
-  }
-`;
-const FooterStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
-  position: relative;
-  margin: 0;
-  width: 100vw;
-  padding: 0.5rem 0 0.5rem 0;
-  line-height: 1.35;
-  --columns: 1;
-  background-color: var(--gold);
-  min-height: 5vh;
-  ul {
-    padding: 0;
-    display: grid;
-    grid-template-areas:
-      '. copyright copyright .'
-      '. dev dev .'
-      '. priv priv .';
-    text-align: center;
-    font-size: 1.4rem;
-    color: gray;
-    list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-    color: gray;
-    &:hover {
-      color: tomato;
-    }
-  }
-  #copyright {
-    grid-area: copyright;
-  }
-  #developer {
-    grid-area: dev;
-  }
-  #privacy {
-    grid-area: priv;
-  }
-  @media (max-width: 400px) {
-    ul {
-      font-size: 1rem;
-    }
-  }
-`;
+const PreFooterStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "Footer__PreFooterStyles"
+})(["background-color:var(--gold);width:100%;ul{list-style-type:none;}.threeColContainer{display:grid;grid-template-columns:repeat(3,minmax(auto,1fr));gap:1rem;max-width:1000px;margin:0 auto;padding:2rem 0;place-content:center;@media only screen and (max-width:450px){grid-template-columns:repeat(2,minmax(auto,1fr));}@media only screen and (max-width:300px){grid-template-columns:minmax(auto,1fr);}}.threeCol{padding:3rem;height:auto;}.buttonesque{padding:1rem 1.5rem;background-color:var(--darkgreen);color:var(--white);}"]);
+const FooterStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "Footer__FooterStyles"
+})(["position:relative;margin:0;width:100vw;padding:0.5rem 0 0.5rem 0;line-height:1.35;--columns:1;background-color:var(--gold);min-height:5vh;ul{padding:0;display:grid;grid-template-areas:'. copyright copyright .' '. dev dev .' '. priv priv .';text-align:center;font-size:1.4rem;color:gray;list-style-type:none;}a{text-decoration:none;color:gray;&:hover{color:tomato;}}#copyright{grid-area:copyright;}#developer{grid-area:dev;}#privacy{grid-area:priv;}@media (max-width:400px){ul{font-size:1rem;}}"]);
 function Footer() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PreFooterStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "threeColContainer"
@@ -32101,14 +32183,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const ContentStyles = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
-  max-width: 1200px;
-  margin: 100px auto 2rem auto;
-  background: var(--white);
-  @media only screen and (max-width: 768px) {
-    margin: 70px 1.5rem 0 1.5rem;
-  }
-`;
+const ContentStyles = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Layout__ContentStyles"
+})(["max-width:1200px;margin:100px auto 2rem auto;background:var(--white);@media only screen and (max-width:768px){margin:70px 1.5rem 0 1.5rem;}"]);
 function Layout({
   children
 }) {
@@ -32138,303 +32215,9 @@ __webpack_require__.r(__webpack_exports__);
 
  // import NavAccordion from './NavAccordion';
 
-const NavStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav`
-  position: fixed;
-  height: 80px;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  padding: 0.75rem 0;
-  background-color: var(--gold);
-  color: var(--white);
-  z-index: 99;
-  .twoPartLogo {
-    a {
-      text-decoration: none;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(auto, 1fr));
-      color: var(--white);
-      .firstCol {
-        width: 95px;
-        height: 8rem;
-        place-self: center;
-      }
-      .secondCol {
-        width: 95px;
-        align-self: center;
-        justify-self: left;
-        margin-left: -20px;
-      }
-    }
-  }
-  .navContainer {
-    margin: 0 2rem;
-    list-style: none;
-    display: grid;
-    grid-template-areas: 'logo . home about programs volunteer contact . donate';
-    gap: 1rem;
-  }
-  .navLink {
-    width: 70px;
-    place-self: center;
-    margin-top: 0.75rem;
-    a {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--white);
-      &:hover {
-        color: var(--darkgreen);
-      }
-      text-decoration: none;
-      position: relative;
-      &:after {
-        content: '';
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--darkgreen);
-        left: 50%;
-        position: absolute;
-        top: 110%;
-        transition: all 0.2s ease-in-out;
-        width: 0;
-      }
-      &:hover:after {
-        left: 0;
-        width: 100%;
-      }
-      &[aria-current='page'] {
-        color: var(--darkgreen);
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--darkgreen);
-        &:hover:after {
-          width: 0;
-        }
-      }
-    }
-  }
-  .logo {
-    width: 15rem;
-    height: 7rem;
-    justify-self: center;
-    align-self: center;
-    text-align: center;
-    background-image: url(${_assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3___default.a});
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  #logo {
-    grid-area: logo;
-  }
-  #home {
-    grid-area: home;
-  }
-  #about {
-    grid-area: about;
-  }
-  #programs {
-    grid-area: programs;
-  }
-  #volunteer {
-    grid-area: volunteer;
-  }
-  #contact {
-    grid-area: contact;
-  }
-  #donate {
-    grid-area: donate;
-  }
-  .buttonesque {
-    padding: 1rem 1.5rem;
-    background-color: var(--darkgreen);
-    color: var(--white);
-  }
-  /* setting the hamburger not to display by default */
-  .mobileHamburger {
-    width: 100%;
-    display: none;
-    position: relative;
-    text-align: center;
-    list-style: none;
-    overflow: hidden;
-    ul {
-      width: 100%;
-      max-height: 0;
-      margin: 7px 0 0 0;
-      padding: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      clear: both;
-      transition: max-height 0.2s ease-out;
-      li a {
-        border-bottom: 1px dotted #ddd;
-        text-decoration: none;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-
-    li a:hover,
-    .menuBtn:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-
-    /* menu icon */
-    .menuIcon {
-      display: inline-block;
-      padding: 28px 20px;
-      position: relative;
-      cursor: pointer;
-      user-select: none;
-    }
-    .menuIcon .navicon {
-      height: 2px;
-      width: 18px;
-      display: block;
-      position: relative;
-      background: #fff;
-      transition: background 0.2s ease-out;
-    }
-    .menuIcon .navicon:before,
-    .menuIcon .navicon:after {
-      height: 100%;
-      width: 100%;
-      display: block;
-      position: absolute;
-      background: #fff;
-      content: '';
-      transition: all 0.2s ease-out;
-    }
-    .menuIcon .navicon:before {
-      top: 5px;
-    }
-    .menuIcon .navicon:after {
-      top: -5px;
-    }
-
-    /* menu btn */
-    .menuBtn {
-      display: none;
-    }
-    .menuBtn:checked ~ .menu {
-      max-height: 340px;
-    }
-    .menuBtn:checked ~ .menuIcon .navicon {
-      background: transparent;
-    }
-    .menuBtn:checked ~ .menuIcon .navicon:before {
-      transform: rotate(-45deg);
-    }
-    .menuBtn:checked ~ .menuIcon .navicon:after {
-      transform: rotate(45deg);
-    }
-    .menuBtn:checked ~ .menuIcon:not(.steps) .navicon:before,
-    .menuBtn:checked ~ .menuIcon:not(.steps) .navicon:after {
-      top: 0;
-    }
-
-    /* Responsive */
-    @media only screen and (min-width: 768px) {
-      height: 50px;
-      .mobileHamburger {
-        background: rgba(0, 0, 0, 0.6);
-        height: 55px;
-        line-height: 55px;
-        width: 100%;
-      }
-      li a {
-        color: #fff;
-        padding: 0px 30px;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .menu {
-        max-height: none;
-      }
-      .menuIcon {
-        display: none;
-      }
-    }
-  }
-  @media only screen and (max-width: 900px) {
-    ul {
-      gap: 0.5rem;
-    }
-    a {
-      font-size: 1.75rem;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    height: 50px;
-    .navContainer {
-      margin: 0 0.5rem;
-      padding: 0;
-      gap: 0;
-      grid-template-areas: 'logo burger';
-    }
-    .mobileHamburger {
-      display: block;
-      float: right;
-      text-align: right;
-      #burger {
-        grid-area: burger;
-      }
-      ul li a {
-        padding: 15px;
-        text-align: center;
-      }
-    }
-    .navLink {
-      display: none;
-    }
-    .logo {
-      width: 9.8rem;
-      height: 5rem;
-    }
-  }
-  @media only screen and (max-width: 400px) {
-    height: 50px;
-    .navContainer {
-      margin: 0 0.5rem;
-      padding: 0;
-      gap: 0;
-      grid-template-areas: 'logo burger';
-    }
-    /* displaying hamburger for screens 400px wide & smaller */
-    .mobileHamburger {
-      display: block;
-      float: right;
-      text-align: right;
-      #burger {
-        grid-area: burger;
-      }
-      ul li a {
-        padding: 15px;
-        text-align: center;
-      }
-    }
-    .logo {
-      width: 9.8rem;
-      height: 5rem;
-      margin: 0;
-    }
-    ul {
-      gap: 0;
-      line-height: 0.9;
-    }
-    a {
-      font-size: 1.5rem;
-    }
-  }
-  @media only screen and (max-width: 349px) {
-    ul {
-      gap: 0;
-      li a {
-        padding: 10px;
-        font-size: 0.95rem;
-        word-break: break-all;
-      }
-    }
-  }
-`;
+const NavStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav.withConfig({
+  displayName: "Nav__NavStyles"
+})(["position:fixed;height:80px;width:100vw;top:0;left:0;padding:0.75rem 0;background-color:var(--gold);color:var(--white);z-index:99;.twoPartLogo{a{text-decoration:none;display:grid;grid-template-columns:repeat(2,minmax(auto,1fr));color:var(--white);.firstCol{width:95px;height:8rem;place-self:center;}.secondCol{width:95px;align-self:center;justify-self:left;margin-left:-20px;}}}.navContainer{max-width:1200px;margin:0 auto;list-style:none;display:grid;grid-template-areas:'logo . home about programs volunteer contact . donate';gap:1rem;}.navLink{width:7rem;text-align:center;place-self:center;a{font-size:1.5rem;font-weight:500;color:var(--white);text-decoration:none;&:hover{color:var(--darkgreen);}text-decoration:none;position:relative;&:after{content:'';padding-bottom:1rem;border-bottom:2px solid var(--darkgreen);left:50%;position:absolute;top:110%;transition:all 0.2s ease-in-out;width:0;}&:hover:after{left:0;width:100%;}&[aria-current='page']{color:var(--darkgreen);padding-bottom:1rem;border-bottom:2px solid var(--darkgreen);&:hover:after{width:0;}}}}.logo{width:15rem;height:7rem;justify-self:center;align-self:center;text-align:center;background-image:url(", ");background-size:contain;background-repeat:no-repeat;background-position:center center;}#logo{grid-area:logo;}#home{grid-area:home;}#about{grid-area:about;}#programs{grid-area:programs;}#volunteer{grid-area:volunteer;}#contact{grid-area:contact;}#donate{grid-area:donate;}.buttonesque{padding:1rem 1.5rem;background-color:var(--darkgreen);color:var(--white);a{font-size:1.5rem;font-weight:500;color:var(--white);text-decoration:none;&[aria-current='page']{color:var(--darkgreen);border-bottom:2px solid var(--darkgreen);&:hover:after{width:0;}}}&:hover{background-color:var(--white);a{color:var(--darkgreen);}}text-decoration:none;position:relative;&:after{content:'';padding-bottom:0;border-bottom:2px solid var(--darkgreen);left:50%;position:absolute;top:110%;transform:translateY(-5px);transition:all 0.2s ease-in-out;width:0;}&:hover:after{left:0;width:100%;}}.mobileHamburger{width:100%;display:none;position:relative;text-align:center;list-style:none;overflow:hidden;ul{width:100%;max-height:0;margin:7px 0 0 0;padding:0;background-color:rgba(0,0,0,0.6);clear:both;transition:max-height 0.2s ease-out;li a{border-bottom:1px dotted #ddd;text-decoration:none;display:block;color:#fff;text-decoration:none;}}li a:hover,.menuBtn:hover{background-color:rgba(0,0,0,0.1);}.menuIcon{display:inline-block;padding:28px 20px;position:relative;cursor:pointer;user-select:none;}.menuIcon .navicon{height:2px;width:18px;display:block;position:relative;background:#fff;transition:background 0.2s ease-out;}.menuIcon .navicon:before,.menuIcon .navicon:after{height:100%;width:100%;display:block;position:absolute;background:#fff;content:'';transition:all 0.2s ease-out;}.menuIcon .navicon:before{top:5px;}.menuIcon .navicon:after{top:-5px;}.menuBtn{display:none;}.menuBtn:checked ~ .menu{max-height:340px;}.menuBtn:checked ~ .menuIcon .navicon{background:transparent;}.menuBtn:checked ~ .menuIcon .navicon:before{transform:rotate(-45deg);}.menuBtn:checked ~ .menuIcon .navicon:after{transform:rotate(45deg);}.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:before,.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:after{top:0;}@media only screen and (min-width:768px){height:50px;.mobileHamburger{background:rgba(0,0,0,0.6);height:55px;line-height:55px;width:100%;}li a{color:#fff;padding:0px 30px;border-right:1px solid rgba(255,255,255,0.2);}.menu{max-height:none;}.menuIcon{display:none;}}}@media only screen and (max-width:900px){ul{gap:0.5rem;}a{font-size:1.75rem;}}@media only screen and (max-width:768px){height:50px;.navContainer{margin:0 0.5rem;padding:0;gap:0;grid-template-areas:'logo burger';}.mobileHamburger{display:block;float:right;text-align:right;#burger{grid-area:burger;}ul li a{padding:15px;text-align:center;}}.navLink{display:none;}.logo{width:9.8rem;height:5rem;}}@media only screen and (max-width:400px){height:50px;.navContainer{margin:0 0.5rem;padding:0;gap:0;grid-template-areas:'logo burger';}.mobileHamburger{display:block;float:right;text-align:right;#burger{grid-area:burger;}ul li a{padding:15px;text-align:center;}}.logo{width:9.8rem;height:5rem;margin:0;}ul{gap:0;line-height:0.9;}a{font-size:1.5rem;}}@media only screen and (max-width:349px){ul{gap:0;li a{padding:10px;font-size:0.95rem;word-break:break-all;}}}"], _assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3___default.a);
 function Nav() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navContainer"
@@ -32546,92 +32329,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const GlobalStyles = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"]`
-  :root {
-    --white: #fff;
-    --black: #2E2E2E;
-    --grey: #efefef;
-    --red: #FF4949;
-    --blue: #4682b4;
-    --yellow: rgba(251,248,146,1);
-    --brown: rgba(114,103,82,1);
-    --gold: rgba(202,162,48,1);
-    --darkgreen: rgba(29,95,85,1);
-    --green: rgba(96,181,103,1);
-  }
-
-  html {
-    background-color: var(--white);
-    font-size: 10px;
-  }
-
-  body {
-    font-size: 2rem;
-  }
-
-  fieldset {
-    border-color: rgba(0,0,0,0.1);
-    border-width: 1px;
-  }
-
-  button {
-    --cast: 2px;
-    background: var(--blue);
-    color: white;
-    border: 0;
-    padding: 0.6rem 1rem;
-    border-radius: 2px;
-    cursor: pointer;
-    box-shadow: 2px 5px 10px gray;
-    text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.2);
-    transition: all 0.2s;
-    span {
-      vertical-align: middle;
-    }
-    &:hover {
-      box-shadow: 0 0 10px gray;
-      background-color: lightsteelblue;
-      color: #36454f;
-    }
-  }
-  /* Scrollbar Styles */
-  body::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--red) var(--white);
-  }
-
-  body::-webkit-scrollbar-track {
-    background: var(--white);
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--red) ;
-    border-radius: 6px;
-    border: 3px solid var(--white);
-  }
-
-  hr {
-    border: 0;
-    height: 8px;
-    background-image: url(${_assets_images_stripes_svg__WEBPACK_IMPORTED_MODULE_2___default.a});
-    background-size: 1500px;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  .tilt {
-    transform: rotate(-2deg);
-    position: relative;
-    display: inline-block;
-  }
-
-`;
+const GlobalStyles = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"])([":root{--white:#fff;--black:#2E2E2E;--grey:#efefef;--red:#FF4949;--blue:#4682b4;--yellow:rgba(251,248,146,1);--brown:rgba(114,103,82,1);--gold:rgba(202,162,48,1);--darkgreen:rgba(29,95,85,1);--green:rgba(96,181,103,1);}html{background-color:var(--white);font-size:10px;}body{font-size:2rem;}fieldset{border-color:rgba(0,0,0,0.1);border-width:1px;}button{--cast:2px;background:var(--blue);color:white;border:0;padding:0.6rem 1rem;border-radius:2px;cursor:pointer;box-shadow:2px 5px 10px gray;text-shadow:0.5px 0.5px 0 rgba(0,0,0,0.2);transition:all 0.2s;span{vertical-align:middle;}&:hover{box-shadow:0 0 10px gray;background-color:lightsteelblue;color:#36454f;}}body::-webkit-scrollbar{width:12px;}html{scrollbar-width:thin;scrollbar-color:var(--red) var(--white);}body::-webkit-scrollbar-track{background:var(--white);}body::-webkit-scrollbar-thumb{background-color:var(--red);border-radius:6px;border:3px solid var(--white);}hr{border:0;height:8px;background-image:url(", ");background-size:1500px;}img{max-width:100%;}.tilt{transform:rotate(-2deg);position:relative;display:inline-block;}"], _assets_images_stripes_svg__WEBPACK_IMPORTED_MODULE_2___default.a);
 /* harmony default export */ __webpack_exports__["default"] = (GlobalStyles);
 
 /***/ }),
@@ -32650,33 +32348,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_fonts_Routhem_Regular_otf__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_fonts_Routhem_Regular_otf__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const Typography = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"]`
- // to import a custom font
- /* @font-face {
-    font-family: Routhem;
-    src: url(${_assets_fonts_Routhem_Regular_otf__WEBPACK_IMPORTED_MODULE_1___default.a});
-  } */
-  html {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--black);
-  }
-  p, li {
-    letter-spacing: 0.5px;
-  }
-  h1,h2,h3,h4,h5,h6 {
-    font-weight: normal;
-    margin: 0;
-  }
-  a {
-    color: var(--black);
-    text-decoration-color: var(--red);
-    /* Chrome renders this weird with this font, so we turn it off */
-    text-decoration-skip-ink: none;
-  }
-  .center {
-    text-align: center;
-  }
-`;
+const Typography = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"])(["html{font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;color:var(--black);}p,li{letter-spacing:0.5px;}h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;}a{color:var(--black);text-decoration-color:var(--red);text-decoration-skip-ink:none;}.center{text-align:center;}"]);
 /* harmony default export */ __webpack_exports__["default"] = (Typography);
 
 /***/ }),
@@ -32722,6 +32394,17 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_react_dom_server__;
+
+/***/ }),
+
+/***/ "react-helmet":
+/*!*******************************!*\
+  !*** external "react-helmet" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_react_helmet__;
 
 /***/ }),
 
