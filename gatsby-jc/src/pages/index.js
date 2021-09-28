@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import styled from 'styled-components';
+// import { graphql } from 'gatsby';
 // import SanityImage from 'gatsby-plugin-sanity-image';
+import styled from 'styled-components';
 import SEO from '../components/SEO';
 
 const HomeStyles = styled.div`
@@ -63,12 +63,12 @@ const HomeStyles = styled.div`
   }
 `;
 
-export default function HomePage() {
+export default function HomePage({ data }) {
   // const homepage = data.home.nodes;
   return (
     <>
       <SEO title="Home Page" />
-      <h1>Welcome to the Home Page</h1>
+      <div>Hello Home Page</div>
       {/* {homepage.map((home) => (
         <HomeStyles key={home.id}>
           <div className="heroBG">
@@ -91,8 +91,8 @@ export default function HomePage() {
               <h3>Here's Our Site Content</h3>
               <div>{info}</div>
             </div>
-          ))} */}
-      {/* </HomeStyles>
+          ))}
+        </HomeStyles>
       ))} */}
     </>
   );
@@ -104,12 +104,15 @@ export default function HomePage() {
 //       nodes {
 //         id
 //         welcome
-//         contents
+//         contents {
+//           content
+//           contentURL
+//           heading
+//         }
 //         image {
 //           asset {
 //             id
 //           }
-//           ...ImageWithPreview
 //         }
 //       }
 //     }

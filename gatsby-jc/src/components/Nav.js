@@ -34,20 +34,22 @@ const NavStyles = styled.nav`
     }
   }
   .navContainer {
-    margin: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
     list-style: none;
     display: grid;
     grid-template-areas: 'logo . home about programs volunteer contact . donate';
     gap: 1rem;
   }
   .navLink {
-    width: 70px;
+    width: 7rem;
+    text-align: center;
     place-self: center;
-    margin-top: 0.75rem;
     a {
       font-size: 1.5rem;
       font-weight: 500;
       color: var(--white);
+      text-decoration: none;
       &:hover {
         color: var(--darkgreen);
       }
@@ -113,6 +115,42 @@ const NavStyles = styled.nav`
     padding: 1rem 1.5rem;
     background-color: var(--darkgreen);
     color: var(--white);
+    a {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+      &[aria-current='page'] {
+        color: var(--darkgreen);
+        border-bottom: 2px solid var(--darkgreen);
+        &:hover:after {
+          width: 0;
+        }
+      }
+    }
+    &:hover {
+      background-color: var(--white);
+      a {
+        color: var(--darkgreen);
+      }
+    }
+    text-decoration: none;
+    position: relative;
+    &:after {
+      content: '';
+      padding-bottom: 0;
+      border-bottom: 2px solid var(--darkgreen);
+      left: 50%;
+      position: absolute;
+      top: 110%;
+      transform: translateY(-5px);
+      transition: all 0.2s ease-in-out;
+      width: 0;
+    }
+    &:hover:after {
+      left: 0;
+      width: 100%;
+    }
   }
   /* setting the hamburger not to display by default */
   .mobileHamburger {
