@@ -32107,9 +32107,9 @@ module.exports = "data:image/svg+xml;base64,ICAgIDxzdmcgd2lkdGg9IjExMDAiIGhlaWdo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 
 
@@ -32121,36 +32121,39 @@ const FooterStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].d
   displayName: "Footer__FooterStyles"
 })(["position:relative;margin:0;width:100vw;padding:0.5rem 0 0.5rem 0;line-height:1.35;--columns:1;background-color:var(--gold);min-height:5vh;ul{padding:0;display:grid;grid-template-areas:'. copyright copyright .' '. dev dev .' '. priv priv .';text-align:center;font-size:1.4rem;color:gray;list-style-type:none;}a{text-decoration:none;color:gray;&:hover{color:tomato;}}#copyright{grid-area:copyright;}#developer{grid-area:dev;}#privacy{grid-area:priv;}@media (max-width:400px){ul{font-size:1rem;}}"]);
 function Footer() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PreFooterStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PreFooterStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "threeColContainer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "threeCol logo"
-  }, "logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "threeCol"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/volunteer"
-  }, "Apply to Volunteer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+  }, "Apply to Volunteer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/contact"
-  }, "Contact Us")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "Contact Us")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "threeCol"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/donate",
     className: "buttonesque"
-  }, "Donate")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+  }, "Donate")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.facebook.com/JosephCenterGJ/",
+    target: "_blank",
+    rel: "noreferrer",
     className: "socialMediaF"
-  }, "f")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(FooterStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+  }, "f")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FooterStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     id: "copyright"
-  }, "\xA9 Company ", new Date().getFullYear()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+  }, "\xA9 Company ", new Date().getFullYear()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     id: "developer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://ericphifer.com",
     target: "_blank",
     rel: "noreferrer"
-  }, "Designed & Developed by Eric Phifer LLC")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+  }, "Designed & Developed by Eric Phifer LLC")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     id: "privacy"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/privacypolicy"
-  }, "Privacy Policy"), " |", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__["Link"], {
+  }, "Privacy Policy"), " |", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/termsconditions"
   }, "Terms & Conditions")))));
 }
@@ -32203,112 +32206,284 @@ function Layout({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Nav; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 /* harmony import */ var _assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/images/bg.png */ "./src/assets/images/bg.png");
 /* harmony import */ var _assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _NavAccordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NavAccordion */ "./src/components/NavAccordion.js");
 
 
 
- // import NavAccordion from './NavAccordion';
+
 
 const NavStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav.withConfig({
   displayName: "Nav__NavStyles"
-})(["position:fixed;height:80px;width:100vw;top:0;left:0;padding:0.75rem 0;background-color:var(--gold);color:var(--white);z-index:99;.twoPartLogo{a{text-decoration:none;display:grid;grid-template-columns:repeat(2,minmax(auto,1fr));color:var(--white);.firstCol{width:95px;height:8rem;place-self:center;}.secondCol{width:95px;align-self:center;justify-self:left;margin-left:-20px;}}}.navContainer{max-width:1200px;margin:0 auto;list-style:none;display:grid;grid-template-areas:'logo . home about programs volunteer contact . donate';gap:1rem;}.navLink{width:7rem;text-align:center;place-self:center;a{font-size:1.5rem;font-weight:500;color:var(--white);text-decoration:none;&:hover{color:var(--darkgreen);}text-decoration:none;position:relative;&:after{content:'';padding-bottom:1rem;border-bottom:2px solid var(--darkgreen);left:50%;position:absolute;top:110%;transition:all 0.2s ease-in-out;width:0;}&:hover:after{left:0;width:100%;}&[aria-current='page']{color:var(--darkgreen);padding-bottom:1rem;border-bottom:2px solid var(--darkgreen);&:hover:after{width:0;}}}}.logo{width:15rem;height:7rem;justify-self:center;align-self:center;text-align:center;background-image:url(", ");background-size:contain;background-repeat:no-repeat;background-position:center center;}#logo{grid-area:logo;}#home{grid-area:home;}#about{grid-area:about;}#programs{grid-area:programs;}#volunteer{grid-area:volunteer;}#contact{grid-area:contact;}#donate{grid-area:donate;}.buttonesque{padding:1rem 1.5rem;background-color:var(--darkgreen);color:var(--white);a{font-size:1.5rem;font-weight:500;color:var(--white);text-decoration:none;&[aria-current='page']{color:var(--darkgreen);border-bottom:2px solid var(--darkgreen);&:hover:after{width:0;}}}&:hover{background-color:var(--white);a{color:var(--darkgreen);}}text-decoration:none;position:relative;&:after{content:'';padding-bottom:0;border-bottom:2px solid var(--darkgreen);left:50%;position:absolute;top:110%;transform:translateY(-5px);transition:all 0.2s ease-in-out;width:0;}&:hover:after{left:0;width:100%;}}.mobileHamburger{width:100%;display:none;position:relative;text-align:center;list-style:none;overflow:hidden;ul{width:100%;max-height:0;margin:7px 0 0 0;padding:0;background-color:rgba(0,0,0,0.6);clear:both;transition:max-height 0.2s ease-out;li a{border-bottom:1px dotted #ddd;text-decoration:none;display:block;color:#fff;text-decoration:none;}}li a:hover,.menuBtn:hover{background-color:rgba(0,0,0,0.1);}.menuIcon{display:inline-block;padding:28px 20px;position:relative;cursor:pointer;user-select:none;}.menuIcon .navicon{height:2px;width:18px;display:block;position:relative;background:#fff;transition:background 0.2s ease-out;}.menuIcon .navicon:before,.menuIcon .navicon:after{height:100%;width:100%;display:block;position:absolute;background:#fff;content:'';transition:all 0.2s ease-out;}.menuIcon .navicon:before{top:5px;}.menuIcon .navicon:after{top:-5px;}.menuBtn{display:none;}.menuBtn:checked ~ .menu{max-height:340px;}.menuBtn:checked ~ .menuIcon .navicon{background:transparent;}.menuBtn:checked ~ .menuIcon .navicon:before{transform:rotate(-45deg);}.menuBtn:checked ~ .menuIcon .navicon:after{transform:rotate(45deg);}.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:before,.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:after{top:0;}@media only screen and (min-width:768px){height:50px;.mobileHamburger{background:rgba(0,0,0,0.6);height:55px;line-height:55px;width:100%;}li a{color:#fff;padding:0px 30px;border-right:1px solid rgba(255,255,255,0.2);}.menu{max-height:none;}.menuIcon{display:none;}}}@media only screen and (max-width:900px){ul{gap:0.5rem;}a{font-size:1.75rem;}}@media only screen and (max-width:768px){height:50px;.navContainer{margin:0 0.5rem;padding:0;gap:0;grid-template-areas:'logo burger';}.mobileHamburger{display:block;float:right;text-align:right;#burger{grid-area:burger;}ul li a{padding:15px;text-align:center;}}.navLink{display:none;}.logo{width:9.8rem;height:5rem;}}@media only screen and (max-width:400px){height:50px;.navContainer{margin:0 0.5rem;padding:0;gap:0;grid-template-areas:'logo burger';}.mobileHamburger{display:block;float:right;text-align:right;#burger{grid-area:burger;}ul li a{padding:15px;text-align:center;}}.logo{width:9.8rem;height:5rem;margin:0;}ul{gap:0;line-height:0.9;}a{font-size:1.5rem;}}@media only screen and (max-width:349px){ul{gap:0;li a{padding:10px;font-size:0.95rem;word-break:break-all;}}}"], _assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3___default.a);
-function Nav() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navContainer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "twoPartLogo",
-    id: "logo"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "twoColContainer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logo firstCol"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "secondCol"
-  }, "The Joseph Center"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navLink",
-    id: "home"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/"
-  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navLink",
-    id: "about"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/our-story"
-  }, "Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navLink",
-    id: "programs"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/programs"
-  }, "Programs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navLink",
-    id: "volunteer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/volunteer"
-  }, "Volunteer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navLink",
-    id: "contact"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/contact"
-  }, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navLink buttonesque",
-    id: "donate"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/donate",
-    role: "button"
-  }, "Donate")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mobileHamburger",
-    id: "burger"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    className: "menuBtn",
-    type: "checkbox",
-    id: "menuBtn"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    className: "menuIcon",
-    htmlFor: "menuBtn"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "navicon"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "menu"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "mobileNavLink",
-    id: "home"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/home"
-  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "mobileNavLink",
-    id: "about"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/our-story"
-  }, "Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "mobileNavLink",
-    id: "programs"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/programs"
-  }, "Programs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "mobileNavLink",
-    id: "volunteer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/volunteer"
-  }, "Volunteer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "mobileNavLink",
-    id: "contact"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/contact"
-  }, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "mobileNavLink buttonesque",
-    id: "donate"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/donate",
-    role: "button"
-  }, "Donate"))))));
+})(["position:fixed;height:80px;width:100vw;top:0;left:0;padding:0.75rem 0;background-color:var(--gold);color:var(--white);z-index:99;.twoPartLogo{max-width:170px;a{max-height:80px;text-decoration:none;color:var(--white);display:grid;grid-template-columns:repeat(2,minmax(auto,1fr));.firstCol{width:95px;height:8rem;place-self:center;}.secondCol{width:95px;align-self:center;justify-self:left;margin-left:-20px;}}@media only screen and (max-width:767px){a .firstCol{height:5rem;}}@media only screen and (min-width:768px){max-width:215px;}}.navContainer{max-width:1200px;margin:0 auto;list-style:none;display:grid;grid-template-areas:'logo . home about programs volunteer contact . donate';gap:1rem;}.navLink{width:7rem;text-align:center;place-self:center;a{font-size:1.5rem;font-weight:500;color:var(--white);text-decoration:none;&:hover{color:var(--darkgreen);}text-decoration:none;position:relative;&:after{content:'';padding-bottom:1rem;border-bottom:2px solid var(--darkgreen);left:50%;position:absolute;top:110%;transition:all 0.2s ease-in-out;width:0;}&:hover:after{left:0;width:100%;}&[aria-current='page']{color:var(--darkgreen);padding-bottom:1rem;border-bottom:2px solid var(--darkgreen);&:hover:after{width:0;}}}}.logo{width:15rem;height:7rem;justify-self:center;align-self:center;text-align:center;background-image:url(", ");background-size:contain;background-repeat:no-repeat;background-position:center center;}#logo{grid-area:logo;}#home{grid-area:home;}#about{grid-area:about;}#programs{grid-area:programs;}#volunteer{grid-area:volunteer;}#contact{grid-area:contact;}#donate{grid-area:donate;}.buttonesque{padding:1rem 1.5rem;background-color:var(--darkgreen);color:var(--white);a{font-size:1.5rem;font-weight:500;color:var(--white);text-decoration:none;&[aria-current='page']{color:var(--darkgreen);border-bottom:2px solid var(--darkgreen);&:hover:after{width:0;}}}&:hover{background-color:var(--white);a{color:var(--darkgreen);}}text-decoration:none;position:relative;&:after{content:'';padding-bottom:0;border-bottom:2px solid var(--darkgreen);left:50%;position:absolute;top:110%;transform:translateY(-5px);transition:all 0.2s ease-in-out;width:0;}&:hover:after{left:0;width:100%;}}.mobileHamburger{width:100%;display:none;position:relative;text-align:center;list-style:none;overflow:hidden;ul{width:100%;max-height:0;margin:7px 0 0 0;padding:0;background-color:rgba(0,0,0,0.6);clear:both;transition:max-height 0.2s ease-out;li a{border-bottom:1px dotted #ddd;text-decoration:none;display:block;color:#fff;text-decoration:none;}}li a:hover,.menuBtn:hover{background-color:rgba(0,0,0,0.1);}.menuIcon{display:inline-block;padding:28px 20px;position:relative;cursor:pointer;user-select:none;}.menuIcon .navicon{height:2px;width:18px;display:block;position:relative;background:#fff;transition:background 0.2s ease-out;}.menuIcon .navicon:before,.menuIcon .navicon:after{height:100%;width:100%;display:block;position:absolute;background:#fff;content:'';transition:all 0.2s ease-out;}.menuIcon .navicon:before{top:5px;}.menuIcon .navicon:after{top:-5px;}.menuBtn{display:none;}.menuBtn:checked ~ .menu{max-height:340px;}.menuBtn:checked ~ .menuIcon .navicon{background:transparent;}.menuBtn:checked ~ .menuIcon .navicon:before{transform:rotate(-45deg);}.menuBtn:checked ~ .menuIcon .navicon:after{transform:rotate(45deg);}.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:before,.menuBtn:checked ~ .menuIcon:not(.steps) .navicon:after{top:0;}@media only screen and (min-width:768px){height:50px;.mobileHamburger{background:rgba(0,0,0,0.6);height:55px;line-height:55px;width:100%;}li a{color:#fff;padding:0px 30px;border-right:1px solid rgba(255,255,255,0.2);}.menu{max-height:none;}.menuIcon{display:none;}}}@media only screen and (max-width:900px){ul{gap:0.5rem;}}@media only screen and (max-width:767px){height:50px;.navContainer{margin:0 0.5rem;padding:0;gap:0;grid-template-areas:'logo burger';}.mobileHamburger{display:block;float:right;text-align:right;#burger{grid-area:burger;}ul li a{padding:15px;text-align:center;}}.navLink{display:none;}.logo{width:9.8rem;height:5rem;}}@media only screen and (max-width:400px){height:50px;.navContainer{margin:0 0.5rem;padding:0;gap:0;grid-template-areas:'logo burger';}.mobileHamburger{display:block;float:right;text-align:right;#burger{grid-area:burger;}.buttonesque{background-color:var(--darkgreen);a{max-height:100%;max-width:100%;margin:0 auto;color:var(--white);border-bottom:none;font-size:1rem;}}ul li a{padding:15px;text-align:center;}}.logo{width:9.8rem;height:5rem;margin:0;}ul{gap:0;line-height:0.9;}a{font-size:1.5rem;}}@media only screen and (max-width:349px){ul{gap:0;li a{padding:10px;font-size:0.95rem;word-break:break-all;}}}"], _assets_images_bg_png__WEBPACK_IMPORTED_MODULE_3___default.a);
+
+class Nav extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavStyles, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navContainer"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "twoPartLogo",
+      id: "logo"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/",
+      className: "twoColContainer"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "logo firstCol"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "secondCol"
+    }, "The Joseph Center"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navLink",
+      id: "home"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/"
+    }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navLink",
+      id: "about"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/our-story"
+    }, "Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navLink",
+      id: "programs"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/programs"
+    }, "Programs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navLink",
+      id: "volunteer"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/volunteer"
+    }, "Volunteer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navLink",
+      id: "contact"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/contact"
+    }, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "navLink buttonesque",
+      id: "donate"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/donate",
+      role: "button"
+    }, "Donate")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "mobileHamburger",
+      id: "burger"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      className: "menuBtn",
+      type: "checkbox",
+      id: "menuBtn"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: "menuIcon",
+      htmlFor: "menuBtn"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "navicon"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "menu"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mobileNavLink",
+      id: "home"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/"
+    }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mobileNavLink",
+      id: "about"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavAccordion__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      label: "About",
+      className: "accBoxLabel"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/our-story"
+    }, "Our Story"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/board"
+    }, "Board"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/testimonials"
+    }, "Testimonials")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mobileNavLink",
+      id: "programs"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/programs"
+    }, "Programs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mobileNavLink",
+      id: "volunteer"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/volunteer"
+    }, "Volunteer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mobileNavLink",
+      id: "contact"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/contact"
+    }, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mobileNavLink buttonesque",
+      id: "donate"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/donate",
+      role: "button"
+    }, "Donate"))))));
+  }
+
 }
+
+/* harmony default export */ __webpack_exports__["default"] = (Nav);
+
+/***/ }),
+
+/***/ "./src/components/NavAccordion.js":
+/*!****************************************!*\
+  !*** ./src/components/NavAccordion.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _NavAccordionSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NavAccordionSection */ "./src/components/NavAccordionSection.js");
+
+
+
+
+const AccordionStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "NavAccordion__AccordionStyles"
+})([".accSection{border-bottom:3px inset lightsteelblue;}"]);
+
+class NavAccordion extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    this.onClick = label => {
+      const {
+        props: {
+          allowMultipleOpen
+        },
+        state: {
+          openSections
+        }
+      } = this;
+      const isOpen = !!openSections[label];
+
+      if (allowMultipleOpen) {
+        this.setState({
+          openSections: { ...openSections,
+            [label]: !isOpen
+          }
+        });
+      } else {
+        this.setState({
+          openSections: {
+            [label]: !isOpen
+          }
+        });
+      }
+    };
+
+    const _openSections = {}; // originally was this.props.children
+
+    this.children.forEach(child => {
+      if (child.props.isOpen) {
+        _openSections[child.props.label] = true;
+      }
+    });
+    this.state = {
+      openSections: _openSections
+    };
+  }
+
+  render() {
+    const {
+      onClick,
+      props: {
+        children
+      },
+      state: {
+        openSections
+      }
+    } = this;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccordionStyles, {
+      className: "accSection"
+    }, children.map(child => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavAccordionSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: child.key,
+      isOpen: !!openSections[child.props.label],
+      label: child.props.label,
+      onClick: onClick
+    }, child.props.children)));
+  }
+
+}
+
+NavAccordion.propTypes = {
+  allowMultipleOpen: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Object).isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (NavAccordion);
+
+/***/ }),
+
+/***/ "./src/components/NavAccordionSection.js":
+/*!***********************************************!*\
+  !*** ./src/components/NavAccordionSection.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+
+
+
+const SectionStyles = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "NavAccordionSection__SectionStyles"
+})([".section{background:#e4e4e4;border-bottom:3px inset lightsteelblue;padding:5px 10px;}.clickable{cursor:pointer;}.plusMinus{float:left;padding-right:1rem;font-family:Phosphate,Georgia,'Times New Roman',Times,serif;}.downCaret{float:right;padding-left:1rem;font-family:Phosphate,Georgia,'Times New Roman',Times,serif;}.openSection{background:white;border:3px outset lightsteelblue;margin-top:10;padding:10px 20px;}"]);
+
+class AccordionSection extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    this.onClick = () => {
+      this.props.onClick(this.props.label);
+    };
+  }
+
+  render() {
+    const {
+      onClick,
+      props: {
+        isOpen,
+        label
+      }
+    } = this;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionStyles, {
+      className: "sectionStyles"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "section"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      onClick: onClick,
+      className: "clickable"
+    }, label, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "downCaret"
+    }, !isOpen && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u25BC"), isOpen && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u25B2"))), isOpen && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "openSection"
+    }, this.props.children)));
+  }
+
+}
+
+AccordionSection.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Object).isRequired,
+  isOpen: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (AccordionSection);
 
 /***/ }),
 

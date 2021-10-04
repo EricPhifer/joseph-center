@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 import bg from '../assets/images/bg.png';
-// import NavAccordion from './NavAccordion';
 
 const NavStyles = styled.nav`
   position: fixed;
@@ -15,11 +15,13 @@ const NavStyles = styled.nav`
   color: var(--white);
   z-index: 99;
   .twoPartLogo {
+    max-width: 170px;
     a {
+      max-height: 80px;
       text-decoration: none;
+      color: var(--white);
       display: grid;
       grid-template-columns: repeat(2, minmax(auto, 1fr));
-      color: var(--white);
       .firstCol {
         width: 95px;
         height: 8rem;
@@ -32,6 +34,14 @@ const NavStyles = styled.nav`
         margin-left: -20px;
       }
     }
+    @media only screen and (max-width: 767px) {
+      a .firstCol {
+        height: 5rem;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      max-width: 215px;
+    }
   }
   .navContainer {
     max-width: 1200px;
@@ -43,8 +53,30 @@ const NavStyles = styled.nav`
   }
   .navLink {
     width: 7rem;
+    align-self: baseline;
     text-align: center;
-    place-self: center;
+    margin-top: 1.3rem;
+    .dropdownContainer {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        color: var(--darkgreen);
+      }
+      .dropdownContent {
+        display: none;
+        a {
+          text-align: center;
+        }
+        .show {
+          display: block;
+        }
+      }
+    }
     a {
       font-size: 1.5rem;
       font-weight: 500;
@@ -114,6 +146,8 @@ const NavStyles = styled.nav`
   .buttonesque {
     padding: 1rem 1.5rem;
     background-color: var(--darkgreen);
+    text-decoration: none;
+    position: relative;
     color: var(--white);
     a {
       font-size: 1.5rem;
@@ -134,8 +168,6 @@ const NavStyles = styled.nav`
         color: var(--darkgreen);
       }
     }
-    text-decoration: none;
-    position: relative;
     &:after {
       content: '';
       padding-bottom: 0;
@@ -151,6 +183,9 @@ const NavStyles = styled.nav`
       left: 0;
       width: 100%;
     }
+    @media only screen and (max-width: 768px) {
+      padding: 0;
+    }
   }
   /* setting the hamburger not to display by default */
   .mobileHamburger {
@@ -160,6 +195,24 @@ const NavStyles = styled.nav`
     text-align: center;
     list-style: none;
     overflow: hidden;
+    .mobileNavLink {
+      .dropdownContainer {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px dotted #ddd;
+        text-decoration: none;
+        color: var(--white);
+        .dropdownContent {
+          display: none;
+          a {
+            text-align: center;
+          }
+          .show {
+            display: block;
+          }
+        }
+      }
+    }
     ul {
       width: 100%;
       max-height: 0;
@@ -173,7 +226,6 @@ const NavStyles = styled.nav`
         text-decoration: none;
         display: block;
         color: #fff;
-        text-decoration: none;
       }
     }
 
@@ -262,11 +314,8 @@ const NavStyles = styled.nav`
     ul {
       gap: 0.5rem;
     }
-    a {
-      font-size: 1.75rem;
-    }
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     height: 50px;
     .navContainer {
       margin: 0 0.5rem;
@@ -310,6 +359,17 @@ const NavStyles = styled.nav`
       #burger {
         grid-area: burger;
       }
+      .buttonesque {
+        background-color: var(--darkgreen);
+        a {
+          max-height: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          color: var(--white);
+          border-bottom: none;
+          font-size: 1rem;
+        }
+      }
       ul li a {
         padding: 15px;
         text-align: center;
@@ -341,6 +401,10 @@ const NavStyles = styled.nav`
 `;
 
 export default function Nav() {
+  // TODO: problem with toggle
+  function showDropdown() {
+    document.getElementsByClassName('dropdownContent').classList.toggle('show');
+  }
   return (
     <NavStyles>
       <div className="navContainer">
@@ -354,16 +418,35 @@ export default function Nav() {
           <Link to="/">Home</Link>
         </div>
         <div className="navLink" id="about">
-          {/* <NavAccordion>
-            <div label="About" className="accBoxLabel"> */}
-          <Link to="/our-story">Our Story</Link>
-          {/* <Link to="/board">Board</Link>
-              <Link to="/testimonials">Testimonials</Link>
+          <div className="dropdownContainer">
+            <div label="About" className="dropdown">
+              {' '}
+              About
+              <button
+                type="button"
+                className="dropdownContent"
+                onClick={showDropdown()}
+              >
+                <Link to="/our-story">Our Story</Link>
+                <Link to="/board">Board</Link>
+                <Link to="/testimonials">Testimonials</Link>
+              </button>
             </div>
-          </NavAccordion> */}
+            <span>
+              <RiArrowDropDownLine />
+            </span>
+          </div>
         </div>
         <div className="navLink" id="programs">
-          <Link to="/programs">Programs</Link>
+          <div className="dropdownContainer">
+            <div label="Programs" className="dropdown">
+              {' '}
+              Programs
+            </div>
+            <span>
+              <RiArrowDropDownLine />
+            </span>
+          </div>
         </div>
         <div className="navLink" id="volunteer">
           <Link to="/volunteer">Volunteer</Link>
@@ -383,19 +466,38 @@ export default function Nav() {
           </label>
           <ul className="menu">
             <li className="mobileNavLink" id="home">
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="mobileNavLink" id="about">
-              {/* <NavAccordion>
-                <div label="About" className="accBoxLabel"> */}
-              <Link to="/our-story">Our Story</Link>
-              {/* <Link to="/board">Board</Link>
-                  <Link to="/testimonials">Testimonials</Link>
-                </div> */}
-              {/* </NavAccordion> */}
+              <div className="dropdownContainer">
+                <div label="About" className="dropdown">
+                  {' '}
+                  About
+                  <button
+                    type="button"
+                    className="dropdownContent"
+                    onClick={showDropdown()}
+                  >
+                    <Link to="/our-story">Our Story</Link>
+                    <Link to="/board">Board</Link>
+                    <Link to="/testimonials">Testimonials</Link>
+                  </button>
+                </div>
+                <span>
+                  <RiArrowDropDownLine />
+                </span>
+              </div>
             </li>
             <li className="mobileNavLink" id="programs">
-              <Link to="/programs">Programs</Link>
+              <div className="dropdownContainer">
+                <div label="Programs" className="dropdown">
+                  {' '}
+                  Programs
+                </div>
+                <span>
+                  <RiArrowDropDownLine />
+                </span>
+              </div>
             </li>
             <li className="mobileNavLink" id="volunteer">
               <Link to="/volunteer">Volunteer</Link>

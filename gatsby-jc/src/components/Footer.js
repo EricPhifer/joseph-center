@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const PreFooterStyles = styled.div`
@@ -103,7 +103,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="socialMediaF">f</Link>
+                <a
+                  href="https://www.facebook.com/JosephCenterGJ/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="socialMediaF"
+                >
+                  f
+                </a>
               </li>
             </ul>
           </div>
