@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { RiArrowDropDownLine } from 'react-icons/ri';
+import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
+import { render } from 'react-dom';
 import bg from '../assets/images/bg.png';
 
 const NavStyles = styled.nav`
@@ -56,25 +57,58 @@ const NavStyles = styled.nav`
     align-self: baseline;
     text-align: center;
     margin-top: 1.3rem;
-    .dropdownContainer {
+    button {
+      background-color: transparent;
+      box-shadow: none;
       font-size: 1.5rem;
       font-weight: 500;
       color: var(--white);
-      text-decoration: none;
       text-decoration: none;
       position: relative;
       cursor: pointer;
       &:hover {
         color: var(--darkgreen);
       }
-      .dropdownContent {
-        display: none;
+      .dropdownBtn {
         a {
           text-align: center;
         }
         .show {
           display: block;
         }
+      }
+    }
+    .dropdown {
+      text-align: center;
+      .menu {
+        display: block;
+        width: 12rem;
+        padding: 0;
+        margin: 0;
+        background-color: var(--white);
+        border: 1px solid var(--gold);
+        list-style-type: none;
+        line-height: 1.5;
+        li a {
+          color: var(--darkgreen);
+          text-decoration: none;
+          &:after {
+            border-bottom: none;
+          }
+          &[aria-current='page'] {
+            border-bottom: none;
+          }
+        }
+      }
+      .aboutMenu {
+        -webkit-transform: translate(-22%, 2%);
+        -ms-transform: translate(-22%, 2%);
+        transform: translate(-22%, 2%);
+      }
+      .programsMenu {
+        -webkit-transform: translate(-22%, 2%);
+        -ms-transform: translate(-22%, 2%);
+        transform: translate(-22%, 2%);
       }
     }
     a {
@@ -146,27 +180,16 @@ const NavStyles = styled.nav`
   .buttonesque {
     padding: 1rem 1.5rem;
     background-color: var(--darkgreen);
+    border-radius: 5px;
     text-decoration: none;
     position: relative;
     color: var(--white);
-    a {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--white);
-      text-decoration: none;
-      &[aria-current='page'] {
-        color: var(--darkgreen);
-        border-bottom: 2px solid var(--darkgreen);
-        &:hover:after {
-          width: 0;
-        }
-      }
-    }
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
     &:hover {
       background-color: var(--white);
-      a {
-        color: var(--darkgreen);
-      }
+      color: var(--darkgreen);
     }
     &:after {
       content: '';
@@ -183,6 +206,17 @@ const NavStyles = styled.nav`
       left: 0;
       width: 100%;
     }
+    &[aria-current='page'] {
+      background-color: var(--white);
+      color: var(--darkgreen);
+      &:hover {
+        background-color: var(--darkgreen);
+        color: var(--white);
+      }
+      &:hover:after {
+        width: 0;
+      }
+    }
     @media only screen and (max-width: 768px) {
       padding: 0;
     }
@@ -190,32 +224,32 @@ const NavStyles = styled.nav`
   /* setting the hamburger not to display by default */
   .mobileHamburger {
     width: 100%;
+    height: auto;
     display: none;
     position: relative;
     text-align: center;
     list-style: none;
     overflow: hidden;
     .mobileNavLink {
-      .dropdownContainer {
+      border-bottom: 1px dotted #ddd;
+      button {
         display: block;
         padding: 0.5rem 0;
-        border-bottom: 1px dotted #ddd;
         text-decoration: none;
         color: var(--white);
-        .dropdownContent {
+        .dropdownBtn {
           display: none;
           a {
             text-align: center;
           }
-          .show {
-            display: block;
-          }
         }
       }
     }
+    .menu {
+      max-height: 0;
+    }
     ul {
       width: 100%;
-      max-height: 0;
       margin: 7px 0 0 0;
       padding: 0;
       background-color: rgba(0, 0, 0, 0.6);
@@ -272,7 +306,7 @@ const NavStyles = styled.nav`
       display: none;
     }
     .menuBtn:checked ~ .menu {
-      max-height: 340px;
+      max-height: 100%;
     }
     .menuBtn:checked ~ .menuIcon .navicon {
       background: transparent;
@@ -335,6 +369,28 @@ const NavStyles = styled.nav`
         text-align: center;
       }
     }
+    .mobileNavLink {
+      text-align: center;
+      button {
+        margin: auto;
+        padding: 0;
+        position: relative;
+        background-color: transparent;
+        color: var(--white);
+        box-shadow: none;
+        text-decoration: none;
+        font-size: 2rem;
+        cursor: pointer;
+        .dropdownBtn {
+          a {
+            text-align: center;
+          }
+          .show {
+            display: block;
+          }
+        }
+      }
+    }
     .navLink {
       display: none;
     }
@@ -359,16 +415,19 @@ const NavStyles = styled.nav`
       #burger {
         grid-area: burger;
       }
+      .mobileNavLink {
+        button {
+          font-size: 1.5rem;
+        }
+      }
       .buttonesque {
         background-color: var(--darkgreen);
-        a {
-          max-height: 100%;
-          max-width: 100%;
-          margin: 0 auto;
-          color: var(--white);
-          border-bottom: none;
-          font-size: 1rem;
-        }
+        max-height: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        color: var(--white);
+        border-bottom: none;
+        font-size: 1.5rem;
       }
       ul li a {
         padding: 15px;
@@ -393,126 +452,248 @@ const NavStyles = styled.nav`
       gap: 0;
       li a {
         padding: 10px;
-        font-size: 0.95rem;
         word-break: break-all;
       }
     }
   }
 `;
 
-export default function Nav() {
-  // TODO: problem with toggle
-  function showDropdown() {
-    document.getElementsByClassName('dropdownContent').classList.toggle('show');
+const UpArrow = styled(RiArrowDropUpLine)`
+  color: var(--darkgreen);
+  @media only screen and (max-width: 767px) {
+    color: var(--white);
   }
-  return (
-    <NavStyles>
-      <div className="navContainer">
-        <div className="twoPartLogo" id="logo">
-          <Link to="/" className="twoColContainer">
-            <div className="logo firstCol" />
-            <span className="secondCol">The Joseph Center</span>
-          </Link>
-        </div>
-        <div className="navLink" id="home">
-          <Link to="/">Home</Link>
-        </div>
-        <div className="navLink" id="about">
-          <div className="dropdownContainer">
-            <div label="About" className="dropdown">
-              {' '}
-              About
-              <button
-                type="button"
-                className="dropdownContent"
-                onClick={showDropdown()}
-              >
-                <Link to="/our-story">Our Story</Link>
-                <Link to="/board">Board</Link>
-                <Link to="/testimonials">Testimonials</Link>
-              </button>
-            </div>
-            <span>
-              <RiArrowDropDownLine />
-            </span>
+`;
+
+class Nav extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showAbout: false,
+      showPrograms: false,
+    };
+
+    this.showAbout = this.showAbout.bind(this);
+    this.closeAbout = this.closeAbout.bind(this);
+    this.showPrograms = this.showPrograms.bind(this);
+    this.closePrograms = this.closePrograms.bind(this);
+  }
+
+  showAbout(event) {
+    event.preventDefault();
+
+    this.setState({ showAbout: true }, () => {
+      document.addEventListener('click', this.closeAbout);
+    });
+  }
+
+  closeAbout() {
+    this.setState({ showAbout: false }, () => {
+      document.removeEventListener('click', this.closeAbout);
+    });
+  }
+
+  showPrograms(event) {
+    event.preventDefault();
+
+    this.setState({ showPrograms: true }, () => {
+      document.addEventListener('click', this.closePrograms);
+    });
+  }
+
+  closePrograms() {
+    this.setState({ showPrograms: false }, () => {
+      document.removeEventListener('click', this.closePrograms);
+    });
+  }
+
+  render() {
+    return (
+      <NavStyles>
+        <div className="navContainer">
+          <div className="twoPartLogo" id="logo">
+            <Link to="/" className="twoColContainer">
+              <div className="logo firstCol" />
+              <span className="secondCol">The Joseph Center</span>
+            </Link>
           </div>
-        </div>
-        <div className="navLink" id="programs">
-          <div className="dropdownContainer">
-            <div label="Programs" className="dropdown">
-              {' '}
-              Programs
-            </div>
-            <span>
-              <RiArrowDropDownLine />
-            </span>
+          <div className="navLink" id="home">
+            <Link to="/">Home</Link>
           </div>
-        </div>
-        <div className="navLink" id="volunteer">
-          <Link to="/volunteer">Volunteer</Link>
-        </div>
-        <div className="navLink" id="contact">
-          <Link to="/contact">Contact</Link>
-        </div>
-        <div className="navLink buttonesque" id="donate">
-          <Link to="/donate" role="button">
+          <div className="navLink" id="about">
+            <div className="dropdownContainer">
+              <div label="About" className="dropdown">
+                <button
+                  type="button"
+                  className="dropdownBtn"
+                  onClick={this.showAbout}
+                >
+                  About
+                </button>
+                {this.state.showAbout ? (
+                  <ul className="menu aboutMenu">
+                    <button type="button" onClick={this.showAbout}>
+                      <UpArrow />
+                    </button>
+                    <li>
+                      <Link to="/our-story">Our Story</Link>
+                    </li>
+                    <li>
+                      <Link to="/board">Board</Link>
+                    </li>
+                    <li>
+                      <Link to="/testimonials">Testimonials</Link>
+                    </li>
+                  </ul>
+                ) : null}
+              </div>
+              <span>
+                {this.state.showAbout ? null : <RiArrowDropDownLine />}
+              </span>
+            </div>
+          </div>
+          <div className="navLink" id="programs">
+            <div className="dropdownContainer">
+              <div label="Programs" className="dropdown">
+                <button
+                  type="button"
+                  className="dropdownBtn"
+                  onClick={this.showPrograms}
+                >
+                  Programs
+                </button>
+                {this.state.showPrograms ? (
+                  <ul className="menu programsMenu">
+                    <button type="button" onClick={this.showPrograms}>
+                      <UpArrow />
+                    </button>
+                    <li>
+                      <Link to="/our-story">Link 1</Link>
+                    </li>
+                    <li>
+                      <Link to="/board">Link 2</Link>
+                    </li>
+                    <li>
+                      <Link to="/testimonials">Link 3</Link>
+                    </li>
+                  </ul>
+                ) : null}
+                <span>
+                  {this.state.showPrograms ? null : <RiArrowDropDownLine />}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="navLink" id="volunteer">
+            <Link to="/volunteer">Volunteer</Link>
+          </div>
+          <div className="navLink" id="contact">
+            <Link to="/contact">Contact</Link>
+          </div>
+          <Link
+            to="/donate"
+            role="button"
+            className="navLink buttonesque"
+            id="donate"
+          >
             Donate
           </Link>
-        </div>
-        <div className="mobileHamburger" id="burger">
-          <input className="menuBtn" type="checkbox" id="menuBtn" />
-          <label className="menuIcon" htmlFor="menuBtn">
-            <span className="navicon" />
-          </label>
-          <ul className="menu">
-            <li className="mobileNavLink" id="home">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="mobileNavLink" id="about">
-              <div className="dropdownContainer">
-                <div label="About" className="dropdown">
-                  {' '}
-                  About
-                  <button
-                    type="button"
-                    className="dropdownContent"
-                    onClick={showDropdown()}
-                  >
-                    <Link to="/our-story">Our Story</Link>
-                    <Link to="/board">Board</Link>
-                    <Link to="/testimonials">Testimonials</Link>
-                  </button>
+          <div className="mobileHamburger" id="burger">
+            <input className="menuBtn" type="checkbox" id="menuBtn" />
+            <label className="menuIcon" htmlFor="menuBtn">
+              <span className="navicon" />
+            </label>
+            <ul className="menu">
+              <li className="mobileNavLink" id="home">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="mobileNavLink" id="about">
+                <div className="dropdownContainer">
+                  <div label="About" className="dropdown">
+                    <button
+                      type="button"
+                      className="dropdownBtn"
+                      onClick={this.showAbout}
+                    >
+                      About
+                    </button>
+                    {this.state.showAbout ? (
+                      <ul className=" aboutMenu">
+                        <li>
+                          <Link to="/our-story">Our Story</Link>
+                        </li>
+                        <li>
+                          <Link to="/board">Board</Link>
+                        </li>
+                        <li>
+                          <Link to="/testimonials">Testimonials</Link>
+                        </li>
+                        <button type="button" onClick={this.showAbout}>
+                          <UpArrow />
+                        </button>
+                      </ul>
+                    ) : null}
+                  </div>
+                  <span>
+                    {this.state.showAbout ? null : <RiArrowDropDownLine />}
+                  </span>
                 </div>
-                <span>
-                  <RiArrowDropDownLine />
-                </span>
-              </div>
-            </li>
-            <li className="mobileNavLink" id="programs">
-              <div className="dropdownContainer">
-                <div label="Programs" className="dropdown">
-                  {' '}
-                  Programs
+              </li>
+              <li className="mobileNavLink" id="programs">
+                <div className="dropdownContainer">
+                  <div label="Programs" className="dropdown">
+                    <button
+                      type="button"
+                      className="dropdownBtn"
+                      onClick={this.showPrograms}
+                    >
+                      Programs
+                    </button>
+                    {this.state.showPrograms ? (
+                      <ul className=" programsMenu">
+                        <li>
+                          <Link to="/our-story">Link 1</Link>
+                        </li>
+                        <li>
+                          <Link to="/board">Link 2</Link>
+                        </li>
+                        <li>
+                          <Link to="/testimonials">Link 3</Link>
+                        </li>
+                        <button type="button" onClick={this.showPrograms}>
+                          <UpArrow />
+                        </button>
+                      </ul>
+                    ) : null}
+                  </div>
+                  <span>
+                    {this.state.showPrograms ? null : <RiArrowDropDownLine />}
+                  </span>
                 </div>
-                <span>
-                  <RiArrowDropDownLine />
-                </span>
-              </div>
-            </li>
-            <li className="mobileNavLink" id="volunteer">
-              <Link to="/volunteer">Volunteer</Link>
-            </li>
-            <li className="mobileNavLink" id="contact">
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li className="mobileNavLink buttonesque" id="donate">
-              <Link to="/donate" role="button">
-                Donate
-              </Link>
-            </li>
-          </ul>
+              </li>
+              <li className="mobileNavLink" id="volunteer">
+                <Link to="/volunteer">Volunteer</Link>
+              </li>
+              <li className="mobileNavLink" id="contact">
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <Link
+                  to="/donate"
+                  role="button"
+                  className="mobileNavLink buttonesque"
+                  id="donate"
+                >
+                  Donate
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </NavStyles>
-  );
+      </NavStyles>
+    );
+  }
 }
+
+export default Nav;

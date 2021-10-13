@@ -4,15 +4,17 @@ import SEO from '../components/SEO';
 // will need to import graphql and SanityImage
 
 const BoardStyles = styled.div`
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  h1 {
+    padding: 4rem 0;
+  }
   // Four Column Grid
   .fourColContainer {
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 1fr));
     gap: 1rem;
-    max-width: 600px;
     margin: 0 auto;
-    padding: 2rem 0;
     place-content: center;
     @media only screen and (max-width: 582px) {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
@@ -22,10 +24,16 @@ const BoardStyles = styled.div`
     }
   }
   .fourCol {
-    padding: 3rem;
-    height: auto;
-    border: 1px black solid;
+    .boardImg {
+      height: 300px;
+      border: 10px groove gray;
+    }
+    .boardName {
+      height: 50px;
+      padding: 0;
+    }
   }
+
   @media only screen and (max-width: 400px) {
     p {
       padding: 0 1.2rem;
@@ -39,12 +47,57 @@ export default function Board() {
     <>
       <SEO title="Board Members" />
       <BoardStyles>
-        <h1>Board Members</h1>
+        <h1>Board of Directors</h1>
         <div className="contentContainer fourColContainer">
           <div className="memberContainer fourCol">
             {/* map of board member images and names */}
-            <div>Repeatable Board Member Img</div>
-            <p>Repeatable Board Member Name</p>
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
+          </div>
+          <div className="memberContainer fourCol">
+            {/* map of board member images and names */}
+            <div className="boardImg" />
+            <p className="boardName">Repeatable Board Member Name</p>
           </div>
         </div>
       </BoardStyles>

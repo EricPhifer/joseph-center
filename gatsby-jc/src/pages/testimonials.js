@@ -3,15 +3,30 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 
 const TestimonialStyles = styled.div`
-  text-align: center;
-  p {
-    padding: 0 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 0;
+  text-align: left;
+  // Three Column Grid
+  .threeColContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+    place-content: center;
+    @media only screen and (max-width: 450px) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+    }
+    @media only screen and (max-width: 300px) {
+      grid-template-columns: minmax(auto, 1fr);
+    }
+  }
+  .threeCol {
+    border: 1px black solid;
+    height: 250px;
   }
   @media only screen and (max-width: 400px) {
-    p {
-      padding: 0 1.2rem;
-      font-size: 1.2rem;
-    }
   }
 `;
 
@@ -23,32 +38,17 @@ export default function Testimonials() {
         <h1>Testimonials</h1>
         <div className="contentContainer">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Many of our families have moved out of homelessness and into safe
+            homes, jobs, and a bright future. Check out their stories and join
+            us in celebrating their success!
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+        </div>
+        <div className="threeColContainer">
+          <div className="threeCol" />
+          <div className="threeCol" />
+          <div className="threeCol" />
+          <div className="threeCol" />
+          <div className="threeCol" />
         </div>
       </TestimonialStyles>
     </>

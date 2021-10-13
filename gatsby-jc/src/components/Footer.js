@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import bg from '../assets/images/bg.png';
 
 const PreFooterStyles = styled.div`
   background-color: var(--gold);
@@ -10,27 +11,65 @@ const PreFooterStyles = styled.div`
   }
   // Three Column Grid
   .threeColContainer {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(auto, 1fr));
-    gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+    gap: 1rem;
     place-content: center;
-    @media only screen and (max-width: 450px) {
-      grid-template-columns: repeat(2, minmax(auto, 1fr));
-    }
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 509px) {
       grid-template-columns: minmax(auto, 1fr);
+      .threeCol {
+        margin: -10px auto;
+      }
     }
   }
+  .logo {
+    width: 15rem;
+    height: 15rem;
+    margin: auto;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    background-image: url(${bg});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
   .threeCol {
-    padding: 3rem;
-    height: auto;
+    margin: auto;
+    text-align: center;
+    a {
+      text-decoration: none;
+    }
+    ul {
+      padding: 0;
+    }
+    .donateSocialMedia {
+      li {
+        height: auto;
+        margin: 4rem 0;
+        .socialMediaF {
+          margin-top: 5rem;
+          padding: 1px 11px;
+          background-color: var(--white);
+          color: var(--blue);
+          border: 4px solid var(--blue);
+          border-radius: 5rem;
+        }
+      }
+    }
+    .importantLinks {
+      li {
+        margin: 1.5rem 0;
+      }
+    }
   }
   .buttonesque {
     padding: 1rem 1.5rem;
     background-color: var(--darkgreen);
+    border-radius: 0.5rem;
     color: var(--white);
   }
 `;
@@ -53,14 +92,14 @@ const FooterStyles = styled.div`
       '. priv priv .';
     text-align: center;
     font-size: 1.4rem;
-    color: gray;
+    color: var(--white);
     list-style-type: none;
   }
   a {
     text-decoration: none;
-    color: gray;
+    color: var(--white);
     &:hover {
-      color: tomato;
+      color: var(--darkgreen);
     }
   }
   #copyright {
@@ -84,9 +123,11 @@ export default function Footer() {
     <footer>
       <PreFooterStyles>
         <div className="threeColContainer">
-          <div className="threeCol logo">logo</div>
+          <Link to="/">
+            <div className="threeCol logo" />
+          </Link>
           <div className="threeCol">
-            <ul>
+            <ul className="importantLinks">
               <li>
                 <Link to="/volunteer">Apply to Volunteer</Link>
               </li>
@@ -96,7 +137,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="threeCol">
-            <ul>
+            <ul className="donateSocialMedia">
               <li>
                 <Link to="/donate" className="buttonesque">
                   Donate
@@ -118,7 +159,9 @@ export default function Footer() {
       </PreFooterStyles>
       <FooterStyles>
         <ul>
-          <li id="copyright">&copy; Company {new Date().getFullYear()}</li>
+          <li id="copyright">
+            &copy; The Joseph Center {new Date().getFullYear()}
+          </li>
           <li id="developer">
             <a href="https://ericphifer.com" target="_blank" rel="noreferrer">
               Designed &amp; Developed by Eric Phifer LLC
