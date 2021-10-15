@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'gatsby';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
