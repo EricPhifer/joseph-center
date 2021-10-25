@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
-import { render } from 'react-dom';
 import bg from '../assets/images/bg.png';
+// TODO: bring back the dynamic list
+// import ProgramsTitleAndSlug from './NavPrograms';
 
 const NavStyles = styled.nav`
   position: fixed;
@@ -565,17 +566,21 @@ class Nav extends Component {
                 </button>
                 {this.state.showPrograms ? (
                   <ul className="menu programsMenu">
-                    <button type="button" onClick={this.showPrograms}>
+                    <button type="button" onClick={this.showAbout}>
                       <UpArrow />
                     </button>
                     <li>
-                      <Link to="/our-story">Link 1</Link>
+                      <Link to="/programs/day-shelter">Day Shelter</Link>
                     </li>
                     <li>
-                      <Link to="/board">Link 2</Link>
+                      <Link to="/programs/parent-advocacy">
+                        Parent Advocacy
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/testimonials">Link 3</Link>
+                      <Link to="/programs/integrated-financial-services">
+                        Financial Services
+                      </Link>
                     </li>
                   </ul>
                 ) : null}

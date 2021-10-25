@@ -1,6 +1,8 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
 
-module.exports = {
+dotenv.config({ path: '.env' });
+
+export default {
   siteMetadata: {
     title: 'The Joseph Center',
     siteUrl: 'https://josephcentergj.com',

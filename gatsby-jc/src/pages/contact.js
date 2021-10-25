@@ -189,7 +189,7 @@ export default function Contact() {
             </div>
             <div className="space1" />
             <div className="phoneContacts indent">
-              <h4 className="deptHeader">Day Shelter</h4>
+              <h4 className="deptHeader">Payee Office</h4>
               <a href="tel:9702454672;ext=304">970-245-4672 x 304</a>
             </div>
             {/* maybe just tel:9702454672,304 

@@ -1,7 +1,11 @@
 {
+  "root": true,
   "api": {
     "dataset": "production",
-    "projectId": "v91tofrv"
+    "projectId": "xgn13ezi"
+  },
+  "project": {
+    "name": "Eric Phifer LLC"
   },
   "env": {
     "development": {
@@ -23,9 +27,5 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/google-maps-input"
-  ],
-  "project": {
-    "name": "Eric Phifer LLC"
-  },
-  "root": true
+  ]
 }

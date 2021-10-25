@@ -28,9 +28,25 @@ const VolunteerStyles = styled.div`
     padding: 0;
     margin: 0;
     // doesnt work TODO: fix
-    label:after + input[required] {
+    input[required] + label:after,
+    select[required] + label:after,
+    textarea[required] + label:after {
       content: '*';
+      padding-left: 0.4rem;
       color: red;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      label {
+        order: 1;
+      }
+      input,
+      select,
+      textarea {
+        order: 2;
+      }
     }
     // Two Column Grid
     .twoColContainer {
@@ -52,6 +68,7 @@ const VolunteerStyles = styled.div`
         padding: 1rem;
       }
     }
+
     // Four Column Grid
     .fourColContainer {
       display: grid;
@@ -222,8 +239,7 @@ export default function Volunteer() {
             <fieldset id="container">
               <legend />
               <div className="basicInfo twoColContainer">
-                <div className="firstName twoCol">
-                  <label htmlFor="firstName">First Name</label>
+                <div className="flex firstName twoCol">
                   <input
                     type="text"
                     name="firstName"
@@ -233,9 +249,9 @@ export default function Volunteer() {
                     placeholder="First Name"
                     required
                   />
+                  <label htmlFor="firstName">First Name</label>
                 </div>
-                <div className="lastName twoCol">
-                  <label htmlFor="lastName">Last Name</label>
+                <div className="flex lastName twoCol">
                   <input
                     type="text"
                     name="lastName"
@@ -245,9 +261,9 @@ export default function Volunteer() {
                     placeholder="Last Name"
                     required
                   />
+                  <label htmlFor="lastName">Last Name</label>
                 </div>
-                <div className="phone twoCol">
-                  <label htmlFor="phone">Phone</label>
+                <div className="flex phone twoCol">
                   <input
                     type="text"
                     name="phone"
@@ -257,9 +273,9 @@ export default function Volunteer() {
                     placeholder="Phone"
                     required
                   />
+                  <label htmlFor="phone">Phone</label>
                 </div>
-                <div className="email twoCol">
-                  <label htmlFor="email">Email</label>
+                <div className="flex email twoCol">
                   <input
                     type="text"
                     name="email"
@@ -269,6 +285,7 @@ export default function Volunteer() {
                     placeholder="Email"
                     required
                   />
+                  <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="volunteerOpportunities">
@@ -323,8 +340,7 @@ export default function Volunteer() {
                 <br />
               </div>
               <div className="availability fiveColContainer">
-                <div className="monday fiveCol">
-                  <label htmlFor="monday">Monday</label>
+                <div className="flex monday fiveCol">
                   <select
                     type="monday"
                     name="monday"
@@ -337,9 +353,9 @@ export default function Volunteer() {
                     <option value="12to3">12-3</option>
                     <option value="none">None</option>
                   </select>
+                  <label htmlFor="monday">Monday</label>
                 </div>
-                <div className="tuesday fiveCol">
-                  <label htmlFor="tuesday">Tuesday</label>
+                <div className="flex tuesday fiveCol">
                   <select
                     type="tuesday"
                     name="tuesday"
@@ -352,9 +368,9 @@ export default function Volunteer() {
                     <option value="12to3">12-3</option>
                     <option value="none">None</option>
                   </select>
+                  <label htmlFor="tuesday">Tuesday</label>
                 </div>
-                <div className="wednesday fiveCol">
-                  <label htmlFor="wednesday">Wednesday</label>
+                <div className="flex wednesday fiveCol">
                   <select
                     type="wednesday"
                     name="wednesday"
@@ -367,9 +383,9 @@ export default function Volunteer() {
                     <option value="12to3">12-3</option>
                     <option value="none">None</option>
                   </select>
+                  <label htmlFor="wednesday">Wednesday</label>
                 </div>
-                <div className="thursday fiveCol">
-                  <label htmlFor="thursday">Thursday</label>
+                <div className="flex thursday fiveCol">
                   <select
                     type="thursday"
                     name="thursday"
@@ -382,9 +398,9 @@ export default function Volunteer() {
                     <option value="12to3">12-3</option>
                     <option value="none">None</option>
                   </select>
+                  <label htmlFor="thursday">Thursday</label>
                 </div>
-                <div className="friday fiveCol">
-                  <label htmlFor="friday">Friday</label>
+                <div className="flex friday fiveCol">
                   <select
                     type="friday"
                     name="friday"
@@ -397,11 +413,9 @@ export default function Volunteer() {
                     <option value="12to3">12-3</option>
                     <option value="none">None</option>
                   </select>
+                  <label htmlFor="friday">Friday</label>
                 </div>
-                <div className="saturday fiveCol">
-                  <label htmlFor="saturday">
-                    Saturday<sub>*Winter Only*</sub>
-                  </label>
+                <div className="flex saturday fiveCol">
                   <select
                     type="saturday"
                     name="saturday"
@@ -413,11 +427,11 @@ export default function Volunteer() {
                     <option value="12to3">12-3</option>
                     <option value="none">None</option>
                   </select>
-                </div>
-                <div className="addlComments fiveCol">
-                  <label htmlFor="addlComments">
-                    Availability Additional Comments
+                  <label htmlFor="saturday">
+                    Saturday<sub>*Winter Only*</sub>
                   </label>
+                </div>
+                <div className="flex addlComments fiveCol">
                   <textarea
                     type="addlComments"
                     name="addlComments"
@@ -427,11 +441,13 @@ export default function Volunteer() {
                     onChange={updateValue}
                     placeholder="Additional Comments"
                   />
+                  <label htmlFor="addlComments">
+                    Availability Additional Comments
+                  </label>
                 </div>
               </div>
               <div className="reasoning">
-                <div className="reason">
-                  <label htmlFor="reason">Reason for Volunteering</label>
+                <div className="flex reason">
                   <textarea
                     name="reason"
                     id="reason"
@@ -441,11 +457,9 @@ export default function Volunteer() {
                     placeholder="Why do you want to Volunteer?"
                     required
                   />
+                  <label htmlFor="reason">Reason for Volunteering</label>
                 </div>
-                <div className="benefit">
-                  <label htmlFor="benefit" className="benefit">
-                    Benefit
-                  </label>
+                <div className="flex benefit">
                   <textarea
                     name="benefit"
                     id="benefit"
@@ -455,12 +469,12 @@ export default function Volunteer() {
                     placeholder="How do you plan to benefit the Joseph Center?"
                     required
                   />
+                  <label htmlFor="benefit" className="benefit">
+                    Benefit
+                  </label>
                 </div>
               </div>
-              <div className="qualifications">
-                <label htmlFor="qualifications">
-                  Qualifications and Skills
-                </label>
+              <div className="flex qualifications">
                 <textarea
                   name="qualifications"
                   id="qualifications"
@@ -470,11 +484,11 @@ export default function Volunteer() {
                   placeholder="What Qualifications and Skills do you have?"
                   required
                 />
-              </div>
-              <div className="employment">
-                <label htmlFor="employment">
-                  Employment History and Training
+                <label htmlFor="qualifications">
+                  Qualifications and Skills
                 </label>
+              </div>
+              <div className="flex employment">
                 <textarea
                   name="employment"
                   id="employment"
@@ -484,11 +498,13 @@ export default function Volunteer() {
                   placeholder="Give a brief summary of your employment history and training"
                   required
                 />
+                <label htmlFor="employment">
+                  Employment History and Training
+                </label>
               </div>
               <div className="orgAndResponsibilities">
                 <div className="fourColContainer">
-                  <div className="organization fourCol">
-                    <label htmlFor="organization1">Organization</label>
+                  <div className="flex organization fourCol">
                     <input
                       type="organization1"
                       name="organization1"
@@ -498,9 +514,9 @@ export default function Volunteer() {
                       placeholder="Organization"
                       required
                     />
+                    <label htmlFor="organization1">Organization</label>
                   </div>
-                  <div className="fourCol">
-                    <label htmlFor="beginDate1">Begin Date</label>
+                  <div className="fourCol flex">
                     <input
                       type="date"
                       name="beginDate1"
@@ -510,9 +526,9 @@ export default function Volunteer() {
                       placeholder="01/01/2000"
                       required
                     />
+                    <label htmlFor="beginDate1">Begin Date</label>
                   </div>
-                  <div className="fourCol">
-                    <label htmlFor="endDate1">End Date</label>
+                  <div className="fourCol flex">
                     <input
                       type="date"
                       name="endDate1"
@@ -522,23 +538,23 @@ export default function Volunteer() {
                       placeholder="01/01/2002"
                       required
                     />
+                    <label htmlFor="endDate1">End Date</label>
                   </div>
                 </div>
-                <label htmlFor="responsibilities1">Responsibilities</label>
-                <textarea
-                  name="responsibilities1"
-                  id="responsibilities1"
-                  value={values.responsibilities1}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What were your responsibilities in this position?"
-                  required
-                />
+                <div className="flex">
+                  <textarea
+                    name="responsibilities1"
+                    id="responsibilities1"
+                    value={values.responsibilities1}
+                    onChange={updateValue}
+                    rows="3"
+                    placeholder="What were your responsibilities in this position?"
+                    required
+                  />
+                  <label htmlFor="responsibilities1">Responsibilities</label>
+                </div>
                 <div className="fourColContainer">
-                  <div className="organization fourCol">
-                    <label htmlFor="organization2" className="organization">
-                      Organization
-                    </label>
+                  <div className="flex organization fourCol">
                     <input
                       type="organization2"
                       name="organization2"
@@ -548,9 +564,11 @@ export default function Volunteer() {
                       placeholder="Organization"
                       required
                     />
+                    <label htmlFor="organization2" className="organization">
+                      Organization
+                    </label>
                   </div>
-                  <div className="fourCol">
-                    <label htmlFor="beginDate2">Begin Date</label>
+                  <div className="flex fourCol">
                     <input
                       type="date"
                       name="beginDate2"
@@ -560,9 +578,9 @@ export default function Volunteer() {
                       placeholder="01/01/2000"
                       required
                     />
+                    <label htmlFor="beginDate2">Begin Date</label>
                   </div>
-                  <div className="fourCol">
-                    <label htmlFor="endDate2">End Date</label>
+                  <div className="flex fourCol">
                     <input
                       type="date"
                       name="endDate2"
@@ -572,23 +590,23 @@ export default function Volunteer() {
                       placeholder="01/01/2002"
                       required
                     />
+                    <label htmlFor="endDate2">End Date</label>
                   </div>
                 </div>
-                <label htmlFor="responsibilities2">Responsibilities</label>
-                <textarea
-                  name="responsibilities2"
-                  id="responsibilities2"
-                  value={values.responsibilities2}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What were your responsibilities in this position?"
-                  required
-                />
+                <div className="flex">
+                  <textarea
+                    name="responsibilities2"
+                    id="responsibilities2"
+                    value={values.responsibilities2}
+                    onChange={updateValue}
+                    rows="3"
+                    placeholder="What were your responsibilities in this position?"
+                    required
+                  />
+                  <label htmlFor="responsibilities2">Responsibilities</label>
+                </div>
                 <div className="fourColContainer">
-                  <div className="organization fourCol">
-                    <label htmlFor="organization3" className="organization">
-                      Organization
-                    </label>
+                  <div className="flex organization fourCol">
                     <input
                       type="organization3"
                       name="organization3"
@@ -598,9 +616,11 @@ export default function Volunteer() {
                       placeholder="Organization"
                       required
                     />
+                    <label htmlFor="organization3" className="organization">
+                      Organization
+                    </label>
                   </div>
-                  <div className="fourCol">
-                    <label htmlFor="beginDate3">Begin Date</label>
+                  <div className="flex fourCol">
                     <input
                       type="date"
                       name="beginDate3"
@@ -610,9 +630,9 @@ export default function Volunteer() {
                       placeholder="01/01/2000"
                       required
                     />
+                    <label htmlFor="beginDate3">Begin Date</label>
                   </div>
-                  <div className="fourCol">
-                    <label htmlFor="endDate3">End Date</label>
+                  <div className="flex fourCol">
                     <input
                       type="date"
                       name="endDate3"
@@ -622,18 +642,21 @@ export default function Volunteer() {
                       placeholder="01/01/2002"
                       required
                     />
+                    <label htmlFor="endDate3">End Date</label>
                   </div>
                 </div>
-                <label htmlFor="responsibilities3">Responsibilities</label>
-                <textarea
-                  name="responsibilities3"
-                  id="responsibilities3"
-                  value={values.responsibilities3}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What were your responsibilities in this position?"
-                  required
-                />
+                <div className="flex">
+                  <textarea
+                    name="responsibilities3"
+                    id="responsibilities3"
+                    value={values.responsibilities3}
+                    onChange={updateValue}
+                    rows="3"
+                    placeholder="What were your responsibilities in this position?"
+                    required
+                  />
+                  <label htmlFor="responsibilities3">Responsibilities</label>
+                </div>
               </div>
               <div className="formFields">
                 <div
