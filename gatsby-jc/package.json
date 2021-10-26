@@ -2,6 +2,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "gatsby": "^2.24.63",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sanity-image": "^0.6.0",
@@ -18,6 +19,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-is": "^17.0.2",
+    "stripe": "^8.184.0",
     "styled-components": "^5.3.1"
   },
   "description": "Providing hope, establishing stability, encouraging resourcefulness and conferring a sense of belonging to the greater community.",

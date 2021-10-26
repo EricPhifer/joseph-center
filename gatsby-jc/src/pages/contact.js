@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import SanityImage from 'gatsby-plugin-sanity-image';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import useContact from '../utils/useContact';
@@ -89,7 +90,7 @@ const ContactStyles = styled.div`
   }
   .oneCol {
     height: 40rem;
-    border: 1px solid black;
+    margin: 0.5rem 0 3rem 0;
   }
   .mapContainer {
     max-width: 1200px;
@@ -152,7 +153,8 @@ const FormStyles = styled.div`
   }
 `;
 
-export default function Contact() {
+export default function Contact({ data }) {
+  const images = data.images.nodes;
   const { values, updateValue } = useForm({
     name: '',
     email: '',
@@ -170,7 +172,16 @@ export default function Contact() {
       <SEO title="Contact Us" />
       <ContactStyles>
         <div className="heroImg oneColContainer">
-          <div className="oneCol" />
+          <div className="oneCol">
+            <SanityImage
+              {...images[0].image}
+              alt={images[0].title}
+              style={{
+                objectFit: 'cover',
+                auto: 'format',
+              }}
+            />
+          </div>
         </div>
         <h1>Contact Us</h1>
         <hr />
@@ -311,3 +322,17 @@ export default function Contact() {
     </>
   );
 }
+
+export const query = graphql`
+  query {
+    images: allSanityImages {
+      nodes {
+        id
+        title
+        image {
+          ...ImageWithPreview
+        }
+      }
+    }
+  }
+`;

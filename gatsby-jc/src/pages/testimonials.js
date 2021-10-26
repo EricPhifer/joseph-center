@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
@@ -23,14 +24,13 @@ const TestimonialStyles = styled.div`
     }
   }
   .threeCol {
-    border: 1px black solid;
-    height: 250px;
   }
   @media only screen and (max-width: 400px) {
   }
 `;
 
-export default function Testimonials() {
+export default function Testimonials({ data }) {
+  const links = data.youtube.nodes;
   return (
     <>
       <SEO title="Testimonials" />
@@ -44,13 +44,33 @@ export default function Testimonials() {
           </p>
         </div>
         <div className="threeColContainer">
-          <div className="threeCol" />
-          <div className="threeCol" />
-          <div className="threeCol" />
-          <div className="threeCol" />
-          <div className="threeCol" />
+          {links.map((link) => (
+            <div key={link.id} className="threeCol">
+              {console.log(link)}
+              <iframe
+                height="315"
+                src={link.youtubeUrl}
+                title={link.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          ))}
         </div>
       </TestimonialStyles>
     </>
   );
 }
+
+export const query = graphql`
+  query {
+    youtube: allSanityYoutubeVideos {
+      nodes {
+        id
+        youtubeUrl
+        title
+      }
+    }
+  }
+`;

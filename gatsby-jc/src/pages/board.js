@@ -1,3 +1,5 @@
+import { graphql } from 'gatsby';
+import SanityImage from 'gatsby-plugin-sanity-image';
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
@@ -42,67 +44,47 @@ const BoardStyles = styled.div`
   }
 `;
 
-export default function Board() {
+export default function Board({ data }) {
+  const boardMembers = data.boardMembers.nodes;
   return (
     <>
       <SEO title="Board Members" />
       <BoardStyles>
         <h1>Board of Directors</h1>
         <div className="contentContainer fourColContainer">
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
-          <div className="memberContainer fourCol">
-            {/* map of board member images and names */}
-            <div className="boardImg" />
-            <p className="boardName">Repeatable Board Member Name</p>
-          </div>
+          {boardMembers.map((member) => (
+            <div className="memberContainer fourCol">
+              {member.image ? (
+                <SanityImage
+                  {...member.image}
+                  alt={member.name}
+                  style={{
+                    objectFit: 'cover',
+                    auto: 'format',
+                  }}
+                />
+              ) : (
+                <div className="noImage" />
+              )}
+              <h3 className="boardName">{member.name}</h3>
+            </div>
+          ))}
         </div>
       </BoardStyles>
     </>
   );
 }
 
-// Need GraphQL here
+export const query = graphql`
+  query {
+    boardMembers: allSanityBoardMembers {
+      nodes {
+        id
+        name
+        image {
+          ...ImageWithPreview
+        }
+      }
+    }
+  }
+`;

@@ -1,5 +1,6 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { graphql, Link } from 'gatsby';
+import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
@@ -29,12 +30,11 @@ const StoryStyles = styled.div`
     place-content: center;
   }
   .oneCol {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
   }
   .storyImg {
     height: 40rem;
     width: 100%;
-    border: 1px solid black;
   }
   h1,
   h2,
@@ -80,13 +80,23 @@ const StoryStyles = styled.div`
   }
 `;
 
-export default function OurStory() {
+export default function OurStory({ data }) {
+  const images = data.images.nodes;
   return (
     <>
       <SEO title="Our Story" />
       <StoryStyles>
         <div className="oneColContainer">
-          <div className="storyImg oneCol" />
+          <div className="storyImg oneCol">
+            <SanityImage
+              {...images[1].image}
+              alt={images[1].title}
+              style={{
+                objectFit: 'cover',
+                auto: 'format',
+              }}
+            />
+          </div>
         </div>
         <div className="oneColContainer">
           <h1 className="oneCol">Our Story</h1>
@@ -156,3 +166,17 @@ export default function OurStory() {
     </>
   );
 }
+
+export const query = graphql`
+  query {
+    images: allSanityImages {
+      nodes {
+        id
+        title
+        image {
+          ...ImageWithPreview
+        }
+      }
+    }
+  }
+`;

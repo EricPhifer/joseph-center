@@ -1,7 +1,6 @@
-import { Link } from 'gatsby';
 import React from 'react';
-// import { graphql } from 'gatsby';
-// import SanityImage from 'gatsby-plugin-sanity-image';
+import { graphql, Link } from 'gatsby';
+import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
@@ -9,6 +8,33 @@ import twitter from '../assets/images/twitter.png';
 const HomeStyles = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  // Four Column Grid
+  .fourColContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    gap: 1rem;
+    padding: 2rem 0;
+    place-content: center;
+    h3,
+    hr {
+      width: 100%;
+      grid-column: 1 / span 4;
+      text-align: center;
+    }
+    hr {
+      border: 1px solid var(--gold);
+    }
+    @media only screen and (max-width: 582px) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+    }
+    @media only screen and (max-width: 300px) {
+      grid-template-columns: minmax(auto, 1fr);
+    }
+  }
+  .fourCol {
+    align-self: center;
+    height: auto;
+  }
   // Three Column Grid
   .threeColContainer {
     display: grid;
@@ -86,7 +112,6 @@ const HomeStyles = styled.div`
     width: 95%;
     height: 400px;
     margin: 1rem auto;
-    border: 1px solid black;
     text-align: center;
   }
   a {
@@ -115,7 +140,6 @@ const HomeStyles = styled.div`
   }
   .testimonyVideo {
     height: 40rem;
-    border: 1px black solid;
   }
   .testimonyContainer {
     border-left: 5px lightgray solid;
@@ -165,12 +189,23 @@ const HomeStyles = styled.div`
 `;
 
 export default function HomePage({ data }) {
-  // const homepage = data.home.nodes;
+  const supporters = data.supporters.nodes;
+  const images = data.images.nodes;
+  const youtube = data.youtube.nodes;
   return (
     <>
       <SEO title="Home Page" />
       <HomeStyles>
-        <div className="carousel" />
+        <div className="carousel">
+          <SanityImage
+            {...images[2].image}
+            alt={images[2].title}
+            style={{
+              objectFit: 'cover',
+              auto: 'format',
+            }}
+          />
+        </div>
         <div className="threeColContainer">
           <div className="threeCol programBox1">
             <div className="space" />
@@ -227,7 +262,16 @@ export default function HomePage({ data }) {
         </div>
         <div className="oneColContainer">
           <div className="oneCol">
-            <div className="testimonyVideo" />
+            <div className="testimonyVideo">
+              <iframe
+                height="315"
+                src={youtube[0].youtubeUrl}
+                title={youtube[0].title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
             <div className="testimonyContainer">
               <p className="testimonyQuote">
                 God has an army of angels within this group! I can’t say enough
@@ -241,28 +285,57 @@ export default function HomePage({ data }) {
             </div>
           </div>
         </div>
+        <div className="supporterList fourColContainer">
+          <hr />
+          <h3>Our Financial Partners</h3>
+          <hr />
+          {supporters.map((supporter) => (
+            <div key={supporter.id} className="fourCol">
+              <a href={supporter.website}>
+                <SanityImage
+                  {...supporter.logo}
+                  alt={supporter.name}
+                  style={{
+                    objectFit: 'cover',
+                    auto: 'format',
+                  }}
+                />
+              </a>
+            </div>
+          ))}
+        </div>
       </HomeStyles>
     </>
   );
 }
 
-// export const query = graphql`
-//   query {
-//     home: allSanityHomepage {
-//       nodes {
-//         id
-//         welcome
-//         contents {
-//           content
-//           contentURL
-//           heading
-//         }
-//         image {
-//           asset {
-//             id
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query {
+    supporters: allSanitySupporters {
+      nodes {
+        id
+        name
+        website
+        logo {
+          ...ImageWithPreview
+        }
+      }
+    }
+    images: allSanityImages {
+      nodes {
+        id
+        title
+        image {
+          ...ImageWithPreview
+        }
+      }
+    }
+    youtube: allSanityYoutubeVideos {
+      nodes {
+        id
+        youtubeUrl
+        title
+      }
+    }
+  }
+`;
