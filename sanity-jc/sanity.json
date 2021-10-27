@@ -1,11 +1,7 @@
 {
-  "root": true,
   "api": {
     "dataset": "production",
     "projectId": "xgn13ezi"
-  },
-  "project": {
-    "name": "Eric Phifer LLC"
   },
   "env": {
     "development": {
@@ -27,5 +23,9 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/google-maps-input"
-  ]
+  ],
+  "project": {
+    "name": "Joseph Center"
+  },
+  "root": true
 }

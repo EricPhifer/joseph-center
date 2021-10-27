@@ -23,21 +23,31 @@ const DonateStyles = styled.div`
     gap: 1rem;
     padding: 2rem 0;
     place-content: center;
+    .fiveCol {
+      padding: 1rem;
+      align-self: center;
+    }
     h4 {
       grid-column: 1 / span 5;
     }
-    @media only screen and (max-width: 728px) {
+    @media only screen and (max-width: 847px) {
+      h4 {
+        grid-column: 1 / span 3;
+      }
       grid-template-columns: repeat(3, minmax(auto, 1fr));
     }
-    @media only screen and (max-width: 442px) {
+    @media only screen and (max-width: 534px) {
+      h4 {
+        grid-column: 1 / span 2;
+      }
       grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 363px) {
+      h4 {
+        grid-column: 1;
+      }
       grid-template-columns: minmax(auto, 1fr);
     }
-  }
-  .fiveCol {
-    height: auto;
   }
   .oneTimeDonations {
     margin-bottom: 3rem;

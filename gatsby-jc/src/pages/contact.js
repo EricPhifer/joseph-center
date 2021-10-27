@@ -16,10 +16,11 @@ const ContactStyles = styled.div`
     grid-template-columns: repeat(6, minmax(auto, 1fr));
     gap: 1rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 3rem;
     place-content: center;
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 667px) {
       grid-template-columns: minmax(auto, 1fr);
+      grid-template-rows: auto;
     }
   }
   .twoCol,
@@ -79,6 +80,22 @@ const ContactStyles = styled.div`
       grid-column: 1 / span 2;
     }
   }
+  @media only screen and (max-width: 667px) {
+    h1 {
+      text-align: center;
+    }
+    .twoColContainer {
+      margin: 0;
+    }
+    .firstCol {
+      grid-column: 1;
+      text-align: center;
+    }
+    .secondCol {
+      grid-column: 1;
+      margin-top: 3rem;
+    }
+  }
   // One Column Grid
   .oneColContainer {
     display: grid;
@@ -89,7 +106,6 @@ const ContactStyles = styled.div`
     place-content: center;
   }
   .oneCol {
-    height: 40rem;
     margin: 0.5rem 0 3rem 0;
   }
   .mapContainer {
@@ -99,6 +115,7 @@ const ContactStyles = styled.div`
       height: auto;
       border: none;
       iframe {
+        width: 100%;
         border: 0;
       }
     }
@@ -122,8 +139,6 @@ const FormStyles = styled.div`
     border: none;
     legend {
       font-size: 3rem;
-      text-align: left;
-      padding-bottom: 2rem;
     }
   }
   .formFields {
@@ -143,6 +158,7 @@ const FormStyles = styled.div`
     }
     label {
       line-height: 2;
+      font-size: 2rem;
     }
     button {
       width: 103%;
@@ -150,11 +166,17 @@ const FormStyles = styled.div`
       background-color: var(--gold);
       box-shadow: none;
     }
+    @media only screen and (max-width: 754px) {
+      label {
+        font-size: 1.5rem;
+      }
+    }
   }
 `;
 
 export default function Contact({ data }) {
   const images = data.images.nodes;
+  const programs = data.programs.nodes;
   const { values, updateValue } = useForm({
     name: '',
     email: '',
@@ -261,8 +283,7 @@ export default function Contact({ data }) {
                   </div>
                   <div id="programDropdown" className="formFields">
                     <label htmlFor="program" className="programChoice">
-                      Choose the Program You're Interested in Learning More
-                      About (if applicable)
+                      What program are you interested in?
                     </label>
                     <select
                       type="program"
@@ -271,11 +292,12 @@ export default function Contact({ data }) {
                       value={values.program}
                       onChange={updateValue}
                     >
-                      <option value="dayshelter">Day Shelter</option>
-                      <option value="parentadvocacy">Parent Advocacy</option>
-                      <option value="integratedfinancialservices">
-                        Integrated Financial Services
-                      </option>
+                      <option value="nopreference">No Preference</option>
+                      {programs.map((program) => (
+                        <option key={program.id} value={program.title}>
+                          {program.title}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div id="messageContainer" className="formFields">
@@ -310,7 +332,6 @@ export default function Contact({ data }) {
           <div className="oneCol">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.3718935437328!2d-108.53881734867191!3d39.07522597944315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87471c3ce2d286e7%3A0x23757e61c34a1bb9!2s2511%20Belford%20Ave%2C%20Grand%20Junction%2C%20CO%2081501!5e0!3m2!1sen!2sus!4v1634039908188!5m2!1sen!2sus"
-              width="1200"
               height="450"
               allowFullScreen=""
               loading="lazy"
@@ -332,6 +353,12 @@ export const query = graphql`
         image {
           ...ImageWithPreview
         }
+      }
+    }
+    programs: allSanityPrograms {
+      nodes {
+        title
+        id
       }
     }
   }
