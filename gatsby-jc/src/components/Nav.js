@@ -657,15 +657,19 @@ class Nav extends Component {
                     </button>
                     {this.state.showPrograms ? (
                       <ul className=" programsMenu">
-                        <li>
-                          <Link to="/our-story">Link 1</Link>
-                        </li>
-                        <li>
-                          <Link to="/board">Link 2</Link>
-                        </li>
-                        <li>
-                          <Link to="/testimonials">Link 3</Link>
-                        </li>
+                       <li>
+                      <Link to="/programs/day-shelter">Day Shelter</Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/parent-advocacy">
+                        Parent Advocacy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/integrated-financial-services">
+                        Financial Services
+                      </Link>
+                    </li>
                         <button type="button" onClick={this.showPrograms}>
                           <UpArrow />
                         </button>

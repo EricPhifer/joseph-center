@@ -46,7 +46,6 @@ export default function Testimonials({ data }) {
         <div className="threeColContainer">
           {links.map((link) => (
             <div key={link.id} className="threeCol">
-              {console.log(link)}
               <iframe
                 height="315"
                 src={link.youtubeUrl}

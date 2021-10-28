@@ -6,7 +6,6 @@ const ProgramsTitleAndSlug = () => {
   const GetProgramList = () => {
     const detailList = [];
     const details = useNavPrograms();
-    console.log(details);
     details.programs.forEach((detail) => {
       detailList.push({
         id: detail.id,

@@ -39,22 +39,47 @@ const HomeStyles = styled.div`
   .threeColContainer {
     display: grid;
     grid-template-columns: repeat(3, minmax(auto, 1fr));
-    gap: 0 1rem;
-    max-width: 95%;
+    gap: 1rem;
+    max-width: 100%;
     margin: 0 auto 3rem auto;
     place-content: center;
-    @media only screen and (max-width: 450px) {
-      grid-template-columns: repeat(2, minmax(auto, 1fr));
+    @media only screen and (max-width: 928px) {
+      .threeCol {
+        h3 {
+          padding-bottom: 0.8rem;
+        }
+        p {
+          font-size: 1.65rem;
+        }
+      }
     }
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 783px) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+      #programBox1 {
+        grid-column: 1 / span 1;
+      }
+      #programBox2 {
+        grid-column: 2 / span 1;
+      }
+      #programBox3 {
+        grid-column: 1 / span 2;
+        p {
+          max-width: 400px;
+        }
+      }
+    }
+    @media only screen and (max-width: 545px) {
       grid-template-columns: minmax(auto, 1fr);
+      p {
+        max-width: 400px;
+      }
     }
   }
   .threeCol {
     height: 275px;
     text-align: center;
     color: var(--white);
-    padding: 0 2rem;
+    padding: 0 1rem;
     .space {
       height: 4rem;
     }
@@ -109,8 +134,7 @@ const HomeStyles = styled.div`
     height: auto;
   }
   .carousel {
-    width: 95%;
-    height: 400px;
+    width: 100%;
     margin: 1rem auto;
     text-align: center;
   }
