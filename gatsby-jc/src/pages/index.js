@@ -212,6 +212,7 @@ const HomeStyles = styled.div`
   }
   .carousel {
     width: 100%;
+    max-height: 500px;
     margin: 1rem auto;
     text-align: center;
   }
