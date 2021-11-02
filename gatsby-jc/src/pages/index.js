@@ -26,14 +26,21 @@ const HomeStyles = styled.div`
     }
     @media only screen and (max-width: 582px) {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
+      h3,
+      hr {
+        grid-column: 1 / span 2;
+      }
     }
     @media only screen and (max-width: 300px) {
       grid-template-columns: minmax(auto, 1fr);
+      h3,
+      hr {
+        grid-column: 1;
+      }
     }
   }
   .fourCol {
     align-self: center;
-    height: auto;
   }
   // Three Column Grid
   .threeColContainer {
@@ -55,13 +62,13 @@ const HomeStyles = styled.div`
     }
     @media only screen and (max-width: 783px) {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
-      #programBox1 {
+      .programBox1 {
         grid-column: 1 / span 1;
       }
-      #programBox2 {
+      .programBox2 {
         grid-column: 2 / span 1;
       }
-      #programBox3 {
+      .programBox3 {
         grid-column: 1 / span 2;
         p {
           max-width: 400px;
@@ -70,8 +77,56 @@ const HomeStyles = styled.div`
     }
     @media only screen and (max-width: 545px) {
       grid-template-columns: minmax(auto, 1fr);
-      p {
-        max-width: 400px;
+      .threeCol {
+        height: 175px;
+        .space {
+          height: 2rem;
+        }
+        h3 {
+          height: 2rem;
+        }
+        p {
+          height: 5rem;
+        }
+      }
+      .programBox1,
+      .programBox2,
+      .programBox3 {
+        grid-column: 1;
+      }
+    }
+    @media only screen and (max-width: 376px) {
+      .threeCol {
+        height: 175px;
+        .space {
+          height: 2rem;
+        }
+        h3 {
+          height: 1rem;
+        }
+        p {
+          height: 6rem;
+          font-size: 1.6rem;
+        }
+      }
+    }
+    @media only screen and (max-width: 317px) {
+      .threeCol {
+        height: 175px;
+        .space {
+          height: 2rem;
+        }
+        h3 {
+          height: 0.7rem;
+          font-size: 1.6rem;
+        }
+        p {
+          height: 6rem;
+          font-size: 1.4rem;
+        }
+        a {
+          font-size: 1.6rem;
+        }
       }
     }
   }
@@ -132,6 +187,28 @@ const HomeStyles = styled.div`
   }
   .oneCol {
     height: auto;
+    @media only screen and (max-width: 975px) {
+      h2,
+      p {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
+    @media only screen and (max-width: 350px) {
+      h2 {
+        font-size: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+      }
+      .buttonesque {
+        font-size: 1.7rem;
+      }
+    }
   }
   .carousel {
     width: 100%;
@@ -167,7 +244,8 @@ const HomeStyles = styled.div`
   }
   .testimonyContainer {
     border-left: 5px lightgray solid;
-    padding-left: 3rem;
+    padding-left: 1rem;
+    margin: 0 1rem;
     a {
       text-decoration: none;
       .tweet {
@@ -180,34 +258,23 @@ const HomeStyles = styled.div`
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
-      }
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    .heroBG {
-      h1 {
-        font-size: 2.6rem;
-      }
-      .imgContainer {
-        img {
-          height: 300px;
+        @media only screen and (max-width: 417px) {
+          margin: -4rem 2rem 0 0;
+        }
+        @media only screen and (max-width: 400px) {
+          margin: -2rem 1rem 0 0;
         }
       }
     }
   }
   @media only screen and (max-width: 400px) {
-    .heroBG {
-      h1 {
-        font-size: 2.22rem;
+    max-width: 95%;
+    .testimonyContainer {
+      p {
+        margin: 0;
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
       }
-      .imgContainer {
-        img {
-          height: 200px;
-        }
-      }
-    }
-    .homeContent {
-      font-size: 1.5rem;
     }
   }
 `;
@@ -311,7 +378,7 @@ export default function HomePage({ data }) {
         </div>
         <div className="supporterList fourColContainer">
           <hr />
-          <h3>Our Financial Partners</h3>
+          <h3 className="fourCol">Our Financial Partners</h3>
           <hr />
           {supporters.map((supporter) => (
             <div key={supporter.id} className="fourCol">

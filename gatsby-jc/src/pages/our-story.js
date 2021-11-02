@@ -13,9 +13,10 @@ const StoryStyles = styled.div`
     grid-template-columns: repeat(2, minmax(auto, 1fr));
     gap: 1.5rem;
     max-width: 1150px;
-    margin: 0 auto;
-    @media only screen and (max-width: 300px) {
+    margin: 0 1rem;
+    @media only screen and (max-width: 500px) {
       grid-template-columns: minmax(auto, 1fr);
+      gap: 0;
     }
   }
   .twoCol {
@@ -26,21 +27,39 @@ const StoryStyles = styled.div`
     display: grid;
     grid-template-columns: minmax(auto, 1fr);
     max-width: 1200px;
-    margin: 0 auto;
     place-content: center;
+    h1,
+    h2 {
+      margin: 0 1rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+    }
+    @media only screen and (max-width: 900px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    @media only screen and (max-width: 400px) {
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
   }
-  .oneCol {
-    margin: 1.5rem 0;
-  }
+
   .storyImg {
-    height: 40rem;
     width: 100%;
   }
   h1,
   h2,
   .buttonContainer,
   .content {
-    margin-left: 2rem;
+    @media only screen and (max-width: 575px) {
+      margin: 0 1rem;
+    }
   }
   p {
     font-size: 1.7rem;
@@ -53,12 +72,17 @@ const StoryStyles = styled.div`
   .buttonContainer {
     max-width: 475px;
     padding: 0;
-    margin-top: 5rem;
-    margin-bottom: 15rem;
+    margin: 5rem auto 15rem auto;
     text-align: center;
     justify-items: stretch;
     a {
       text-decoration: none;
+    }
+    @media only screen and (max-width: 575px) {
+      margin: 1rem;
+      .volunteerBtn {
+        margin-bottom: 1rem;
+      }
     }
   }
   .buttonesque {
@@ -68,13 +92,30 @@ const StoryStyles = styled.div`
   }
   .volunteerBtn {
     background-color: var(--darkgreen);
+    @media only screen and (max-width: 400px) {
+      margin: 0 1rem;
+    }
   }
   .contactBtn {
     background-color: var(--gold);
+    @media only screen and (max-width: 400px) {
+      margin: 1rem;
+    }
   }
   @media only screen and (max-width: 400px) {
+    margin: 0;
+    .twoColContainer {
+      margin: 0;
+    }
+    .oneColContainer {
+      margin: 0;
+      h1,
+      h2 {
+        margin: 1rem;
+      }
+    }
     p {
-      padding: 0 1.2rem;
+      margin: 1rem;
       font-size: 1.2rem;
     }
   }

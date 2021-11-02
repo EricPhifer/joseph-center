@@ -10,6 +10,10 @@ const VolunteerStyles = styled.div`
   h1 {
     padding-top: 4rem;
   }
+  h1,
+  p {
+    margin: 0 1rem;
+  }
   .space2 {
     padding: 2rem;
   }
@@ -27,7 +31,6 @@ const VolunteerStyles = styled.div`
   form {
     padding: 0;
     margin: 0;
-    // doesnt work TODO: fix
     input[required] + label:after,
     select[required] + label:after,
     textarea[required] + label:after {
@@ -57,8 +60,12 @@ const VolunteerStyles = styled.div`
       margin: 0 auto;
       padding: 2rem 0;
       place-content: center;
-      @media only screen and (max-width: 300px) {
+      @media only screen and (max-width: 350px) {
         grid-template-columns: minmax(auto, 1fr);
+        grid-template-rows: auto;
+        .twoCol {
+          grid-column: 1;
+        }
       }
     }
     .twoCol {
@@ -86,6 +93,9 @@ const VolunteerStyles = styled.div`
       .organization {
         width: 104%;
         grid-column: 1 / span 2;
+        @media only screen and (max-width: 500px) {
+          width: 100%;
+        }
       }
       .fourCol {
         input {
@@ -122,14 +132,12 @@ const VolunteerStyles = styled.div`
           background-color: var(--white);
         }
       }
-      @media only screen and (max-width: 728px) {
-        grid-template-columns: repeat(3, minmax(auto, 1fr));
-      }
-      @media only screen and (max-width: 442px) {
-        grid-template-columns: repeat(2, minmax(auto, 1fr));
-      }
-      @media only screen and (max-width: 300px) {
+      @media only screen and (max-width: 535px) {
         grid-template-columns: minmax(auto, 1fr);
+        grid-template-rows: auto;
+        .fiveCol {
+          grid-column: 1;
+        }
       }
     }
     label {
@@ -153,9 +161,11 @@ const VolunteerStyles = styled.div`
     }
   }
   @media only screen and (max-width: 400px) {
+    h1 {
+      font-size: 3rem;
+    }
     p {
-      padding: 0 1.2rem;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
   }
   #submitContainer {
