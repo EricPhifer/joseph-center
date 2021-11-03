@@ -17,6 +17,12 @@ const BannerStyles = styled.div`
     color: white;
     text-transform: smallcaps;
   }
+  @media only screen and (max-width: 735px) {
+    height: 50px;
+  }
+  @media only screen and (max-width: 383px) {
+    height: 75px;
+  }
 `;
 
 export default function Banner() {
