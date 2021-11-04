@@ -14,8 +14,9 @@ const HomeStyles = styled.div`
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 1fr));
     gap: 1rem;
-    padding: 2rem 0;
     place-content: center;
+    padding: 2rem 0;
+    overflow-y: hidden;
     h3,
     hr {
       width: 100%;
