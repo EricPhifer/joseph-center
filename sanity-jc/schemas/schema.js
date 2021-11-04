@@ -11,7 +11,7 @@ import termsConditions from './termsConditions';
 import board from './board';
 import images from './images';
 import supporters from './supporters';
-import videos from './videos';
+import youtubeVideos from './videos';
 
 export default createSchema({
   // We name our schema
@@ -24,7 +24,7 @@ export default createSchema({
     board,
     images,
     supporters,
-    videos,
+    youtubeVideos,
     privacyPolicy,
     termsConditions,
   ]),
