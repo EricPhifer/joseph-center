@@ -5,7 +5,7 @@ import bg from '../assets/images/bg.png';
 
 const PreFooterStyles = styled.div`
   background-color: var(--gold);
-  width: 100%;
+  width: 100vw;
   ul {
     list-style-type: none;
   }
