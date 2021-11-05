@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     font-size: 2rem;
-    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   fieldset {

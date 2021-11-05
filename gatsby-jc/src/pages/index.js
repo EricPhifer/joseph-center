@@ -16,7 +16,7 @@ const HomeStyles = styled.div`
     gap: 1rem;
     place-content: center;
     padding: 2rem 0;
-    overflow-y: hidden;
+    overflow-x: hidden;
     h3,
     hr {
       width: 100%;
