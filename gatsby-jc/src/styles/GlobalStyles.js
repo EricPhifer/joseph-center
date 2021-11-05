@@ -17,11 +17,11 @@ const GlobalStyles = createGlobalStyle`
   html {
     background-color: var(--white);
     font-size: 10px;
-    overflow-y: hidden;
   }
-
+  
   body {
     font-size: 2rem;
+    overflow-y: hidden;
   }
 
   fieldset {
