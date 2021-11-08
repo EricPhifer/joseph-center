@@ -84,7 +84,7 @@ const NavStyles = styled.nav`
       .menu {
         display: block;
         width: 12rem;
-        padding: 0;
+        padding: 1.2rem;
         margin: 0;
         background-color: var(--white);
         border: 1px solid var(--gold);
@@ -102,14 +102,14 @@ const NavStyles = styled.nav`
         }
       }
       .aboutMenu {
-        -webkit-transform: translate(-22%, 2%);
-        -ms-transform: translate(-22%, 2%);
-        transform: translate(-22%, 2%);
+        -webkit-transform: translate(-27%, 0%);
+        -ms-transform: translate(-27%, 0%);
+        transform: translate(-27%, 0%);
       }
       .programsMenu {
-        -webkit-transform: translate(-22%, 2%);
-        -ms-transform: translate(-22%, 2%);
-        transform: translate(-22%, 2%);
+        -webkit-transform: translate(-27%, 0%);
+        -ms-transform: translate(-27%, 0%);
+        transform: translate(-27%, 0%);
       }
     }
     a {
@@ -657,19 +657,19 @@ class Nav extends Component {
                     </button>
                     {this.state.showPrograms ? (
                       <ul className=" programsMenu">
-                       <li>
-                      <Link to="/programs/day-shelter">Day Shelter</Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/parent-advocacy">
-                        Parent Advocacy
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/integrated-financial-services">
-                        Financial Services
-                      </Link>
-                    </li>
+                        <li>
+                          <Link to="/programs/day-shelter">Day Shelter</Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/parent-advocacy">
+                            Parent Advocacy
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/integrated-financial-services">
+                            Financial Services
+                          </Link>
+                        </li>
                         <button type="button" onClick={this.showPrograms}>
                           <UpArrow />
                         </button>
