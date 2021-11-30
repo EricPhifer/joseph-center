@@ -546,29 +546,7 @@ class Nav extends Component {
                     <li>
                       <Link to="/testimonials">Testimonials</Link>
                     </li>
-                    <li>
-                      <Link to="/programs/the-joseph-center-outreach">
-                        JC Outreach
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/food-bank">Food Bank</Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/learn-to-live-again">
-                        Learn to Live Again
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/the-golden-girls-project">
-                        Golden Girls Project
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/services-through-partnership">
-                        Services Through Partnerships
-                      </Link>
-                    </li>
+                    
                   </ul>
                 ) : null}
               </div>
@@ -603,6 +581,29 @@ class Nav extends Component {
                     <li>
                       <Link to="/programs/integrated-financial-services">
                         Financial Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/the-joseph-center-outreach">
+                        JC Outreach
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/food-bank">Food Bank</Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/learn-to-live-again">
+                        Learn to Live Again
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/the-golden-girls-project">
+                        Golden Girls Project
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/services-through-partnership">
+                        Services Through Partnerships
                       </Link>
                     </li>
                   </ul>
@@ -693,6 +694,29 @@ class Nav extends Component {
                             Financial Services
                           </Link>
                         </li>
+                        <li>
+                      <Link to="/programs/the-joseph-center-outreach">
+                        JC Outreach
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/food-bank">Food Bank</Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/learn-to-live-again">
+                        Learn to Live Again
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/the-golden-girls-project">
+                        Golden Girls Project
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/programs/services-through-partnership">
+                        Services Through Partnerships
+                      </Link>
+                    </li>
                         <button type="button" onClick={this.showPrograms}>
                           <UpArrow />
                         </button>
