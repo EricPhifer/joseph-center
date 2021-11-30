@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 const ContentStyles = styled.div`
   max-width: 1200px;
-  margin: 95px auto 2rem auto;
+  margin: 20px auto 2rem auto;
   background: var(--white);
   overflow-y: hidden;
   @media only screen and (max-width: 768px) {
