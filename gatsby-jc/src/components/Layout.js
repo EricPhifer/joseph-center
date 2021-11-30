@@ -12,7 +12,7 @@ const ContentStyles = styled.div`
   background: var(--white);
   overflow-y: hidden;
   @media only screen and (max-width: 768px) {
-    margin: 65px 0 0 0;
+    margin: -10px 0 0 0;
     .storyImg {
       margin: 0;
     }
