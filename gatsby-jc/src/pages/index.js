@@ -382,7 +382,7 @@ export default function HomePage({ data }) {
         </div>
         <div className="supporterList fourColContainer">
           <hr />
-          <h3 className="fourCol">Our Financial Partners</h3>
+          <h3 className="fourCol">Partners</h3>
           <hr />
           {supporters.map((supporter) => (
             <div key={supporter.id} className="fourCol">
