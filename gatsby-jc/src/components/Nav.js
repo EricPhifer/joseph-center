@@ -83,7 +83,7 @@ const NavStyles = styled.nav`
       text-align: center;
       .menu {
         display: block;
-        width: 12rem;
+        width: 21rem;
         padding: 1.2rem;
         margin: 0;
         background-color: var(--white);
@@ -102,14 +102,14 @@ const NavStyles = styled.nav`
         }
       }
       .aboutMenu {
-        -webkit-transform: translate(-27%, 0%);
-        -ms-transform: translate(-27%, 0%);
-        transform: translate(-27%, 0%);
+        -webkit-transform: translate(-35%, 0%);
+        -ms-transform: translate(-35%, 0%);
+        transform: translate(-35%, 0%);
       }
       .programsMenu {
-        -webkit-transform: translate(-27%, 0%);
-        -ms-transform: translate(-27%, 0%);
-        transform: translate(-27%, 0%);
+        -webkit-transform: translate(-35%, 0%);
+        -ms-transform: translate(-35%, 0%);
+        transform: translate(-35%, 0%);
       }
     }
     a {
