@@ -184,7 +184,7 @@ const HomeStyles = styled.div`
     grid-template-columns: minmax(auto, 1fr);
     gap: 1rem;
     max-width: 950px;
-    margin: 0 auto;
+    margin: 5rem auto;
     place-content: center;
   }
   .oneCol {
