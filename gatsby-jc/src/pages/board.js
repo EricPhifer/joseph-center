@@ -7,7 +7,7 @@ import SEO from '../components/SEO';
 
 const BoardStyles = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto;
   h1 {
     padding: 4rem 0;
   }
