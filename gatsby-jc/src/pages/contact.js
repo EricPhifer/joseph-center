@@ -8,7 +8,7 @@ import useContact from '../utils/useContact';
 
 const ContactStyles = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto;
   // Two Column Grid
   .twoColContainer {
     display: -ms-grid;

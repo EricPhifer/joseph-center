@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 
 const TermStyles = styled.div`
   max-width: 850px;
-  margin: 0 auto;
+  margin: 5rem auto;
   padding: 2rem 0;
   color: black;
   word-wrap: break-word;

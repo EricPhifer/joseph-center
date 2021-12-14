@@ -6,7 +6,7 @@ import useContact from '../utils/useContact';
 
 const VolunteerStyles = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto;
   h1 {
     padding-top: 4rem;
   }

@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 
 const TestimonialStyles = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto;
   padding: 5rem 0;
   text-align: left;
   // Three Column Grid

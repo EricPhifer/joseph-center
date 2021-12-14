@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 
 const StoryStyles = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto;
   // Two Column Grid
   .twoColContainer {
     display: grid;

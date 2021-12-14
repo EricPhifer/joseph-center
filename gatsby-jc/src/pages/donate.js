@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const DonateStyles = styled.div`
   max-width: 1200px;
-  margin: 0 autos;
+  margin: 5rem auto;
   text-align: center;
   p {
     max-width: 500px;
