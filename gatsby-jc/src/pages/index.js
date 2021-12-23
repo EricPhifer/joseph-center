@@ -9,12 +9,6 @@ import Banner from '../components/Banner';
 const HomeStyles = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  // Remove when Banner is removed
-  @media only screen and (max-width: 383px) {
-    .carousel {
-      margin: 150px auto -0.5rem;
-    }
-  }
   // Four Column Grid
   .fourColContainer {
     display: grid;
@@ -223,6 +217,10 @@ const HomeStyles = styled.div`
     max-height: 500px;
     margin: 75px auto -0.5rem auto;
     text-align: center;
+    // Remove when Banner is removed
+    @media only screen and (max-width: 383px) {
+      margin: 150px auto -0.5rem auto;
+    }
   }
   a {
     text-decoration: none;
