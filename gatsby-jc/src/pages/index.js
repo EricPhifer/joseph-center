@@ -289,6 +289,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
+      <Banner />
       <HomeStyles>
         <div className="carousel">
           <SanityImage

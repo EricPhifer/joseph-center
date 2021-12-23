@@ -29,8 +29,8 @@ export default function Banner() {
   return (
     <BannerStyles>
       <h3>
-        The Joseph Center will be closed for Thanksgiving from 11/23 - 11/29.
-        Regular hours will resume on 11/30.
+        The Joseph Center will be closed for Christmas & New Year from 12/27/21 - 1/03/22.
+        Regular hours will resume on 01/04/22.
       </h3>
     </BannerStyles>
   );
