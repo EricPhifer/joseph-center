@@ -366,11 +366,9 @@ export default function HomePage({ data }) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
-          {/* {youtube.map((yt) => (
-                <div key={yt.id} className="testimonyVideo">
-                  <YouTube id={yt.id} />
-                </div>
-              ))} */}
+              <div className="testimonyVideo">
+                <YouTube id={youtube[0].youtubeUrl} />
+              </div>
             </div>
             <div className="testimonyContainer">
               <p className="testimonyQuote">
