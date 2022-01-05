@@ -4,7 +4,6 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
-import YouTube from '../components/Youtube';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -356,11 +355,21 @@ export default function HomePage({ data }) {
         </div>
         <div className="oneColContainer">
           <div className="oneCol">
-              {youtube.map((yt) => (
+            <div className="testimonyVideo">
+              <iframe
+                height="315"
+                src={youtube[0].youtubeUrl}
+                title={youtube[0].title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                   {/* {youtube.map((yt) => (
                 <div key={yt.id} className="testimonyVideo">
                   <YouTube id={yt.id} />
                 </div>
-              ))}
+              ))} */}
+            </div>
             <div className="testimonyContainer">
               <p className="testimonyQuote">
                 God has an army of angels within this group! I can’t say enough
