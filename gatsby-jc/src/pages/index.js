@@ -4,6 +4,7 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
+import YouTube from '../components/YouTube';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -361,10 +362,11 @@ export default function HomePage({ data }) {
                 src={youtube[0].youtubeUrl}
                 title={youtube[0].title}
                 frameBorder="0"
+                crossorigin="anonymous"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
-                   {/* {youtube.map((yt) => (
+          {/* {youtube.map((yt) => (
                 <div key={yt.id} className="testimonyVideo">
                   <YouTube id={yt.id} />
                 </div>

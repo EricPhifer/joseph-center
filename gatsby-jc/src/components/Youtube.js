@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const StyledYouTube = styled.div`
@@ -21,18 +22,20 @@ const StyledYouTube = styled.div`
 
 const YouTube = ({id}) => {
     return (
-        <div className="youtube">
-            <StyledYouTube>
-                <iframe
-                    title={id}
-                    src={`https://www.youtube-nocookie.com/embed/${id}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    />
-            </StyledYouTube>
-        </div>
+        <StyledYouTube>
+            <iframe
+                title={id}
+                src={`https://www.youtube-nocookie.com/embed/${id}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            />
+        </StyledYouTube>
     )
+}
+
+YouTube.propTypes = {
+    id: PropTypes.string.isRequired,
 }
 
 export default YouTube;
