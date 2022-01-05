@@ -366,9 +366,9 @@ export default function HomePage({ data }) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
-              <div className="testimonyVideo">
-                <YouTube id={youtube[0].youtubeUrl} />
-              </div>
+            </div>
+            <div className="testimonyVideo">
+              <YouTube id={youtube[0].youtubeUrl} />
             </div>
             <div className="testimonyContainer">
               <p className="testimonyQuote">
