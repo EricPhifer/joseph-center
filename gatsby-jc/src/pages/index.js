@@ -4,7 +4,6 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
-import Banner from '../components/Banner';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -217,10 +216,6 @@ const HomeStyles = styled.div`
     max-height: 500px;
     margin: 75px auto -0.5rem auto;
     text-align: center;
-    // Remove when Banner is removed
-    @media only screen and (max-width: 383px) {
-      margin: 150px auto -0.5rem auto;
-    }
   }
   a {
     text-decoration: none;
@@ -293,7 +288,6 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
-      <Banner />
       <HomeStyles>
         <div className="carousel">
           <SanityImage
