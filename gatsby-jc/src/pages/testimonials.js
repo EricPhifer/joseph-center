@@ -46,14 +46,17 @@ export default function Testimonials({ data }) {
         <div className="threeColContainer">
           {links.map((link) => (
             <div key={link.id} className="threeCol">
-              <iframe
+              <Link to={link.youtubeUrl}>
+                {link.title}'s Testimony
+              </Link>
+              {/* <iframe
                 height="315"
                 src={link.youtubeUrl}
                 title={link.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              />
+              /> */}
             </div>
           ))}
         </div>
