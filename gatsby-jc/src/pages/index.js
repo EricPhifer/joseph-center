@@ -362,14 +362,14 @@ export default function HomePage({ data }) {
                 src={youtube[0].youtubeUrl}
                 title={youtube[0].title}
                 frameBorder="0"
-                crossorigin="anonymous"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
-            <div className="testimonyVideo">
+            
+            {/* <div className="testimonyVideo">
               <YouTube id={youtube[0].youtubeUrl} />
-            </div>
+            </div> */}
             <div className="testimonyContainer">
               <p className="testimonyQuote">
                 God has an army of angels within this group! I can’t say enough
