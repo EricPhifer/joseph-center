@@ -8,7 +8,8 @@ import SEO from '../components/SEO';
 
 const BoardStyles = styled.div`
   max-width: 1200px;
-  margin: 5rem auto;
+  /* TODO: change top / bottom margin to 5rem once banner is removed */
+  margin: 9rem auto;
   h1 {
     padding: 4rem 0;
   }
