@@ -271,6 +271,10 @@ const HomeStyles = styled.div`
       }
     }
   }
+  /* adjust top margin for Banner on small screens*/
+  @media only screen and (max-width: 383px) {
+    margin-top: 15rem;
+  }
   @media only screen and (max-width: 400px) {
     max-width: 95%;
     .testimonyContainer {
