@@ -5,6 +5,7 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import useContact from '../utils/useContact';
+import Banner from '../components/Banner';
 
 const ContactStyles = styled.div`
   max-width: 1200px;
@@ -192,6 +193,7 @@ export default function Contact({ data }) {
   return (
     <>
       <SEO title="Contact Us" />
+      <Banner />
       <ContactStyles>
         <div className="heroImg oneColContainer">
           <div className="oneCol">

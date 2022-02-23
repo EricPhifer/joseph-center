@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
 import YouTube from '../components/Youtube';
+import Banner from '../components/Banner';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -289,6 +290,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
+      <Banner />
       <HomeStyles>
         <div className="carousel">
           <SanityImage

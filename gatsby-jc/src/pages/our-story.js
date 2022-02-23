@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
+import Banner from '../components/Banner';
 
 const StoryStyles = styled.div`
   max-width: 1200px;
@@ -126,6 +127,7 @@ export default function OurStory({ data }) {
   return (
     <>
       <SEO title="Our Story" />
+      <Banner />
       <StoryStyles>
         <div className="oneColContainer">
           <div className="storyImg oneCol">

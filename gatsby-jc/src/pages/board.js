@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import SanityImage from 'gatsby-plugin-sanity-image';
 import React from 'react';
 import styled from 'styled-components';
+import Banner from '../components/Banner';
 import SEO from '../components/SEO';
 // will need to import graphql and SanityImage
 
@@ -49,6 +50,7 @@ export default function Board({ data }) {
   return (
     <>
       <SEO title="Board Members" />
+      <Banner />
       <BoardStyles>
         <h1>Board of Directors</h1>
         <div className="contentContainer fourColContainer">
