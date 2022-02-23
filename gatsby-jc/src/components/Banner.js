@@ -22,6 +22,10 @@ const BannerStyles = styled.div`
   h3 a {
     color: #fff;
   }
+  h3 a:hover {
+    color: tomato;
+    text-decoration-color: #fff;
+  }
   @media only screen and (max-width: 735px) {
     height: 70px;
   }
