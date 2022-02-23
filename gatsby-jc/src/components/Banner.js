@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const BannerStyles = styled.div`
@@ -30,7 +31,7 @@ export default function Banner() {
   return (
     <BannerStyles>
       <h3>
-        Come join us for the 1st Annual Fundraiser Fabulous Family Fun Food Truck Friday! <Link to="/programs/1st-annual-fundraiser">Click here for details.</Link><br />
+        Come join us for the 1st Annual Fundraiser Fabulous Family Fun Food Truck Friday! <Link to="/programs/1st-annual-fundraiser">Click here for details.</Link>
       </h3>
     </BannerStyles>
   );
