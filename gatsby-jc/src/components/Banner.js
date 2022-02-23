@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const BannerStyles = styled.div`
-  background-color: mustard;
+  background-color: #FFDB58;
   width: 100vw;
   height: 40px;
   margin: 75px 0 0 0;
@@ -18,6 +18,9 @@ const BannerStyles = styled.div`
     text-align: center;
     color: tomato;
     text-transform: smallcaps;
+  }
+  h3 a {
+    color: #fff;
   }
   @media only screen and (max-width: 735px) {
     height: 70px;
