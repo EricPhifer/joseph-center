@@ -48,7 +48,7 @@ const SingleProgramStyles = styled.div`
   }
   @media only screen and (max-width: 400px) {
     h1, h3, p {
-      margin: auto 1rem;
+      margin: auto 1.5rem;
     }
   }
 `;
