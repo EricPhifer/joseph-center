@@ -58,7 +58,7 @@ export default function SingleProgramsPage({ data }) {
   return (
     <>
       <SingleProgramStyles>
-        <div className="contentContainer"> s
+        <div className="contentContainer">
           <div className="image">
             <SanityImage
               {...programs.image}
