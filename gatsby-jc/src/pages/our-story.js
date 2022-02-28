@@ -42,6 +42,7 @@ const StoryStyles = styled.div`
       }
     }
     @media only screen and (max-width: 400px) {
+      margin: 17rem 0 0;
       h1 {
         font-size: 3rem;
       }
