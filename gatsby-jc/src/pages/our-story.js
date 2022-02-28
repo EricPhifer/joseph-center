@@ -105,7 +105,8 @@ const StoryStyles = styled.div`
     }
   }
   @media only screen and (max-width: 400px) {
-    margin: 0;
+    /* Banner adjust for mobile */
+    margin: 17rem 0 0;
     .twoColContainer {
       margin: 0;
     }
