@@ -51,6 +51,11 @@ const SingleProgramStyles = styled.div`
       margin: 1.5rem;
     }
   }
+  @media only screen and (max-width: 356px) {
+    .twoColContainer .buttonesque {
+      padding: 2rem;
+    }
+  }
 `;
 
 export default function SingleProgramsPage({ data }) {
