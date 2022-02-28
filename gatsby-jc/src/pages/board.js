@@ -38,9 +38,14 @@ const BoardStyles = styled.div`
     }
   }
 
+  @media only screen and (max-width: 736px) {
+    /* Banner margin adjust */
+    margin: 13rem 1.5rem 3rem;
+  }
+
   @media only screen and (max-width: 400px) {
     /* Banner margin adjust */
-    margin: 17rem 1.5rem;
+    margin: 17rem 1.5rem 3rem;
     p {
       padding: 0 1.2rem;
       font-size: 1.2rem;
