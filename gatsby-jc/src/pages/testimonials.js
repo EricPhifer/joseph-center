@@ -26,6 +26,7 @@ const TestimonialStyles = styled.div`
   .threeCol {
   }
   @media only screen and (max-width: 400px) {
+    margin: auto 1.5rem;
   }
 `;
 
