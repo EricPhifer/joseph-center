@@ -47,8 +47,8 @@ const SingleProgramStyles = styled.div`
     }
   }
   @media only screen and (max-width: 400px) {
-    h1, h3, p {
-      margin: auto 1.5rem;
+    h1, h3, p, .services {
+      margin: 1.5rem;
     }
   }
 `;
@@ -58,7 +58,7 @@ export default function SingleProgramsPage({ data }) {
   return (
     <>
       <SingleProgramStyles>
-        <div className="contentContainer">
+        <div className="contentContainer"> s
           <div className="image">
             <SanityImage
               {...programs.image}

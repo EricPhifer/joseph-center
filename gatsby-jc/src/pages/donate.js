@@ -5,7 +5,8 @@ import SEO from '../components/SEO';
 
 const DonateStyles = styled.div`
   max-width: 1200px;
-  margin: 10rem auto;
+  /* Change margin for banner */
+  margin: 13rem auto;
   text-align: center;
   p {
     max-width: 500px;
@@ -73,6 +74,7 @@ const DonateStyles = styled.div`
     }
   }
   @media only screen and (max-width: 400px) {
+    margin: 20rem auto 4rem;
     p {
       padding: 0 1.2rem;
       font-size: 1.2rem;

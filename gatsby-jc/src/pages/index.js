@@ -314,7 +314,7 @@ export default function HomePage({ data }) {
               Creating a safe place for families to eat and shower, while
               equipping them to care for themselves.
             </p>
-            <Link to="/testimony" className="callToAction">
+            <Link to="/programs/day-shelter" className="callToAction">
               Learn More
             </Link>
           </div>
