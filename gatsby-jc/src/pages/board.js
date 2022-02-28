@@ -9,7 +9,7 @@ import SEO from '../components/SEO';
 const BoardStyles = styled.div`
   max-width: 1200px;
   /* TODO: change top / bottom margin to 5rem once banner is removed */
-  margin: 9rem auto;
+  margin: 9rem 1.5rem;
   h1 {
     padding: 4rem 0;
   }
@@ -39,6 +39,7 @@ const BoardStyles = styled.div`
   }
 
   @media only screen and (max-width: 400px) {
+    margin: 17rem 1.5rem;
     p {
       padding: 0 1.2rem;
       font-size: 1.2rem;

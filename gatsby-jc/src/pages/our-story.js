@@ -118,7 +118,7 @@ const StoryStyles = styled.div`
       }
     }
     p {
-      margin: 1rem;
+      margin: 1.5rem;
       font-size: 1.2rem;
     }
   }
