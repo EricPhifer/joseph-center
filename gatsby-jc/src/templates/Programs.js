@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const SingleProgramStyles = styled.div`
   max-width: 1200px;
-  margin: 5rem auto;
+  margin: 5rem 1.5rem 0;
   padding: 1rem 0;
   h1 {
     margin: 5rem 0 2rem 0;
