@@ -9,7 +9,7 @@ import Banner from '../components/Banner';
 
 const ContactStyles = styled.div`
   max-width: 1200px;
-  margin: 5rem auto;
+  margin: 9rem auto -5rem;
   // Two Column Grid
   .twoColContainer {
     display: -ms-grid;
@@ -121,8 +121,10 @@ const ContactStyles = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 736px) {
+    margin: 12rem auto -5rem;
+  }
   @media only screen and (max-width: 400px) {
-    margin: 15rem auto 1rem;
     p {
       padding: 0 1.2rem;
       font-size: 1.2rem;
