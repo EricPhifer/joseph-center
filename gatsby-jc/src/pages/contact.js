@@ -122,6 +122,7 @@ const ContactStyles = styled.div`
     }
   }
   @media only screen and (max-width: 400px) {
+    margin: 15rem auto 1rem;
     p {
       padding: 0 1.2rem;
       font-size: 1.2rem;
