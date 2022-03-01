@@ -4,6 +4,23 @@ import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import useContact from '../utils/useContact';
 
+// Setting up HCaptcha
+
+// const { verify } = require('hcaptcha');
+
+// const secret = '0x166DfA4ca3DaD98Ea57fe8b2289371501F15031d';
+// const token = 'token from widget';
+
+// verify(secret, token)
+//   .then((data) => {
+//     if (data.success === true) {
+//       console.log('success!', data);
+//     } else {
+//       console.log('verification failed');
+//     }
+//   })
+//   .catch(console.error);
+
 const VolunteerStyles = styled.div`
   max-width: 1200px;
   margin: 5rem auto;
@@ -182,6 +199,10 @@ const VolunteerStyles = styled.div`
     }
   }
 `;
+// Setting up HCaptcha
+// function onVerifyCaptcha (token) {
+//   console.log("Verified: " + token)
+// }
 
 export default function Volunteer() {
   const { values, updateValue } = useForm({
@@ -237,12 +258,11 @@ export default function Volunteer() {
           </p>
           <div className="space2" />
           <form
-            name="contact"
+            name="volunteer"
             id="formContainer"
             method="POST"
-            netlify-honeypot="bot-field"
+            data-netlify-honeypot="bot-field"
             data-netlify="true"
-            data-netlify-recaptcha="true"
           >
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
@@ -668,12 +688,13 @@ export default function Volunteer() {
                   <label htmlFor="responsibilities3">Responsibilities</label>
                 </div>
               </div>
-              <div className="formFields">
-                <div
-                  className="g-recaptcha recaptcha"
-                  data-sitekey="[insert-data-key-here]"
+              {/* Setting up HCaptcha */}
+              {/* <div className="formFields">
+                <hCaptcha
+                  sitekey="bb97f68e-c1d4-48b1-9a3a-94050ff97da3"
+                  onVerify={this.onVerifyCaptcha}
                 />
-              </div>
+              </div> */}
               <div id="submitContainer" className="formFields">
                 <button type="submit">Submit Application</button>
               </div>

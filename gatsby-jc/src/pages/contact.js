@@ -250,9 +250,8 @@ export default function Contact({ data }) {
                 name="contact"
                 id="formContainer"
                 method="POST"
-                netlify-honeypot="bot-field"
+                data-netlify-honeypot="bot-field"
                 data-netlify="true"
-                data-netlify-recaptcha="true"
               >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
