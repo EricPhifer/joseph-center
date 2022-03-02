@@ -152,8 +152,7 @@ const FormStyles = styled.div`
       padding: 1vmin;
     }
     select {
-      height: 5vmin;
-      padding: 2vmin;
+      height: 6vmin;
     }
     button {
       margin-top: 3vmin;
@@ -313,9 +312,9 @@ export default function Contact({ data }) {
                     What program are you interested in?
                   </label>
                   <select
-                    type="program"
                     name="program"
                     id="program"
+                    type="program"
                     value={values.program}
                     onChange={updateValue}
                     required
