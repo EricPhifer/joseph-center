@@ -133,6 +133,37 @@ const ContactStyles = styled.div`
 `;
 
 const FormStyles = styled.div`
+  form {
+    fieldset {
+      border: none;
+    }
+    input,
+    select,
+    textarea,
+    button {
+      box-sizing: border-box;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+    }
+    input,
+    textarea {
+      padding: 1vmin;
+    }
+    select {
+      height: 5vmin;
+      padding: 2vmin;
+    }
+    button {
+      margin-top: 3vmin;
+      margin-bottom: 1vmin;
+      padding: 2vmin;
+    }
+  }
+`;
+
+const OldStyles = styled.div`
   @media only screen and (max-width: 646px) {
     padding: 0 0.5rem;
   }
@@ -247,86 +278,67 @@ export default function Contact({ data }) {
           <div className="twoCol secondCol">
             <FormStyles>
               <form
-                name="contact"
-                id="formContainer"
-                method="POST"
-                data-netlify-honeypot="bot-field"
+                name="contact-form"
+                method="post"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
-                <fieldset id="container">
+                <fieldset>
                   <legend>Send Us a Message</legend>
-                  <div id="nameContainer" className="formFields">
-                    <label htmlFor="name" className="name">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      value={values.name}
-                      onChange={updateValue}
-                      placeholder="Name"
-                      required
-                    />
-                  </div>
-                  <div id="emailContainer" className="formFields">
-                    <label htmlFor="email" className="email">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      value={values.email}
-                      onChange={updateValue}
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-                  <div id="programDropdown" className="formFields">
-                    <label htmlFor="program" className="programChoice">
-                      What program are you interested in?
-                    </label>
-                    <select
-                      type="program"
-                      name="program"
-                      id="program"
-                      value={values.program}
-                      onChange={updateValue}
-                    >
-                      <option value="nopreference">No Preference</option>
-                      {programs.map((program) => (
-                        <option key={program.id} value={program.title}>
-                          {program.title}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div id="messageContainer" className="formFields">
-                    <label htmlFor="message" className="message">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      value={values.message}
-                      onChange={updateValue}
-                      rows="5"
-                      placeholder="How can we help?"
-                      required
-                    />
-                  </div>
-                  <div className="formFields">
-                    <div
-                      className="g-recaptcha recaptcha"
-                      data-sitekey="[insert-data-key-here]"
-                    />
-                  </div>
-                  <div id="submitContainer" className="formFields">
-                    <button type="submit">Send</button>
-                  </div>
+                  <label htmlFor="name" className="name">
+                    Name
+                  </label>
+                  <input
+                    name="name"
+                    id="name"
+                    type="text"
+                    value={values.name}
+                    onChange={updateValue}
+                    required
+                  />
+                  <label htmlFor="name" className="name">
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    id="email"
+                    type="text"
+                    value={values.email}
+                    onChange={updateValue}
+                    required
+                  />
+                  <label htmlFor="program" className="programChoice">
+                    What program are you interested in?
+                  </label>
+                  <select
+                    type="program"
+                    name="program"
+                    id="program"
+                    value={values.program}
+                    onChange={updateValue}
+                    required
+                  >
+                    <option value="nopreference">No Preference</option>
+                    {programs.map((program) => (
+                      <option key={program.id} value={program.title}>
+                        {program.title}
+                      </option>
+                    ))}
+                  </select>
+                  <label htmlFor="message" className="message">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    value={values.message}
+                    onChange={updateValue}
+                    rows="5"
+                    required
+                  />
+                  <button type="submit">Send</button>
                 </fieldset>
               </form>
             </FormStyles>
