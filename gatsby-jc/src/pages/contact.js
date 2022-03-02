@@ -154,6 +154,10 @@ const FormStyles = styled.div`
     textarea {
       padding: 1vmin;
     }
+    input,
+    select {
+      margin-bottom: 1vmin;
+    }
     select {
       height: 6vmin;
     }
