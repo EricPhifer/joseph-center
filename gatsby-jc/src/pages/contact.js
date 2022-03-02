@@ -137,6 +137,9 @@ const FormStyles = styled.div`
     fieldset {
       border: none;
     }
+    legend {
+      font-size: 2.5rem;
+    }
     input,
     select,
     textarea,
@@ -158,52 +161,6 @@ const FormStyles = styled.div`
       margin-top: 3vmin;
       margin-bottom: 1vmin;
       padding: 2vmin;
-    }
-  }
-`;
-
-const OldStyles = styled.div`
-  @media only screen and (max-width: 646px) {
-    padding: 0 0.5rem;
-  }
-  // One Column Grid
-  #container {
-    display: block;
-    margin: 0 auto;
-    border: none;
-    legend {
-      font-size: 3rem;
-    }
-  }
-  .formFields {
-    padding: 1rem 0;
-    input,
-    textarea,
-    select {
-      width: 100%;
-    }
-    select {
-      width: 103%;
-    }
-    input,
-    textarea,
-    select {
-      padding: 1rem;
-    }
-    label {
-      line-height: 2;
-      font-size: 2rem;
-    }
-    button {
-      width: 103%;
-      height: 65px;
-      background-color: var(--gold);
-      box-shadow: none;
-    }
-    @media only screen and (max-width: 754px) {
-      label {
-        font-size: 1.5rem;
-      }
     }
   }
 `;
