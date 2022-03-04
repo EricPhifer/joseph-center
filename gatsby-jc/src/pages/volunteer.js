@@ -32,13 +32,6 @@ const VolunteerStyles = styled.div`
   form {
     padding: 0;
     margin: 0;
-    input[required] + label:after,
-    select[required] + label:after,
-    textarea[required] + label:after {
-      content: '*';
-      padding-left: 0.4rem;
-      color: red;
-    }
   }
 `;
 
@@ -52,6 +45,13 @@ const FormStyles = styled.div`
       display: flex;
       flex-flow: column nowrap;
       border: none;
+      input[required] + label:after,
+      select[required] + label:after,
+      textarea[required] + label:after {
+        content: '*';
+        padding-left: 0.4rem;
+        color: red;
+      }
     }
     input,
     textarea,
@@ -202,7 +202,6 @@ export default function Volunteer() {
           meaningful relationships with our families, helping them move from a
           place of desperation to a place of hope.
         </p>
-        <div className="space2" />
         <FormStyles>
           <form
             name="volunteer-form"
