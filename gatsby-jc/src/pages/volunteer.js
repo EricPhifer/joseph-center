@@ -7,7 +7,7 @@ import Banner from '../components/Banner';
 
 const VolunteerStyles = styled.div`
   max-width: 1200px;
-  margin: 5rem auto;
+  margin: 10rem auto;
   h1 {
     padding-top: 4rem;
   }
@@ -115,7 +115,7 @@ const FormStyles = styled.div`
       display: block;
     }
     /* Style the checkmark/indicator */
-    .container .checkmark:after {
+    .checkboxLabel .checkmark:after {
       left: 9px;
       top: 5px;
       width: 5px;
@@ -196,409 +196,405 @@ export default function Volunteer() {
       <Banner />
       <VolunteerStyles>
         <h1>Volunteer</h1>
-        <div className="contentContainer">
-          <p>
-            The Joseph Center is completely volunteer-based, so we need
-            dedicated people with a heart for helping others. When you volunteer
-            you build meaningful relationships with our families, helping them
-            move from a place of desperation to a place of hope.
-          </p>
-          <div className="space2" />
-          <FormStyles>
-            <form
-              name="volunteer"
-              id="formContainer"
-              method="POST"
-              data-netlify-honeypot="bot-field"
-              data-netlify="true"
-            >
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="contact" />
-              <fieldset id="container">
-                <h3>Basic Information</h3>
-                <hr />
-                <label htmlFor="firstName" className="firstName">
-                  First Name
-                </label>
+        <p>
+          The Joseph Center is completely volunteer-based, so we need dedicated
+          people with a heart for helping others. When you volunteer you build
+          meaningful relationships with our families, helping them move from a
+          place of desperation to a place of hope.
+        </p>
+        <div className="space2" />
+        <FormStyles>
+          <form
+            name="volunteer"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
+            <fieldset>
+              <legend />
+              <h3>Basic Information</h3>
+              <hr />
+              <label htmlFor="firstName" className="firstName">
+                First Name
+              </label>
+              <input
+                name="firstName"
+                id="firstName"
+                type="text"
+                className="firstName"
+                value={values.firstName}
+                onChange={updateValue}
+                required
+              />
+              <label htmlFor="lastName" className="lastName">
+                Last Name
+              </label>
+              <input
+                name="lastName"
+                id="lastName"
+                type="text"
+                className="lastName"
+                value={values.lastName}
+                onChange={updateValue}
+                required
+              />
+              <label htmlFor="phone" className="phone">
+                Phone
+              </label>
+              <input
+                name="phone"
+                id="phone"
+                type="text"
+                className="phone"
+                value={values.phone}
+                onChange={updateValue}
+                required
+              />
+              <label htmlFor="email" className="email">
+                Email
+              </label>
+              <input
+                name="email"
+                id="email"
+                type="text"
+                className="email"
+                value={values.email}
+                onChange={updateValue}
+                required
+              />
+              <h3>Volunteer Opportunity</h3>
+              <hr />
+              <label htmlFor="dayShelterResource" className="checkboxLabel">
+                Day Shelter Resource
                 <input
-                  type="text"
-                  name="firstName"
-                  id="firstName"
-                  className="firstName"
-                  value={values.firstName}
+                  name="dayShelterResource"
+                  id="dayShelterResource"
+                  type="checkbox"
+                  value={values.dayShelterResource}
                   onChange={updateValue}
-                  required
                 />
-                <label htmlFor="lastName" className="lastName">
-                  Last Name
-                </label>
+                <span className="checkmark" />
+              </label>
+
+              <label htmlFor="dayShelterKitchen" className="checkboxLabel">
+                Day Shelter Kitchen
                 <input
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  className="lastName"
-                  value={values.lastName}
+                  name="dayShelterKitchen"
+                  id="dayShelterKitchen"
+                  value={values.dayShelterKitchen}
+                  type="checkbox"
                   onChange={updateValue}
-                  required
                 />
-                <label htmlFor="phone" className="phone">
-                  Phone
-                </label>
+                <span className="checkmark" />
+              </label>
+
+              <label htmlFor="repPayeeProgram" className="checkboxLabel">
+                Representative Payee Program
                 <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  className="phone"
-                  value={values.phone}
+                  name="repPayeeProgram"
+                  id="repPayeeProgram"
+                  type="checkbox"
+                  value={values.repPayeeProgram}
                   onChange={updateValue}
-                  required
                 />
-                <label htmlFor="email" className="email">
-                  Email
-                </label>
+                <span className="checkmark" />
+              </label>
+              <label htmlFor="parentAdvocacyProgram" className="checkboxLabel">
+                Parent Advocacy Program
                 <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  className="email"
-                  value={values.email}
+                  name="parentAdvocacyProgram"
+                  id="parentAdvocacyProgram"
+                  type="checkbox"
+                  value={values.parentAdvocacyProgram}
                   onChange={updateValue}
-                  required
                 />
-                <h3>Volunteer Opportunity</h3>
-                <hr />
-                <label htmlFor="dayShelterResource" className="checkboxLabel">
-                  Day Shelter Resource
-                  <input
-                    type="checkbox"
-                    name="dayShelterResource"
-                    id="dayShelterResource"
-                    value={values.dayShelterResource}
-                    onChange={updateValue}
-                  />
-                  <span className="checkmark" />
-                </label>
+                <span className="checkmark" />
+              </label>
+              <h3>Availability</h3>
+              <hr />
+              <label htmlFor="monday">Monday</label>
+              <select
+                name="monday"
+                id="monday"
+                type="monday"
+                value={values.monday}
+                onChange={updateValue}
+                required
+              >
+                <option value="9to12">9-12</option>
+                <option value="12to3">12-3</option>
+                <option value="none">None</option>
+              </select>
+              <label htmlFor="tuesday">Tuesday</label>
+              <select
+                name="tuesday"
+                id="tuesday"
+                type="tuesday"
+                value={values.tuesday}
+                onChange={updateValue}
+                required
+              >
+                <option value="9to12">9-12</option>
+                <option value="12to3">12-3</option>
+                <option value="none">None</option>
+              </select>
+              <label htmlFor="wednesday">Wednesday</label>
+              <select
+                name="wednesday"
+                id="wednesday"
+                type="wednesday"
+                value={values.wednesday}
+                onChange={updateValue}
+                required
+              >
+                <option value="9to12">9-12</option>
+                <option value="12to3">12-3</option>
+                <option value="none">None</option>
+              </select>
+              <label htmlFor="thursday">Thursday</label>
+              <select
+                name="thursday"
+                id="thursday"
+                type="thursday"
+                value={values.thursday}
+                onChange={updateValue}
+                required
+              >
+                <option value="9to12">9-12</option>
+                <option value="12to3">12-3</option>
+                <option value="none">None</option>
+              </select>
+              <label htmlFor="friday">Friday</label>
+              <select
+                name="friday"
+                id="friday"
+                type="friday"
+                value={values.friday}
+                onChange={updateValue}
+                required
+              >
+                <option value="9to12">9-12</option>
+                <option value="12to3">12-3</option>
+                <option value="none">None</option>
+              </select>
+              <label htmlFor="saturday">
+                Saturday<sub>*Winter Only*</sub>
+              </label>
+              <select
+                name="saturday"
+                id="saturday"
+                type="saturday"
+                value={values.saturday}
+                onChange={updateValue}
+              >
+                <option value="9to12">9-12</option>
+                <option value="12to3">12-3</option>
+                <option value="none">None</option>
+              </select>
+              <label htmlFor="addlComments">
+                Availability Additional Comments
+              </label>
+              <textarea
+                name="addlComments"
+                id="addlComments"
+                type="addlComments"
+                rows="2"
+                value={values.addlComments}
+                onChange={updateValue}
+                placeholder="Additional Comments"
+              />
+              <label htmlFor="reason">Reason for Volunteering</label>
+              <textarea
+                name="reason"
+                id="reason"
+                value={values.reason}
+                onChange={updateValue}
+                rows="3"
+                placeholder="Why do you want to Volunteer?"
+                required
+              />
+              <label htmlFor="benefit" className="benefit">
+                Benefit
+              </label>
+              <textarea
+                name="benefit"
+                id="benefit"
+                value={values.benefit}
+                onChange={updateValue}
+                rows="3"
+                placeholder="How do you plan to benefit the Joseph Center?"
+                required
+              />
+              <label htmlFor="qualifications">Qualifications and Skills</label>
+              <textarea
+                name="qualifications"
+                id="qualifications"
+                value={values.qualifications}
+                onChange={updateValue}
+                rows="3"
+                placeholder="What Qualifications and Skills do you have?"
+                required
+              />
+              <h3>Employment</h3>
+              <hr />
+              <label htmlFor="employment">
+                Employment History and Training
+              </label>
+              <textarea
+                name="employment"
+                id="employment"
+                value={values.employment}
+                onChange={updateValue}
+                rows="3"
+                placeholder="Give a brief summary of your employment history and training"
+                required
+              />
+              <h3>Employment One</h3>
+              <hr />
+              <label htmlFor="organization1">Organization</label>
+              <input
+                name="organization1"
+                id="organization1"
+                type="organization1"
+                value={values.organization1}
+                onChange={updateValue}
+                placeholder="Organization"
+                required
+              />
 
-                <label htmlFor="dayShelterKitchen" className="checkboxLabel">
-                  Day Shelter Kitchen
-                  <input
-                    type="checkbox"
-                    name="dayShelterKitchen"
-                    id="dayShelterKitchen"
-                    value={values.dayShelterKitchen}
-                    onChange={updateValue}
-                  />
-                  <span className="checkmark" />
-                </label>
+              <label htmlFor="beginDate1">Begin Date</label>
+              <input
+                name="beginDate1"
+                id="beginDate1"
+                type="date"
+                value={values.beginDate1}
+                onChange={updateValue}
+                placeholder="01/01/2000"
+                required
+              />
 
-                <label htmlFor="repPayeeProgram" className="checkboxLabel">
-                  Representative Payee Program
-                  <input
-                    type="checkbox"
-                    name="repPayeeProgram"
-                    id="repPayeeProgram"
-                    value={values.repPayeeProgram}
-                    onChange={updateValue}
-                  />
-                  <span className="checkmark" />
-                </label>
-                <label
-                  htmlFor="parentAdvocacyProgram"
-                  className="checkboxLabel"
-                >
-                  Parent Advocacy Program
-                  <input
-                    type="checkbox"
-                    name="parentAdvocacyProgram"
-                    id="parentAdvocacyProgram"
-                    value={values.parentAdvocacyProgram}
-                    onChange={updateValue}
-                  />
-                  <span className="checkmark" />
-                </label>
-                <h3>Availability</h3>
-                <hr />
-                <label htmlFor="monday">Monday</label>
-                <select
-                  type="monday"
-                  name="monday"
-                  id="monday"
-                  value={values.monday}
-                  onChange={updateValue}
-                  required
-                >
-                  <option value="9to12">9-12</option>
-                  <option value="12to3">12-3</option>
-                  <option value="none">None</option>
-                </select>
-                <label htmlFor="tuesday">Tuesday</label>
-                <select
-                  type="tuesday"
-                  name="tuesday"
-                  id="tuesday"
-                  value={values.tuesday}
-                  onChange={updateValue}
-                  required
-                >
-                  <option value="9to12">9-12</option>
-                  <option value="12to3">12-3</option>
-                  <option value="none">None</option>
-                </select>
-                <label htmlFor="wednesday">Wednesday</label>
-                <select
-                  type="wednesday"
-                  name="wednesday"
-                  id="wednesday"
-                  value={values.wednesday}
-                  onChange={updateValue}
-                  required
-                >
-                  <option value="9to12">9-12</option>
-                  <option value="12to3">12-3</option>
-                  <option value="none">None</option>
-                </select>
-                <label htmlFor="thursday">Thursday</label>
-                <select
-                  type="thursday"
-                  name="thursday"
-                  id="thursday"
-                  value={values.thursday}
-                  onChange={updateValue}
-                  required
-                >
-                  <option value="9to12">9-12</option>
-                  <option value="12to3">12-3</option>
-                  <option value="none">None</option>
-                </select>
-                <label htmlFor="friday">Friday</label>
-                <select
-                  type="friday"
-                  name="friday"
-                  id="friday"
-                  value={values.friday}
-                  onChange={updateValue}
-                  required
-                >
-                  <option value="9to12">9-12</option>
-                  <option value="12to3">12-3</option>
-                  <option value="none">None</option>
-                </select>
-                <label htmlFor="saturday">
-                  Saturday<sub>*Winter Only*</sub>
-                </label>
-                <select
-                  type="saturday"
-                  name="saturday"
-                  id="saturday"
-                  value={values.saturday}
-                  onChange={updateValue}
-                >
-                  <option value="9to12">9-12</option>
-                  <option value="12to3">12-3</option>
-                  <option value="none">None</option>
-                </select>
-                <label htmlFor="addlComments">
-                  Availability Additional Comments
-                </label>
-                <textarea
-                  type="addlComments"
-                  name="addlComments"
-                  id="addlComments"
-                  rows="2"
-                  value={values.addlComments}
-                  onChange={updateValue}
-                  placeholder="Additional Comments"
-                />
-                <label htmlFor="reason">Reason for Volunteering</label>
-                <textarea
-                  name="reason"
-                  id="reason"
-                  value={values.reason}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="Why do you want to Volunteer?"
-                  required
-                />
-                <label htmlFor="benefit" className="benefit">
-                  Benefit
-                </label>
-                <textarea
-                  name="benefit"
-                  id="benefit"
-                  value={values.benefit}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="How do you plan to benefit the Joseph Center?"
-                  required
-                />
-                <label htmlFor="qualifications">
-                  Qualifications and Skills
-                </label>
-                <textarea
-                  name="qualifications"
-                  id="qualifications"
-                  value={values.qualifications}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What Qualifications and Skills do you have?"
-                  required
-                />
-                <h3>Employment</h3>
-                <hr />
-                <label htmlFor="employment">
-                  Employment History and Training
-                </label>
-                <textarea
-                  name="employment"
-                  id="employment"
-                  value={values.employment}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="Give a brief summary of your employment history and training"
-                  required
-                />
+              <label htmlFor="endDate1">End Date</label>
+              <input
+                name="endDate1"
+                id="endDate1"
+                type="date"
+                value={values.endDate1}
+                onChange={updateValue}
+                placeholder="01/01/2002"
+                required
+              />
 
-                <label htmlFor="organization1">Organization</label>
-                <input
-                  type="organization1"
-                  name="organization1"
-                  id="organization1"
-                  value={values.organization1}
-                  onChange={updateValue}
-                  placeholder="Organization"
-                  required
-                />
+              <label htmlFor="responsibilities1">Responsibilities</label>
+              <textarea
+                name="responsibilities1"
+                id="responsibilities1"
+                value={values.responsibilities1}
+                onChange={updateValue}
+                rows="3"
+                placeholder="What were your responsibilities in this position?"
+                required
+              />
+              <h3>Employment Two</h3>
+              <hr />
+              <label htmlFor="organization2" className="organization">
+                Organization
+              </label>
+              <input
+                type="organization2"
+                name="organization2"
+                id="organization2"
+                value={values.organization2}
+                onChange={updateValue}
+                placeholder="Organization"
+                required
+              />
 
-                <label htmlFor="beginDate1">Begin Date</label>
-                <input
-                  type="date"
-                  name="beginDate1"
-                  id="beginDate1"
-                  value={values.beginDate1}
-                  onChange={updateValue}
-                  placeholder="01/01/2000"
-                  required
-                />
+              <label htmlFor="beginDate2">Begin Date</label>
+              <input
+                type="date"
+                name="beginDate2"
+                id="beginDate2"
+                value={values.beginDate2}
+                onChange={updateValue}
+                placeholder="01/01/2000"
+                required
+              />
 
-                <label htmlFor="endDate1">End Date</label>
-                <input
-                  type="date"
-                  name="endDate1"
-                  id="endDate1"
-                  value={values.endDate1}
-                  onChange={updateValue}
-                  placeholder="01/01/2002"
-                  required
-                />
+              <label htmlFor="endDate2">End Date</label>
+              <input
+                type="date"
+                name="endDate2"
+                id="endDate2"
+                value={values.endDate2}
+                onChange={updateValue}
+                placeholder="01/01/2002"
+                required
+              />
 
-                <label htmlFor="responsibilities1">Responsibilities</label>
-                <textarea
-                  name="responsibilities1"
-                  id="responsibilities1"
-                  value={values.responsibilities1}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What were your responsibilities in this position?"
-                  required
-                />
+              <label htmlFor="responsibilities2">Responsibilities</label>
+              <textarea
+                name="responsibilities2"
+                id="responsibilities2"
+                value={values.responsibilities2}
+                onChange={updateValue}
+                rows="3"
+                placeholder="What were your responsibilities in this position?"
+                required
+              />
+              <h3>Employment Three</h3>
+              <hr />
+              <label htmlFor="organization3" className="organization">
+                Organization
+              </label>
+              <input
+                type="organization3"
+                name="organization3"
+                id="organization3"
+                value={values.organization3}
+                onChange={updateValue}
+                placeholder="Organization"
+                required
+              />
 
-                <label htmlFor="organization2" className="organization">
-                  Organization
-                </label>
-                <input
-                  type="organization2"
-                  name="organization2"
-                  id="organization2"
-                  value={values.organization2}
-                  onChange={updateValue}
-                  placeholder="Organization"
-                  required
-                />
+              <label htmlFor="beginDate3">Begin Date</label>
+              <input
+                type="date"
+                name="beginDate3"
+                id="beginDate3"
+                value={values.beginDate3}
+                onChange={updateValue}
+                placeholder="01/01/2000"
+                required
+              />
 
-                <label htmlFor="beginDate2">Begin Date</label>
-                <input
-                  type="date"
-                  name="beginDate2"
-                  id="beginDate2"
-                  value={values.beginDate2}
-                  onChange={updateValue}
-                  placeholder="01/01/2000"
-                  required
-                />
+              <label htmlFor="endDate3">End Date</label>
+              <input
+                type="date"
+                name="endDate3"
+                id="endDate3"
+                value={values.endDate3}
+                onChange={updateValue}
+                placeholder="01/01/2002"
+                required
+              />
 
-                <label htmlFor="endDate2">End Date</label>
-                <input
-                  type="date"
-                  name="endDate2"
-                  id="endDate2"
-                  value={values.endDate2}
-                  onChange={updateValue}
-                  placeholder="01/01/2002"
-                  required
-                />
+              <label htmlFor="responsibilities3">Responsibilities</label>
+              <textarea
+                name="responsibilities3"
+                id="responsibilities3"
+                value={values.responsibilities3}
+                onChange={updateValue}
+                rows="3"
+                placeholder="What were your responsibilities in this position?"
+                required
+              />
 
-                <label htmlFor="responsibilities2">Responsibilities</label>
-                <textarea
-                  name="responsibilities2"
-                  id="responsibilities2"
-                  value={values.responsibilities2}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What were your responsibilities in this position?"
-                  required
-                />
-
-                <label htmlFor="organization3" className="organization">
-                  Organization
-                </label>
-                <input
-                  type="organization3"
-                  name="organization3"
-                  id="organization3"
-                  value={values.organization3}
-                  onChange={updateValue}
-                  placeholder="Organization"
-                  required
-                />
-
-                <label htmlFor="beginDate3">Begin Date</label>
-                <input
-                  type="date"
-                  name="beginDate3"
-                  id="beginDate3"
-                  value={values.beginDate3}
-                  onChange={updateValue}
-                  placeholder="01/01/2000"
-                  required
-                />
-
-                <label htmlFor="endDate3">End Date</label>
-                <input
-                  type="date"
-                  name="endDate3"
-                  id="endDate3"
-                  value={values.endDate3}
-                  onChange={updateValue}
-                  placeholder="01/01/2002"
-                  required
-                />
-
-                <label htmlFor="responsibilities3">Responsibilities</label>
-                <textarea
-                  name="responsibilities3"
-                  id="responsibilities3"
-                  value={values.responsibilities3}
-                  onChange={updateValue}
-                  rows="3"
-                  placeholder="What were your responsibilities in this position?"
-                  required
-                />
-
-                <button type="submit">Submit Application</button>
-              </fieldset>
-            </form>
-          </FormStyles>
-        </div>
+              <button type="submit">Submit Application</button>
+            </fieldset>
+          </form>
+        </FormStyles>
       </VolunteerStyles>
     </>
   );
