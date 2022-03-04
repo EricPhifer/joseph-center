@@ -258,7 +258,7 @@ export default function Contact({ data }) {
                     onChange={updateValue}
                     required
                   />
-                  <label htmlFor="name" className="name">
+                  <label htmlFor="email" className="email">
                     Email
                   </label>
                   <input
