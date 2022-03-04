@@ -185,6 +185,8 @@ const VolunteerStyles = styled.div`
 
 const FormStyles = styled.div`
   max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid black;
   form {
     overflow: hidden;
     fieldset {
