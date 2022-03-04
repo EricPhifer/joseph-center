@@ -206,7 +206,7 @@ export default function Volunteer() {
         <FormStyles>
           <form
             name="volunteer-form"
-            method="POST"
+            method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
