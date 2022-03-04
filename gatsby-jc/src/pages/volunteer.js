@@ -6,8 +6,9 @@ import useContact from '../utils/useContact';
 import Banner from '../components/Banner';
 
 const VolunteerStyles = styled.div`
-  max-width: 1200px;
+  max-width: 800px;
   margin: 10rem auto;
+  border: 1px solid black;
   h1 {
     padding-top: 4rem;
   }
@@ -18,40 +19,22 @@ const VolunteerStyles = styled.div`
   .space2 {
     padding: 2rem;
   }
-  .basicInfo,
-  .volunteerOpportunities,
-  .qualifications,
-  .employment,
-  .orgAndResponsibilites,
-  .saturday,
-  .addlComments,
-  .reason,
-  .benefit {
-    margin: 1rem 0 0 0;
-  }
-  form {
-    padding: 0;
-    margin: 0;
-  }
 `;
 
 const FormStyles = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  border: 1px solid black;
   form {
     overflow: hidden;
+    input[required] + label:after,
+    select[required] + label:after,
+    textarea[required] + label:after {
+      content: '*';
+      padding-left: 0.4rem;
+      color: red;
+    }
     fieldset {
       display: flex;
       flex-flow: column nowrap;
       border: none;
-      input[required] + label:after,
-      select[required] + label:after,
-      textarea[required] + label:after {
-        content: '*';
-        padding-left: 0.4rem;
-        color: red;
-      }
     }
     input,
     textarea,
