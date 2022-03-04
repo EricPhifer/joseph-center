@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import useContact from '../utils/useContact';
+import Banner from '../components/Banner';
 
 const VolunteerStyles = styled.div`
   max-width: 1200px;
@@ -143,6 +144,10 @@ const FormStyles = styled.div`
       width: 100%;
     }
   }
+  @media only screen and (max-width: 800px) {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+  }
 `;
 
 export default function Volunteer() {
@@ -179,7 +184,7 @@ export default function Volunteer() {
     endDate3: '',
     responsibilities3: '',
   });
-  const { errMessage, submitContact } = useContact({
+  const { contact, error, loading, errMessage, submitContact } = useContact({
     values,
   });
   if (errMessage) {
@@ -188,6 +193,7 @@ export default function Volunteer() {
   return (
     <>
       <SEO title="Volunteer" />
+      <Banner />
       <VolunteerStyles>
         <h1>Volunteer</h1>
         <div className="contentContainer">
