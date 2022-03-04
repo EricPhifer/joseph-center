@@ -15,6 +15,9 @@ const VolunteerStyles = styled.div`
   p {
     margin: 0 1rem;
   }
+  @media only screen and (max-width: 380px) {
+    margin: 15rem auto;
+  }
 `;
 
 const FormStyles = styled.div`
