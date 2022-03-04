@@ -8,16 +8,12 @@ import Banner from '../components/Banner';
 const VolunteerStyles = styled.div`
   max-width: 800px;
   margin: 10rem auto;
-  border: 1px solid black;
   h1 {
     padding-top: 4rem;
   }
   h1,
   p {
     margin: 0 1rem;
-  }
-  .space2 {
-    padding: 2rem;
   }
 `;
 
@@ -126,10 +122,6 @@ const FormStyles = styled.div`
     label {
       width: 100%;
     }
-  }
-  @media only screen and (max-width: 800px) {
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
   }
 `;
 
