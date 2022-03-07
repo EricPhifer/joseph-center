@@ -3,10 +3,11 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const BannerStyles = styled.div`
-  background-color: #FFDB58;
+  background-color: #ffdb58;
   width: 100vw;
   height: 40px;
   margin: 75px 0 0 0;
+  z-index: 99;
   position: fixed;
   left: 0;
   display: grid;
@@ -38,7 +39,11 @@ export default function Banner() {
   return (
     <BannerStyles>
       <h3>
-        Come join us for the 1st Annual Fundraiser Fabulous Family Fun Food Truck Friday! <Link to="/programs/1st-annual-fundraiser">Click here for details.</Link>
+        Come join us for the 1st Annual Fundraiser Fabulous Family Fun Food
+        Truck Friday!{' '}
+        <Link to="/programs/1st-annual-fundraiser">
+          Click here for details.
+        </Link>
       </h3>
     </BannerStyles>
   );
