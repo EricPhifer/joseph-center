@@ -15,7 +15,7 @@ const NavStyles = styled.nav`
   padding: 0.75rem 0;
   background-color: var(--gold);
   color: var(--white);
-  z-index: 99;
+  z-index: 100;
   .twoPartLogo {
     max-width: 170px;
     a {
@@ -546,7 +546,6 @@ class Nav extends Component {
                     <li>
                       <Link to="/testimonials">Testimonials</Link>
                     </li>
-                    
                   </ul>
                 ) : null}
               </div>
@@ -695,28 +694,28 @@ class Nav extends Component {
                           </Link>
                         </li>
                         <li>
-                      <Link to="/programs/the-joseph-center-outreach">
-                        JC Outreach
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/food-bank">Food Bank</Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/learn-to-live-again">
-                        Learn to Live Again
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/the-golden-girls-project">
-                        Golden Girls Project
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/programs/services-through-partnership">
-                        Services Through Partnerships
-                      </Link>
-                    </li>
+                          <Link to="/programs/the-joseph-center-outreach">
+                            JC Outreach
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/food-bank">Food Bank</Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/learn-to-live-again">
+                            Learn to Live Again
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/the-golden-girls-project">
+                            Golden Girls Project
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/services-through-partnership">
+                            Services Through Partnerships
+                          </Link>
+                        </li>
                         <button type="button" onClick={this.showPrograms}>
                           <UpArrow />
                         </button>
