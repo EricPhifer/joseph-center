@@ -191,9 +191,8 @@ export default function Volunteer() {
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="volunteer-form" />
             <fieldset>
-              <legend />
               <h3>Basic Information</h3>
               <hr />
               <label htmlFor="firstName" className="firstName">

@@ -244,7 +244,7 @@ export default function Contact({ data }) {
                 data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="bot-field" />
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="contact-form" />
                 <fieldset>
                   <legend>Send Us a Message</legend>
                   <label htmlFor="name" className="name">
