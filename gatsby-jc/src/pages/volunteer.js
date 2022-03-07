@@ -30,6 +30,9 @@ const FormStyles = styled.div`
       padding-left: 0.4rem;
       color: red;
     }
+    .asterisk {
+      color: red;
+    }
     fieldset {
       display: flex;
       flex-flow: column nowrap;
@@ -194,7 +197,7 @@ export default function Volunteer() {
               <h3>Basic Information</h3>
               <hr />
               <label htmlFor="firstName" className="firstName">
-                First Name
+                First Name<span className="asterisk">{' *'}</span>
               </label>
               <input
                 name="firstName"
@@ -414,7 +417,7 @@ export default function Volunteer() {
                 placeholder="What Qualifications and Skills do you have?"
                 required
               />
-              <h3>Employment</h3>
+              <h3>Employment History</h3>
               <hr />
               <label htmlFor="employment">
                 Employment History and Training
