@@ -293,7 +293,9 @@ export default function Volunteer() {
               </label>
               <h3>Availability</h3>
               <hr />
-              <label htmlFor="monday">Monday</label>
+              <label htmlFor="monday">
+                Monday<span className="asterisk">{' *'}</span>
+              </label>
               <select
                 name="monday"
                 id="monday"
@@ -384,7 +386,9 @@ export default function Volunteer() {
                 onChange={updateValue}
                 placeholder="Additional Comments"
               />
-              <label htmlFor="reason">Reason for Volunteering</label>
+              <label htmlFor="reason">
+                Reason for Volunteering<span className="asterisk">{' *'}</span>
+              </label>
               <textarea
                 name="reason"
                 id="reason"
@@ -420,6 +424,7 @@ export default function Volunteer() {
               <hr />
               <label htmlFor="employment">
                 Employment History and Training
+                <span className="asterisk">{' *'}</span>
               </label>
               <textarea
                 name="employment"
@@ -432,7 +437,9 @@ export default function Volunteer() {
               />
               <h3>Employment One</h3>
               <hr />
-              <label htmlFor="organization1">Organization</label>
+              <label htmlFor="organization1">
+                Organization<span className="asterisk">{' *'}</span>
+              </label>
               <input
                 name="organization1"
                 id="organization1"
@@ -478,7 +485,7 @@ export default function Volunteer() {
               <h3>Employment Two</h3>
               <hr />
               <label htmlFor="organization2" className="organization">
-                Organization
+                Organization<span className="asterisk">{' *'}</span>
               </label>
               <input
                 type="organization2"
@@ -525,7 +532,7 @@ export default function Volunteer() {
               <h3>Employment Three</h3>
               <hr />
               <label htmlFor="organization3" className="organization">
-                Organization
+                Organization<span className="asterisk">{' *'}</span>
               </label>
               <input
                 type="organization3"
