@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
 import YouTube from '../components/Youtube';
-import Banner from '../components/Banner';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -271,10 +270,10 @@ const HomeStyles = styled.div`
       }
     }
   }
-  /* adjust top margin for Banner on small screens*/
-  @media only screen and (max-width: 383px) {
-    margin-top: 15rem;
-  }
+  // /* adjust top margin for Banner on small screens*/
+  // @media only screen and (max-width: 383px) {
+  //   margin-top: 15rem;
+  // }
   @media only screen and (max-width: 400px) {
     max-width: 95%;
     .testimonyContainer {
@@ -294,7 +293,6 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
-      <Banner />
       <HomeStyles>
         <div className="carousel">
           <SanityImage
@@ -372,7 +370,7 @@ export default function HomePage({ data }) {
                 allowFullScreen
               />
             </div>
-            
+
             {/* <div className="testimonyVideo">
               <YouTube id={youtube[0].youtubeUrl} />
             </div> */}

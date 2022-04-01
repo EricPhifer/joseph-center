@@ -15,7 +15,7 @@ const NavStyles = styled.nav`
   padding: 0.75rem 0;
   background-color: var(--gold);
   color: var(--white);
-  z-index: 100;
+  z-index: 99;
   .twoPartLogo {
     max-width: 170px;
     a {

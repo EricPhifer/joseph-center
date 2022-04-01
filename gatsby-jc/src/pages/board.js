@@ -2,14 +2,13 @@ import { graphql } from 'gatsby';
 import SanityImage from 'gatsby-plugin-sanity-image';
 import React from 'react';
 import styled from 'styled-components';
-import Banner from '../components/Banner';
 import SEO from '../components/SEO';
 // will need to import graphql and SanityImage
 
 const BoardStyles = styled.div`
   max-width: 1200px;
   /* TODO: change top / bottom margin to 5rem once banner is removed */
-  margin: 9rem 1.5rem;
+  margin: 5rem 1.5rem;
   h1 {
     padding: 4rem 0;
   }
@@ -38,14 +37,14 @@ const BoardStyles = styled.div`
     }
   }
 
-  @media only screen and (max-width: 736px) {
-    /* Banner margin adjust */
-    margin: 13rem 1.5rem 3rem;
-  }
+  // @media only screen and (max-width: 736px) {
+  //   /* Banner margin adjust */
+  //   margin: 13rem 1.5rem 3rem;
+  // }
 
   @media only screen and (max-width: 400px) {
-    /* Banner margin adjust */
-    margin: 17rem 1.5rem 3rem;
+    // /* Banner margin adjust */
+    // margin: 17rem 1.5rem 3rem;
     p {
       padding: 0 1.2rem;
       font-size: 1.2rem;
@@ -58,7 +57,6 @@ export default function Board({ data }) {
   return (
     <>
       <SEO title="Board Members" />
-      <Banner />
       <BoardStyles>
         <h1>Board of Directors</h1>
         <div className="contentContainer fourColContainer">

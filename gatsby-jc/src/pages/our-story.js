@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby';
 import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
-import Banner from '../components/Banner';
 
 const StoryStyles = styled.div`
   max-width: 1200px;
@@ -41,13 +40,13 @@ const StoryStyles = styled.div`
         font-size: 2rem;
       }
     }
-    /* Banner adjust */
-    @media only screen and (min-width: 736px) {
-      margin: 11rem 1.5rem 0;
-    }
+    // /* Banner adjust */
+    // @media only screen and (min-width: 736px) {
+    //   margin: 11rem 1.5rem 0;
+    // }
     /* Banner adjust */
     @media only screen and (max-width: 400px) {
-      margin: 17rem 1.5rem 0;
+      // margin: 17rem 1.5rem 0;
       h1 {
         font-size: 3rem;
       }
@@ -110,8 +109,8 @@ const StoryStyles = styled.div`
     }
   }
   @media only screen and (max-width: 400px) {
-    /* Banner adjust for mobile */
-    margin: 17rem 0 0;
+    // /* Banner adjust for mobile */
+    // margin: 17rem 0 0;
     .twoColContainer {
       margin: 0;
     }
@@ -134,7 +133,6 @@ export default function OurStory({ data }) {
   return (
     <>
       <SEO title="Our Story" />
-      <Banner />
       <StoryStyles>
         <div className="oneColContainer">
           <div className="storyImg oneCol">

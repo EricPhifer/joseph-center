@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Banner from '../components/Banner';
 import SEO from '../components/SEO';
 
 const DonateStyles = styled.div`
   max-width: 1200px;
   /* Change margin for banner */
-  margin: 13rem auto;
+  margin: 5rem auto;
   text-align: center;
   p {
     max-width: 500px;
@@ -86,7 +85,6 @@ export default function Donate() {
   return (
     <>
       <SEO title="Donate" />
-      <Banner />
       <DonateStyles>
         <h1>Donate</h1>
         <h3>Thank you for supporting the Joseph Center!</h3>

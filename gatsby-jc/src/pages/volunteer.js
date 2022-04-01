@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import useContact from '../utils/useContact';
-import Banner from '../components/Banner';
 
 const VolunteerStyles = styled.div`
   max-width: 800px;
@@ -174,7 +173,6 @@ export default function Volunteer() {
   return (
     <>
       <SEO title="Volunteer" />
-      <Banner />
       <VolunteerStyles>
         <h1>Volunteer</h1>
         <p>
