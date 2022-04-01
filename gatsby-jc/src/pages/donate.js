@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 const DonateStyles = styled.div`
   max-width: 1200px;
   /* Change margin for banner */
-  margin: 5rem auto;
+  margin: 10rem auto 0;
   text-align: center;
   p {
     max-width: 500px;
@@ -90,7 +90,7 @@ export default function Donate() {
         <h3>Thank you for supporting the Joseph Center!</h3>
         <p>
           Amounts can be adjusted by quantity. For example, if you want to
-          donate $15 then select "Donate $5" and change the qunatity to 3.
+          donate $15 then select "Donate $5" and change the quantity to 3.
         </p>
         <div className="oneTimeDonations fiveColContainer">
           <h4>One Time Donation</h4>
