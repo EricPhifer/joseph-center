@@ -4,7 +4,6 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
-import YouTube from '../components/Youtube';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
