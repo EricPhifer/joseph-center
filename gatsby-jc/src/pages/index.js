@@ -4,6 +4,7 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
+import Banner from '../components/Banner';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -269,10 +270,6 @@ const HomeStyles = styled.div`
       }
     }
   }
-  // /* adjust top margin for Banner on small screens*/
-  // @media only screen and (max-width: 383px) {
-  //   margin-top: 15rem;
-  // }
   @media only screen and (max-width: 400px) {
     max-width: 95%;
     .testimonyContainer {
@@ -283,6 +280,10 @@ const HomeStyles = styled.div`
       }
     }
   }
+  /* adjust top padding for Banner on small screens */
+  @media only screen and (max-width: 450px) {
+    padding-top: 10rem;
+  }
 `;
 
 export default function HomePage({ data }) {
@@ -292,6 +293,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
+      <Banner />
       <HomeStyles>
         <div className="carousel">
           <SanityImage
