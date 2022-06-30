@@ -472,11 +472,14 @@ class Nav extends Component {
 
     this.state = {
       showAbout: false,
+      showForms: false,
       showPrograms: false,
     };
 
     this.showAbout = this.showAbout.bind(this);
     this.closeAbout = this.closeAbout.bind(this);
+    this.showForms = this.showForms.bind(this);
+    this.closeForms = this.closeForms.bind(this);
     this.showPrograms = this.showPrograms.bind(this);
     this.closePrograms = this.closePrograms.bind(this);
   }
@@ -492,6 +495,20 @@ class Nav extends Component {
   closeAbout() {
     this.setState({ showAbout: false }, () => {
       document.removeEventListener('click', this.closeAbout);
+    });
+  }
+
+  showForms(event) {
+    event.preventDefault();
+
+    this.setState({ showForms: true }, () => {
+      document.addEventListener('click', this.closeForms);
+    });
+  }
+
+  closeForms() {
+    this.setState({ showForms: false }, () => {
+      document.removeEventListener('click', this.closeForms);
     });
   }
 
@@ -614,7 +631,33 @@ class Nav extends Component {
             </div>
           </div>
           <div className="navLink" id="volunteer">
-            <Link to="/volunteer">Volunteer</Link>
+            <div className="dropdownContainer">
+              <div label="Forms" className="dropdown">
+                <button
+                  type="button"
+                  className="dropdownBtn"
+                  onClick={this.showForms}
+                >
+                  Forms
+                </button>
+                {this.state.showForms ? (
+                  <ul className="menu aboutMenu">
+                    <button type="button" onClick={this.showForms}>
+                      <UpArrow />
+                    </button>
+                    <li>
+                      <Link to="/volunteer">Volunteer</Link>
+                    </li>
+                    <li>
+                      <Link to="/referral">Referral</Link>
+                    </li>
+                  </ul>
+                ) : null}
+              </div>
+              <span>
+                {this.state.showForms ? null : <RiArrowDropDownLine />}
+              </span>
+            </div>
           </div>
           <div className="navLink" id="contact">
             <Link to="/contact">Contact</Link>
@@ -647,7 +690,7 @@ class Nav extends Component {
                       About
                     </button>
                     {this.state.showAbout ? (
-                      <ul className=" aboutMenu">
+                      <ul className="aboutMenu">
                         <li>
                           <Link to="/our-story">Our Story</Link>
                         </li>
@@ -728,7 +771,33 @@ class Nav extends Component {
                 </div>
               </li>
               <li className="mobileNavLink" id="volunteer">
-                <Link to="/volunteer">Volunteer</Link>
+                <div className="dropdownContainer">
+                  <div label="Forms" className="dropdown">
+                    <button
+                      type="button"
+                      className="dropdownBtn"
+                      onClick={this.showForms}
+                    >
+                      Forms
+                    </button>
+                    {this.state.showForms ? (
+                      <ul className="aboutMenu">
+                        <button type="button" onClick={this.showForms}>
+                          <UpArrow />
+                        </button>
+                        <li>
+                          <Link to="/volunteer">Volunteer</Link>
+                        </li>
+                        <li>
+                          <Link to="/referral">Referral</Link>
+                        </li>
+                      </ul>
+                    ) : null}
+                  </div>
+                  <span>
+                    {this.state.showForms ? null : <RiArrowDropDownLine />}
+                  </span>
+                </div>
               </li>
               <li className="mobileNavLink" id="contact">
                 <Link to="/contact">Contact</Link>

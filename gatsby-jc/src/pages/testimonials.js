@@ -47,9 +47,7 @@ export default function Testimonials({ data }) {
         <div className="threeColContainer">
           {links.map((link) => (
             <div key={link.id} className="threeCol">
-              <Link to={link.youtubeUrl}>
-                {link.title}'s Testimony
-              </Link>
+              <Link to={link.youtubeUrl}>{link.title}'s Testimony</Link>
               {/* <iframe
                 height="315"
                 src={link.youtubeUrl}

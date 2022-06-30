@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
-const IntakeStyles = styled.div`
+const ReferralStyles = styled.div`
   max-width: 1200px;
   margin: 5rem 1.5rem 0;
   padding: 5rem 0;
@@ -34,19 +34,19 @@ const IntakeStyles = styled.div`
   }
 `;
 
-export default function Intake() {
+export default function Referral() {
   return (
     <>
-      <SEO title="Intake Form" />
-      <IntakeStyles>
+      <SEO title="Referral Form" />
+      <ReferralStyles>
         <iframe
           src="https://the-joseph-center.casemgr.org/embed-casemgr-referral/46dd9429268ede42bf0f31629fb5fcea1fd65236"
-          title="Intake Form"
+          title="Referral Form"
           frameBorder="0"
           width="800"
-          height="800"
+          height="1287"
         />
-      </IntakeStyles>
+      </ReferralStyles>
     </>
   );
 }
