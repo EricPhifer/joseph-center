@@ -4,6 +4,7 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import twitter from '../assets/images/twitter.png';
+import Banner from '../components/Banner';
 
 const HomeStyles = styled.div`
   max-width: 1200px;
@@ -42,6 +43,7 @@ const HomeStyles = styled.div`
   }
   .fourCol {
     align-self: center;
+    justify-self: center;
   }
   // Three Column Grid
   .threeColContainer {
@@ -279,10 +281,13 @@ const HomeStyles = styled.div`
       }
     }
   }
-  // /* adjust top padding for Banner on small screens */
-  // @media only screen and (max-width: 450px) {
-  //   padding-top: 10rem;
-  // }
+  .supporters {
+    max-height: 292.5px;
+  }
+  /* adjust top padding for Banner on small screens */
+  @media only screen and (max-width: 450px) {
+    padding-top: 10rem;
+  }
 `;
 
 export default function HomePage({ data }) {
@@ -292,7 +297,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
-      {/* <Banner /> */}
+      <Banner />
       <HomeStyles>
         <div className="carousel">
           <SanityImage
@@ -392,7 +397,7 @@ export default function HomePage({ data }) {
           <h3 className="fourCol">Partners</h3>
           <hr />
           {supporters.map((supporter) => (
-            <div key={supporter.id} className="fourCol">
+            <div key={supporter.id} className="supporters fourCol">
               <a href={supporter.website}>
                 <SanityImage
                   {...supporter.logo}

@@ -45,12 +45,7 @@ const BannerStyles = styled.div`
 export default function Banner() {
   return (
     <BannerStyles>
-      <h3>
-        The Joseph Center will be closed for the next two weeks due to a
-        positive COVID case. We will re-open to the public on 06/14. We will
-        still be available during normal hours{' '}
-        <Link to="/contact">by phone</Link>.{' '}
-      </h3>
+      <h3>The Joseph Center will be closed this Friday 07/15/2022. </h3>
     </BannerStyles>
   );
 }
