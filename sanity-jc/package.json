@@ -42,9 +42,9 @@
   "keywords": [
     "sanity"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "package.json",
-  "name": "base-site-backend",
+  "name": "jc-backend",
   "private": true,
   "scripts": {
     "lint": "eslint .",
