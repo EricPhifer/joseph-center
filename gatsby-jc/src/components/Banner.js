@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const BannerStyles = styled.div`
@@ -7,7 +6,7 @@ const BannerStyles = styled.div`
   width: 100vw;
   height: 40px;
   margin: 75px 0 0 0;
-  z-index: 99;
+  z-index: 1;
   position: fixed;
   left: 0;
   display: grid;
@@ -45,7 +44,10 @@ const BannerStyles = styled.div`
 export default function Banner() {
   return (
     <BannerStyles>
-      <h3>The Joseph Center will be closed this Friday 07/15/2022. </h3>
+      <h3>
+        The Joseph Center will be closed this Thursday &amp; Friday 07/21 -
+        07/22.{' '}
+      </h3>
     </BannerStyles>
   );
 }
