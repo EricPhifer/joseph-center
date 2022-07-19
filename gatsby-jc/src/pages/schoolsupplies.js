@@ -131,7 +131,6 @@ export default function SchoolSupplies() {
                 onChange={updateValue}
                 required
               >
-                <option value="PreK">Pre-K</option>
                 <option value="Kindergarten">K</option>
                 <option value="1st">1st</option>
                 <option value="2nd">2nd</option>
