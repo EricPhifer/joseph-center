@@ -44,6 +44,11 @@ const FormStyles = styled.div`
       padding: 1vmin;
       margin: 1vmin 0;
     }
+    .inline {
+      display: inline-flex;
+      flex-flow: row nowrap;
+    }
+
     /* Customize the label (the container) */
     .checkboxLabel {
       display: block;
@@ -77,6 +82,62 @@ const FormStyles = styled.div`
       height: 25px;
       width: 25px;
       background-color: #eee;
+    }
+
+    /* Create a Toggle switch*/
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 77px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: '';
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+    .slider.round {
+      border-radius: 34px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
     }
 
     /* On mouse-over, add a grey background color */
@@ -139,8 +200,7 @@ export default function SchoolSupplies() {
     phone: '',
     email: '',
     grade: '',
-    assistanceyes: '',
-    assistanceno: '',
+    assistance: '',
   });
   const { contact, error, loading, errMessage, submitContact } = useContact({
     values,
@@ -239,31 +299,22 @@ export default function SchoolSupplies() {
                 onChange={updateValue}
                 required
               />
-              <label htmlFor="assistance">
-                Will you need assistance with the school fee?
-              </label>
-              <label htmlFor="assistanceyes" className="checkboxLabel">
-                Yes
-                <input
-                  name="assistanceyes"
-                  id="assistanceyes"
-                  type="checkbox"
-                  value={values.assistanceyes}
-                  onChange={updateValue}
-                />
-                <span className="checkmark" />
-              </label>
-              <label htmlFor="assistanceno" className="checkboxLabel">
-                No
-                <input
-                  name="assistanceno"
-                  id="assistanceno"
-                  type="checkbox"
-                  value={values.assistanceno}
-                  onChange={updateValue}
-                />
-                <span className="checkmark" />
-              </label>
+              <fieldset className="inline">
+                <label htmlFor="assistwords">
+                  Toggle the switch to blue if you will need assistance with the
+                  school fee
+                </label>
+                <label htmlFor="assistance" className="switch">
+                  <input
+                    name="assistance"
+                    id="assistance"
+                    type="checkbox"
+                    value={values.assistance}
+                    onChange={updateValue}
+                  />
+                  <span className="slider round" />
+                </label>
+              </fieldset>
               <button type="submit" value="Submit">
                 Submit Application
               </button>
