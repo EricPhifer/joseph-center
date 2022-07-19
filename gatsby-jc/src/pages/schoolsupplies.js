@@ -137,7 +137,8 @@ export default function SchoolSupplies() {
     phone: '',
     email: '',
     grade: '',
-    assistance: '',
+    assistanceyes: '',
+    assistanceno: '',
   });
   const { contact, error, loading, errMessage, submitContact } = useContact({
     values,
@@ -187,7 +188,7 @@ export default function SchoolSupplies() {
               />
               <label htmlFor="grade">
                 What grade is your child in?
-                <span className="asterisk">{' *'}</span>
+                <span className="asterisk" />
               </label>
               <select
                 name="grade"
@@ -236,13 +237,27 @@ export default function SchoolSupplies() {
                 onChange={updateValue}
                 required
               />
-              <label htmlFor="assistance" className="checkboxLabel">
-                Check here if you will need assistance with the school fee
+              <label htmlFor="assistance">
+                Will you need assistance with the school fee?
+              </label>
+              <label htmlFor="assistanceyes" className="checkboxLabel">
+                Yes
                 <input
-                  name="assistance"
-                  id="assistance"
+                  name="assistanceyes"
+                  id="assistanceyes"
                   type="checkbox"
-                  value={values.assistance}
+                  value={values.assistanceyes}
+                  onChange={updateValue}
+                />
+                <span className="checkmark" />
+              </label>
+              <label htmlFor="assistanceno" className="checkboxLabel">
+                No
+                <input
+                  name="assistanceno"
+                  id="assistanceno"
+                  type="checkbox"
+                  value={values.assistanceno}
                   onChange={updateValue}
                 />
                 <span className="checkmark" />
