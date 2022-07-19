@@ -247,7 +247,9 @@ export default function SchoolSupplies() {
                 />
                 <span className="checkmark" />
               </label>
-              <button type="submit">Submit Application</button>
+              <button type="submit" value="Submit">
+                Submit Application
+              </button>
             </fieldset>
           </form>
         </FormStyles>
