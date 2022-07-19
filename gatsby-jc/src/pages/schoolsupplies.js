@@ -63,8 +63,10 @@ const FormStyles = styled.div`
       position: absolute;
       opacity: 0;
       cursor: pointer;
-      height: 0;
-      width: 0;
+      height: 25px;
+      width: 25px;
+      left: 0;
+      top: -5px;
     }
 
     /* Create a custom checkbox */
