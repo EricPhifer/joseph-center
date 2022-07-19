@@ -157,7 +157,7 @@ export default function SchoolSupplies() {
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="Supply-form" />
+            <input type="hidden" name="form-name" value="supply-form" />
             <fieldset>
               <h3>School Supplies Form</h3>
               <hr />
