@@ -284,10 +284,10 @@ const HomeStyles = styled.div`
   .supporters {
     max-height: 292.5px;
   }
-  /* adjust top padding for Banner on small screens */
-  @media only screen and (max-width: 450px) {
-    padding-top: 10rem;
-  }
+  // /* adjust top padding for Banner on small screens */
+  // @media only screen and (max-width: 450px) {
+  //   padding-top: 10rem;
+  // }
 `;
 
 export default function HomePage({ data }) {
@@ -297,7 +297,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Home Page" />
-      <Banner />
+      {/* <Banner /> */}
       <HomeStyles>
         <div className="carousel">
           <SanityImage
