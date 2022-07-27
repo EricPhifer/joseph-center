@@ -651,9 +651,9 @@ class Nav extends Component {
                     <li>
                       <Link to="/referral">Referral</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="/schoolsupplies">School Supplies</Link>
-                    </li>
+                    </li> */}
                   </ul>
                 ) : null}
               </div>
@@ -794,9 +794,9 @@ class Nav extends Component {
                         <li>
                           <Link to="/referral">Referral</Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link to="/schoolsupplies">School Supplies</Link>
-                        </li>
+                        </li> */}
                       </ul>
                     ) : null}
                   </div>
